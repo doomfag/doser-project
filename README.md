@@ -105,3 +105,5 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:release
 ```
 
 O relatório fica em `releases/validacao-real.json`. Testes de dimensões móveis não substituem Android/iOS reais. Fixtures são sintéticas, isoladas e não entram na distribuição. Veja [arquitetura](docs/arquitetura.md), [formato do catálogo](docs/catalogo.md) e [validação](docs/validacao.md).
+
+Para iPhone/iPad sem Mac, consulte [o caminho gratuito com Windows e AltStore Classic](docs/ios-gratuito.md). Ele exige renovação de assinatura a cada sete dias e não cobre Apple TV. Os downloads de teste de iPhone e TVs ficam em [Releases](https://github.com/doomfag/doser-project/releases); a IPA requer assinatura pessoal antes de instalar.

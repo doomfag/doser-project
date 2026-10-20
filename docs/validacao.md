@@ -72,3 +72,17 @@ O botão Salvar HTML da distribuição portátil cria um Blob local com os recur
 - Windows/Linux são artefatos instaláveis, distintos do ZIP anterior que apenas iniciava o navegador. Não há afirmação de assinatura comercial ou instalação física validada.
 
 A execução final [39450238625](https://github.com/doomfag/doser-project/actions/runs/39450238625), commit e71ab3b, concluiu com sucesso os três trabalhos: Windows (teste da janela e instalador NSIS), Linux (teste da janela e pacote Debian) e Android (APK de teste compilado). Os três artefatos foram publicados no GitHub Actions; os arquivos exigem conta GitHub para download e ficam retidos por 14 dias. Nenhuma instalação física Android ou assinatura comercial Windows foi alegada.
+
+## iOS, macOS e TVs — 0.6
+
+Em 20/10/2026, os workflows [39453915295](https://github.com/doomfag/doser-project/actions/runs/39453915295) e [39453915293](https://github.com/doomfag/doser-project/actions/runs/39453915293), commit a898361, concluíram com sucesso:
+
+- Windows, Linux e macOS: teste da janela Electron e empacotamento; Android: compilação do APK.
+- iPhone/iPad: compilações para simulador e dispositivo sem assinatura; instalação e abertura no simulador iPhone, com captura de tela. Isso não comprova os fluxos completos nem instalação em aparelho físico.
+- Android TV/Fire OS: APK com launcher de TV compilado. Sem teste físico ou emulador Android TV.
+- Apple TV: app SwiftUI compilado para simulador e dispositivo sem assinatura. Sem execução/instalação física validada.
+- LG: IPK gerado pelo CLI oficial. Samsung: ZIP de projeto, sem assinatura ou WGT instalável.
+- TV web em Chromium: base real, navegação por setas/Enter/Voltar, ficha e calculadora, sem API, erros JavaScript ou estouro horizontal. Não substitui testes nos motores de firmware de Samsung/LG.
+- 61 testes unitários/serviço, TypeScript e build passaram. Auditoria completa npm: zero vulnerabilidades conhecidas; isso não é garantia de ausência de falhas.
+
+Os pacotes móveis e de TV preservam o catálogo offline; atualização automática nessas plataformas permanece pendente. Apple TV tem conjunto de recursos reduzido. Consulte [a matriz de plataformas](apple-e-tvs.md) e [instalação gratuita iPhone/iPad com Windows](ios-gratuito.md). As compilações posteriores corrigem a versão interna da IPA para 0.6.0 e acrescentam publicação de downloads públicos de teste; a execução dessas alterações é registrada separadamente no GitHub Actions.

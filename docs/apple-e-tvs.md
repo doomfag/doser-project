@@ -15,9 +15,11 @@ Compatibilidade deve ser declarada por sistema e versão. Não existe instalador
 
 ## Instalar em iPhone ou Apple TV
 
-A conta gratuita da Apple pode permitir desenvolvimento pessoal pelo Xcode em um Mac, com provisionamento temporário sujeito às limitações da Apple. Uma IPA sem assinatura não pode ser instalada normalmente tocando no arquivo. Distribuição por App Store/TestFlight e provisionamento permanente normalmente exigem associação ao Apple Developer Program. Não foi contratado nenhum serviço, comprada assinatura nem solicitada chave/senha.
+Para iPhone/iPad sem Mac, existe um caminho gratuito com **Windows + AltStore Classic/AltServer**. A assinatura pessoal precisa ser renovada a cada sete dias, com o AltServer disponível. Não é instalação permanente nem publicação na App Store. Veja [as instruções em português](ios-gratuito.md). O IPA compilado aqui ainda depende dessa assinatura local; baixar o arquivo não instala o aplicativo.
 
-Os builds de simulador funcionam apenas no simulador do Xcode. Não os apresente como instaladores para iPhone ou Apple TV física. O caminho de instalação depende de um Mac e de sua conta/certificado, não pode ser concluído apenas neste ambiente Linux. Referência oficial: https://developer.apple.com/support/compare-memberships/ . A página não pôde ser consultada pela rede deste ambiente nesta etapa; confirme ali as condições vigentes antes de escolher uma modalidade.
+Apple TV não é coberta por esse caminho do AltStore Classic. O pacote tvOS continua sem assinatura/provisionamento, e a instalação física permanece pendente. Não foi contratado serviço nem solicitada senha, chave ou assinatura paga.
+
+Os builds de simulador funcionam apenas nos simuladores do Xcode. Não são instaladores de aparelho físico. Desenvolvimento pessoal pelo Xcode usa Mac e provisionamento temporário sujeito às regras da Apple; App Store/TestFlight normalmente exigem associação ao Apple Developer Program. Referência: https://developer.apple.com/support/compare-memberships/ . Essa página não pôde ser consultada pela rede deste ambiente; confirme ali as condições vigentes.
 
 ## TVs
 

@@ -69,6 +69,7 @@ jobs:
             build-ios/Doser-*.zip
             build-ios/LEIA-ME.md
             build-ios/iPhone.png
+            docs/ios-gratuito.md
           if-no-files-found: error
           retention-days: 3
   android-tv:
@@ -180,3 +181,34 @@ jobs:
             docs/apple-e-tvs.md
           if-no-files-found: error
           retention-days: 3
+  publish-preview:
+    name: Downloads públicos de teste
+    needs: [ios, android-tv, apple-tv, vendor-tv]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: release-input
+      - name: Organizar downloads
+        run: |
+          mkdir -p release-files
+          cp release-input/Doser-iOS-ASSINATURA-NECESSARIA/*.ipa release-files/
+          cp release-input/Doser-Android-TV-Fire-TV-APK-teste/app-debug.apk release-files/Doser-Android-TV-Fire-TV-TESTE.apk
+          cp release-input/Doser-Apple-TV-ASSINATURA-NECESSARIA/*.zip release-files/
+          find release-input/Doser-LG-webOS-e-projeto-Samsung -type f \( -name '*.ipk' -o -name '*.zip' \) -exec cp {} release-files/ \;
+          cp docs/apple-e-tvs.md release-files/LEIA-ME.md
+          cp docs/ios-gratuito.md release-files/iPhone-INSTALACAO-GRATUITA.md
+          cd release-files
+          sha256sum * > SHA256SUMS.txt
+      - name: Publicar prévia
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="v0.6.0-apple-tv-preview"
+          if ! gh release view "$tag" > /dev/null 2>&1; then
+            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title "Doser 0.6 — iPhone e TVs (teste)" --notes-file docs/apple-e-tvs.md
+          fi
+          gh release upload "$tag" release-files/* --clobber
