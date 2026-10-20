@@ -16,7 +16,7 @@ A extensão 0.6 acrescenta projetos/builds para iPhone/iPad, Apple TV, Android T
 
 ## Aplicativos para instalar
 
-A distribuição nativa está em implementação: Electron para Windows/Linux e Capacitor para Android. O workflow [Aplicativos instaláveis](https://github.com/doomfag/doser-project/actions/workflows/native.yml) produz instaladores e APK quando os trabalhos concluem com sucesso. Consulte [instruções e limites](docs/aplicativos.md). Não é necessário abrir o aplicativo instalado no navegador. A atualização Android ainda está pendente.
+A distribuição usa Electron para Windows/Linux/macOS e Capacitor para Android. Os instaladores de teste ficam em [Releases](https://github.com/doomfag/doser-project/releases). O workflow [Aplicativos instaláveis](https://github.com/doomfag/doser-project/actions/workflows/native.yml) produz instaladores e APK quando os trabalhos concluem com sucesso. Consulte [instruções e limites](docs/aplicativos.md). Não é necessário abrir o aplicativo instalado no navegador. A atualização automática do catálogo no Android ainda está pendente.
 
 ## Formatos anteriores de consulta
 
@@ -37,7 +37,7 @@ A cópia HTML não consegue baixar automaticamente o CSV da Anvisa: o servidor d
 
 O pacote inclui o runtime Node oficial e sua licença, a dependência de parsing, o aplicativo compilado e a base cadastral. Não exige instalar Node ou dependências. O ZIP oficial do Node tem SHA-256 conferido contra o arquivo de checksums da distribuição oficial; proveniência fica na pasta `runtime`.
 
-**Limite de validação:** o servidor e os fluxos foram testados em Linux, inclusive com a base real. O iniciador e runtime Windows ainda precisam de teste em Windows 10/11 x64 real. Trata-se de um pacote portátil, não de instalador Tauri. Não há APK Android nesta etapa. O HTML pode ser consultado em navegador compatível; isso não equivale a um aplicativo Android instalado.
+**Limite de validação:** o servidor e os fluxos foram testados em Linux, inclusive com a base real. O iniciador e runtime Windows ainda precisam de teste em Windows 10/11 x64 real. Trata-se de um pacote portátil, não de instalador Tauri. Esse formato histórico não é o APK Android disponível nas Releases. O HTML pode ser consultado em navegador compatível; isso não equivale a um aplicativo Android instalado.
 
 ## Executar pelo código
 
@@ -58,7 +58,7 @@ A biblioteca é vinculada ao navegador e à origem/porta. Trocar de `localhost` 
 
 No programa local, **Dados e ajustes → Atualizar agora** baixa e valida o arquivo oficial. A opção semanal verifica enquanto o aplicativo está aberto ou ao reabri-lo depois de uma semana. Falhas têm intervalo mínimo automático de uma hora e preservam a base anterior. ETag evita repetir o download sem alterações. Não há atualização com o computador desligado ou o programa fechado.
 
-O acesso que estava bloqueado foi restabelecido nesta tarefa. O download real, o formato e uma atualização real via API foram verificados. Os domínios necessários são `dados.anvisa.gov.br`, `www.gov.br` e `consultas.anvisa.gov.br`. O serviço consulta URLs fixas do CSV e de dois PDFs PCDT, sem token ou chave. A versão dos PDFs é conferida por SHA-256; documentos alterados têm os esquemas retirados até revisão.
+O acesso que estava bloqueado foi restabelecido nesta tarefa. O download real, o formato e uma atualização real via API foram verificados. Os domínios necessários são `dados.anvisa.gov.br`, `www.gov.br` e `consultas.anvisa.gov.br`. O serviço consulta URLs fixas dos CSVs cadastral e CMED e dos quatro documentos oficiais do manifesto clínico, sem token ou chave. A versão dos PDFs é conferida por SHA-256; documentos alterados têm os esquemas retirados até revisão.
 
 Use uma única instância do serviço por pasta. Para atualizar pelo terminal, pare o serviço, execute `npm run catalog:update` e reinicie-o. Para gerar uma nova cópia HTML com a base atual:
 
@@ -84,10 +84,10 @@ O pacote Windows é reproduzido por `scripts/package-windows.py` com um ZIP ofic
 
 ## Limites clínicos
 
-O CSV cadastral não é uma base de bulas. As 19 referências clínicas documentam contextos de hipertensão e diabete tipo 2 em adultos; exigem leitura das condições e não confirmam a apresentação do registro. A busca por sintomas só encontra indicações documentadas; a ausência de resultados não exclui uma condição. A maior parte dos registros ainda não possui informações clínicas. Não são estimadas doses, horários, idades mínimas ou interações ausentes.
+O CSV cadastral não é uma base de bulas. As 30 referências oficiais incluem protocolos de hipertensão e diabete tipo 2 em adultos, documentos Anvisa sobre sintomas comuns e aprovação do Aquipta; exigem leitura das condições e não substituem a bula de cada apresentação. A busca por sintomas só encontra indicações documentadas; a ausência de resultados não exclui uma condição. A maior parte dos registros ainda não possui informações clínicas. Não são estimadas doses, horários, idades mínimas ou interações ausentes.
 
 Na **Calculadora**, informe a dose prescrita **por tomada** e a concentração da embalagem. Exemplo apenas matemático: 1 mg ÷ 0,5 mg por comprimido = 2 comprimidos. O programa não arredonda, não autoriza partir comprimidos ou trocar formulações e não calcula doses pediátricas nem verifica adequação clínica. Os dados do formulário não são gravados. Leia [curadoria e limites](docs/curadoria-clinica.md).
-O portal do Bulário possui mecanismos interativos de verificação; não tentamos contorná-los nem usamos APIs protegidas para extração em massa. Links abrem a consulta oficial, não prometem um PDF específico disponível ou um resultado clínico validado. SQLite/FTS5, revisão clínica, atualização de bulas, instaladores nativos e agendamento de sistema continuam pendentes.
+O portal do Bulário possui mecanismos interativos de verificação; não tentamos contorná-los nem usamos APIs protegidas para extração em massa. Links abrem a consulta oficial, não prometem um PDF específico disponível ou um resultado clínico validado. SQLite/FTS5, ampliação da revisão clínica, atualização de bulas, assinatura definitiva dos instaladores e agendamento de sistema continuam pendentes.
 
 ## Testes
 
