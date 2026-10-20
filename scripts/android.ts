@@ -1,4 +1,10 @@
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  readFileSync,
+  writeFileSync,
+  copyFileSync,
+  globSync,
+} from "node:fs";
 import { spawnSync } from "node:child_process";
 const command = process.platform === "win32" ? "npx.cmd" : "npx";
 const args = existsSync("android")
@@ -26,3 +32,8 @@ writeFileSync(
     'versionName "0.5.0"',
   ),
 );
+
+for (const path of globSync(
+  "android/app/src/main/res/mipmap-*/ic_launcher*.png",
+))
+  copyFileSync("desktop/icon.png", path);
