@@ -16,7 +16,7 @@ jobs:
       GH_REPO: ${{ github.repository }}
       # Source and build are pinned for this preview; never substitute an unchecked run.
       DOSER_BUILD_RUN: "39456098574"
-      DOSER_BUILD_SHA: "969f8fc"
+      DOSER_BUILD_SHA: "969f8fc80169d3f4b21454d62cf48745d32f0dad"
     steps:
       - uses: actions/checkout@v4
       - name: Conferir compilação de origem
@@ -42,6 +42,8 @@ jobs:
           sha256sum * > SHA256SUMS.txt
       - name: Publicar downloads
         run: |
+          exec > >(tee publication.log) 2>&1
+          trap 'tail -80 publication.log >> "$GITHUB_STEP_SUMMARY"' EXIT
           tag="v0.6.0-desktop-android-preview"
           cat > release-notes.md <<'NOTES'
           Aplicativos de teste: Windows (.exe), Linux (.deb), macOS (.dmg) e Android (.apk).
