@@ -195,9 +195,9 @@ jobs:
       - name: Organizar downloads
         run: |
           mkdir -p release-files
-          cp release-input/Doser-iOS-ASSINATURA-NECESSARIA/*.ipa release-files/
+          find release-input/Doser-iOS-ASSINATURA-NECESSARIA -type f -name '*.ipa' -exec cp {} release-files/ \;
           cp release-input/Doser-Android-TV-Fire-TV-APK-teste/app-debug.apk release-files/Doser-Android-TV-Fire-TV-TESTE.apk
-          cp release-input/Doser-Apple-TV-ASSINATURA-NECESSARIA/*.zip release-files/
+          find release-input/Doser-Apple-TV-ASSINATURA-NECESSARIA -type f -name '*.zip' -exec cp {} release-files/ \;
           find release-input/Doser-LG-webOS-e-projeto-Samsung -type f \( -name '*.ipk' -o -name '*.zip' \) -exec cp {} release-files/ \;
           cp docs/apple-e-tvs.md release-files/LEIA-ME.md
           cp docs/ios-gratuito.md release-files/iPhone-INSTALACAO-GRATUITA.md
