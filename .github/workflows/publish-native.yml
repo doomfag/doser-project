@@ -1,0 +1,56 @@
+name: Downloads PC e Android
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/doser-download]
+    paths: [".github/workflows/publish-native.yml"]
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GH_REPO: ${{ github.repository }}
+      # Source and build are pinned for this preview; never substitute an unchecked run.
+      DOSER_BUILD_RUN: "39456098574"
+      DOSER_BUILD_SHA: "969f8fc"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Conferir compilação de origem
+        shell: bash
+        run: |
+          for attempt in {1..24}; do
+            status=$(gh run view "$DOSER_BUILD_RUN" --json status --jq .status)
+            if [ "$status" = completed ]; then break; fi
+            sleep 30
+          done
+          conclusion=$(gh run view "$DOSER_BUILD_RUN" --json conclusion --jq .conclusion)
+          source_sha=$(gh run view "$DOSER_BUILD_RUN" --json headSha --jq .headSha)
+          test "$conclusion" = success
+          [[ "$source_sha" == "$DOSER_BUILD_SHA"* ]]
+      - name: Obter instaladores testados
+        run: |
+          gh run download "$DOSER_BUILD_RUN" --dir package-input
+          mkdir -p package-downloads
+          find package-input -type f \( -name '*.exe' -o -name '*.deb' -o -name '*.dmg' \) -exec cp {} package-downloads/ \;
+          cp package-input/Doser-Android-APK-teste/app-debug.apk package-downloads/Doser-Android-CELULAR-TESTE.apk
+          cp docs/aplicativos.md package-downloads/LEIA-ME.md
+          cd package-downloads
+          sha256sum * > SHA256SUMS.txt
+      - name: Publicar downloads
+        run: |
+          tag="v0.6.0-desktop-android-preview"
+          cat > release-notes.md <<'NOTES'
+          Aplicativos de teste: Windows (.exe), Linux (.deb), macOS (.dmg) e Android (.apk).
+
+          Desktop abre em janela própria, sem iniciar navegador. A base é local. APK Android tem assinatura de depuração; versões com outra chave podem não atualizar sobre a anterior. Não desinstale sem preservar sua biblioteca. Windows/macOS ainda não possuem assinatura comercial/notarização. Instalação em aparelhos físicos precisa de validação.
+
+          Fonte: 969f8fc. Build verificado: https://github.com/doomfag/doser-project/actions/runs/39456098574 . Teste da janela desktop, TypeScript, build e 61 testes passaram. Atualização de dados no Android permanece pendente. Arquivo SHA256SUMS.txt disponível para conferência de integridade.
+          NOTES
+          if ! gh release view "$tag" > /dev/null 2>&1; then
+            gh release create "$tag" --target "$DOSER_BUILD_SHA" --prerelease --title "Doser 0.6 — PC e Android (teste)" --notes-file release-notes.md
+          fi
+          gh release upload "$tag" package-downloads/* --clobber
