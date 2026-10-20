@@ -86,3 +86,11 @@ Em 20/10/2026, os workflows [39453915295](https://github.com/doomfag/doser-proje
 - 61 testes unitários/serviço, TypeScript e build passaram. Auditoria completa npm: zero vulnerabilidades conhecidas; isso não é garantia de ausência de falhas.
 
 Os pacotes móveis e de TV preservam o catálogo offline; atualização automática nessas plataformas permanece pendente. Apple TV tem conjunto de recursos reduzido. Consulte [a matriz de plataformas](apple-e-tvs.md) e [instalação gratuita iPhone/iPad com Windows](ios-gratuito.md). As compilações posteriores corrigem a versão interna da IPA para 0.6.0 e acrescentam publicação de downloads públicos de teste; a execução dessas alterações é registrada separadamente no GitHub Actions.
+
+## Downloads externos — 0.6
+
+A execução [39456404738](https://github.com/doomfag/doser-project/actions/runs/39456404738), fonte 4bdd537, concluiu os quatro builds e a publicação da [prévia iPhone/TVs](https://github.com/doomfag/doser-project/releases/tag/v0.6.0-apple-tv-preview). iOS abriu no simulador. Foram baixados novamente, por HTTPS público, a IPA, o APK TV e o IPK LG; seus SHA-256 corresponderam a SHA256SUMS.txt publicado. A IPA contém identificador io.github.doomfag.doser, versão 0.6.0/build 6, mínimo iOS 15.4 e catálogo nativo embutido. A assinatura pessoal e a instalação física continuam pendentes.
+
+O workflow nativo [39456098574](https://github.com/doomfag/doser-project/actions/runs/39456098574), fonte 969f8fc, passou em Windows/Linux/macOS e Android. O primeiro publicador separado de desktop recebeu HTTP 403 ao tentar criar a release para uma referência anterior. A tag explícita v0.6.0-desktop-android-preview foi criada pelo acesso Git autorizado, e o publicador exige agora essa tag existente, sem mudar main ou solicitar credenciais. O resultado da publicação é registrado em [39457757093](https://github.com/doomfag/doser-project/actions/runs/39457757093).
+
+A reinstalação congelada de dependências foi repetida com cache Electron/npm no workspace, seguida de native:prepare e build:portable; todas passaram. As instruções reutilizáveis install_script e start_skill foram atualizadas no rascunho do ambiente. Salvar o rascunho não publica a configuração.
