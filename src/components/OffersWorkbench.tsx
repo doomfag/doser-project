@@ -1,3 +1,4 @@
+import { presentationLabel } from "../domain/presentationLabel";
 import { useEffect, useState } from "react";
 import { type Medicine } from "../domain/catalog";
 import {
@@ -105,13 +106,21 @@ export default function OffersWorkbench({
           Embalagem exata
           <input
             value={presentation}
-            maxLength={300}
+            maxLength={1000}
             onChange={(e) => setPresentation(e.target.value)}
             placeholder="Ex.: 500 mg, 20 comprimidos"
             list="offer-presentations"
           />
           <datalist id="offer-presentations">
-            {[...new Set(relevant.map((o) => o.presentation))].map((p) => (
+            {[
+              ...new Set([
+                ...relevant.map((o) => o.presentation),
+                ...(
+                  medicines.find((m) => m.id === medicineId)?.presentations ??
+                  []
+                ).map(presentationLabel),
+              ]),
+            ].map((p) => (
               <option key={p} value={p} />
             ))}
           </datalist>

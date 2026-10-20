@@ -1,12 +1,14 @@
-# Doser 0.7
+# Doser 0.7.1
 
 Consulta pessoal de medicamentos em React e TypeScript. Sem chatbot, conta, hospedagem ou API paga.
 
 A base real foi consultada na Anvisa em **20/10/2026**: **10.326 registros ativos únicos**, após processar 228.869 linhas, excluir 156.100 linhas fora do critério e remover 62.443 duplicatas. Treze registros incluídos não trazem princípio ativo, sinalizado como ausente. Registro ativo na fonte não confirma estoque ou comercialização. Dose, idade, apresentação e indicação não são fornecidas por esse arquivo cadastral. Em coleção separada, há **30 referências oficiais em quatro documentos**, incluindo 19 PCDT de HAS e DM2 e referências Anvisa sobre sintomas comuns e Aquipta. Há vínculos por substância a 388 registros; outras referências não são ligadas automaticamente por falta de apresentação confirmada. Não são bulas completas desses produtos. Veja [o que mudou e os limites](docs/melhorias-0.7.md).
 
+A integração CMED adiciona **25.219 apresentações em 8.355 fichas**, com vínculo por registro MS e nome do produto. As descrições, datas e fontes são preservadas. Isso não constitui dose recomendada, estoque ou preço comercial real.
+
 ## Atualização Android
 
-O usuário já usa o APK anterior. A prévia 0.7 instala ao lado dele, com identificador próprio; não desinstale a versão antiga. Favoritos e anotações continuam no aplicativo anterior, sem migração automática. Assinatura definitiva e restauração nativa ainda precisam ser configuradas e validadas. [Instruções de instalação](docs/melhorias-0.7.md).
+O usuário já usa o APK anterior. A prévia 0.7.1 instala ao lado dele, com identificador próprio; não desinstale a versão antiga. Favoritos e anotações continuam no aplicativo anterior, sem migração automática. Assinatura definitiva e restauração nativa ainda precisam ser configuradas e validadas. [Instruções de instalação](docs/melhorias-0.7.md).
 
 ## Apple e TVs
 

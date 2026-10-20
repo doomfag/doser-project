@@ -18,6 +18,13 @@ import { standalone } from "../data/runtime";
 import { readEmbeddedCatalog } from "../data/embeddedCatalog";
 import { shouldCheck, type UpdatePreferences } from "../domain/updateSchedule";
 export interface OfficialStatus {
+  presentations?: {
+    status: string;
+    products: number;
+    presentations: number;
+    checkedAt?: string;
+    message?: string;
+  };
   count: number;
   lastSuccess?: string;
   lastAttempt?: string;

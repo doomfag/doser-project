@@ -1,3 +1,4 @@
+import type { PresentationStatus } from "./presentations.ts";
 import { officialText } from "./officialDocument.ts";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
@@ -34,6 +35,7 @@ export interface ClinicalManifest {
   references: ClinicalReference[];
 }
 export interface EnrichedCatalog {
+  presentationStatus?: PresentationStatus;
   medicines: Medicine[];
   clinicalReferences: ClinicalReference[];
   clinicalStatus: ClinicalStatus;

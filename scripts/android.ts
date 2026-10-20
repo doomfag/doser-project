@@ -44,12 +44,12 @@ writeFileSync(
 const gradlePath = "android/app/build.gradle";
 writeFileSync(
   gradlePath,
-  readFileSync(gradlePath, "utf8").replace(/versionCode \d+/, "versionCode 7"),
+  readFileSync(gradlePath, "utf8").replace(/versionCode \d+/, "versionCode 8"),
 );
 writeFileSync(
   gradlePath,
   readFileSync(gradlePath, "utf8").replace(
-    /applicationId "io.github.doomfag.doser(?:\.tv|\.preview07)?"/,
+    /applicationId "io.github.doomfag.doser(?:\.tv|\.preview[0-9]+)?"/,
     'applicationId "io.github.doomfag.doser"',
   ),
 );
@@ -58,7 +58,7 @@ writeFileSync(
   gradlePath,
   readFileSync(gradlePath, "utf8").replace(
     /versionName "[^"]+"/,
-    'versionName "0.7.0"',
+    'versionName "0.7.1"',
   ),
 );
 
@@ -130,7 +130,7 @@ if (
     gradlePath,
     readFileSync(gradlePath, "utf8").replace(
       'applicationId "io.github.doomfag.doser"',
-      'applicationId "io.github.doomfag.doser.preview07"',
+      'applicationId "io.github.doomfag.doser.preview071"',
     ),
   );
   const labels = "android/app/src/main/res/values/strings.xml";
@@ -139,11 +139,11 @@ if (
     readFileSync(labels, "utf8")
       .replace(
         /<string name="app_name">[^<]*<\/string>/,
-        '<string name="app_name">Doser 0.7 — prévia</string>',
+        '<string name="app_name">Doser 0.7.1 — prévia</string>',
       )
       .replace(
         /<string name="title_activity_main">[^<]*<\/string>/,
-        '<string name="title_activity_main">Doser 0.7 — prévia</string>',
+        '<string name="title_activity_main">Doser 0.7.1 — prévia</string>',
       ),
   );
 }

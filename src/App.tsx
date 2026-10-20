@@ -1,3 +1,4 @@
+import { presentationLabel } from "./domain/presentationLabel";
 import OffersWorkbench from "./components/OffersWorkbench";
 import { normalize } from "./domain/text";
 import ReferenceResults from "./components/ReferenceResults";
@@ -360,7 +361,7 @@ export default function App() {
             <Settings2 size={19} />
             <span>Dados e ajustes</span>
           </button>
-          <span className="version">DOSER / VERSÃO 0.7</span>
+          <span className="version">DOSER / VERSÃO 0.7.1</span>
         </div>
       </aside>
       <div className="workspace">
@@ -884,8 +885,31 @@ export default function App() {
                                   <th>Apresentações</th>
                                   {chosen.map((m) => (
                                     <td key={m.id}>
-                                      {m.presentations.join("; ") ||
-                                        "Não informado"}
+                                      {m.presentations.length ? (
+                                        <>
+                                          <p>
+                                            {m.presentations
+                                              .slice(0, 2)
+                                              .map(presentationLabel)
+                                              .join("; ")}
+                                          </p>
+                                          {m.presentations.length > 2 && (
+                                            <details>
+                                              <summary>
+                                                Ver todas (
+                                                {m.presentations.length})
+                                              </summary>
+                                              {m.presentations.map((p) => (
+                                                <p key={p}>
+                                                  {presentationLabel(p)}
+                                                </p>
+                                              ))}
+                                            </details>
+                                          )}
+                                        </>
+                                      ) : (
+                                        "Não informado"
+                                      )}
                                     </td>
                                   ))}
                                 </tr>

@@ -65,6 +65,7 @@ export interface ClinicalReference {
 }
 export const MAX_MEDICINES = 100_000;
 export interface Medicine {
+  presentationSource?: Source;
   id: string;
   name: string;
   ingredient: string;
@@ -375,10 +376,10 @@ export function parseCatalog(input: unknown): Medicine[] {
         "Registro inválido: confira identificação, nome, princípio ativo e classe.",
       );
     ids.add(item.id);
-    const list = (value: unknown): string[] => {
+    const list = (value: unknown, limit = 100): string[] => {
       if (
         !Array.isArray(value) ||
-        value.length > 100 ||
+        value.length > limit ||
         !value.every((v) => text(v, 500))
       )
         throw new Error("Apresentações ou sinônimos inválidos.");
@@ -402,7 +403,10 @@ export function parseCatalog(input: unknown): Medicine[] {
       name: item.name,
       ingredient: item.ingredient,
       drugClass: item.drugClass,
-      presentations: list(item.presentations),
+      presentations: list(item.presentations, 1000),
+      ...(item.presentationSource === undefined
+        ? {}
+        : { presentationSource: parseSource(item.presentationSource) }),
       aliases: list(item.aliases),
       ...(item.clinicalReferenceIds === undefined
         ? {}

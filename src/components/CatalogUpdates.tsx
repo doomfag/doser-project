@@ -137,6 +137,15 @@ export default function CatalogUpdates({
           </>
         )}
       </div>
+      {status.presentations && (
+        <p className="small-note">
+          Apresentações CMED: {status.presentations.presentations} em{" "}
+          {status.presentations.products} registros.{" "}
+          {status.presentations.status === "cached"
+            ? "Cache anterior, com data original preservada."
+            : "A lista não confirma estoque ou comercialização."} {status.presentations.message}
+        </p>
+      )}
       {status.clinical && (
         <details className="update-report">
           <summary>

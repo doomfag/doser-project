@@ -1,3 +1,4 @@
+import { presentationLabel } from "../domain/presentationLabel";
 import { useEffect, useState } from "react";
 import {
   productPhotos,
@@ -12,9 +13,11 @@ import { External } from "./ui";
 export default function ProductPhotos({
   medicineId,
   name,
+  presentations = [],
 }: {
   medicineId: string;
   name: string;
+  presentations?: string[];
 }) {
   const [photos, setPhotos] = useState<ProductPhoto[]>([]);
   const [error, setError] = useState("");
@@ -125,8 +128,9 @@ export default function ProductPhotos({
             Qual é a embalagem?
             <input
               name="presentation"
+              list={`photo-presentations-${medicineId}`}
               required
-              maxLength={300}
+              maxLength={1000}
               placeholder="Ex.: 500 mg, caixa com 20 comprimidos"
             />
           </label>

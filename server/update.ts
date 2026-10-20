@@ -12,6 +12,7 @@ if (result.lastError) {
         lastSuccess: result.lastSuccess,
         report: result.report,
         clinical: result.clinical,
+        presentations: result.presentations,
       },
       null,
       2,

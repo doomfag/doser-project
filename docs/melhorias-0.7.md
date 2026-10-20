@@ -1,8 +1,8 @@
-# Doser 0.7 — busca e fichas
+# Doser 0.7.1 — busca e fichas
 
 ## Instalar sem apagar a versão anterior
 
-O APK `Doser-Android-PREVIA-SEPARADA-0.7.apk` é uma **instalação de teste separada**, chamada **Doser 0.7 — prévia**. Ela instala ao lado do Doser anterior. **Não desinstale o aplicativo antigo:** favoritos, anotações e comparações continuam nele; não são transferidos automaticamente para a prévia. A assinatura de depuração anterior não foi preservada pelo processo de build. Não se promete atualização sobre ela, migração automática nem assinatura definitiva. A distribuição Android permanente precisa de uma chave estável guardada com segurança e de um processo de backup/restauração validado. Nenhum pagamento é necessário para criar essa chave.
+O APK `Doser-Android-PREVIA-SEPARADA-0.7.1.apk` é uma **instalação de teste separada**, chamada **Doser 0.7.1 — prévia**. Ela instala ao lado do Doser anterior. **Não desinstale o aplicativo antigo:** favoritos, anotações e comparações continuam nele; não são transferidos automaticamente para a prévia. A assinatura de depuração anterior não foi preservada pelo processo de build. Não se promete atualização sobre ela, migração automática nem assinatura definitiva. A distribuição Android permanente precisa de uma chave estável guardada com segurança e de um processo de backup/restauração validado. Nenhum pagamento é necessário para criar essa chave.
 
 Windows/Linux/macOS continuam abrindo uma janela própria. Links de bulas e farmácias abrem sites externos quando você escolhe consultá-los. A instalação ainda precisa ser validada nos seus aparelhos.
 
@@ -30,3 +30,11 @@ Fotos e cotações ficam neste aplicativo/dispositivo. Não há sincronização 
 ## Validação
 
 Os resultados atuais e os limites dos testes ficam em [docs/validacao.md](https://github.com/doomfag/doser-project/blob/codex/doser-download/docs/validacao.md). Compilar um APK ou testar uma interface em Chromium não comprova o seletor de fotos, o armazenamento ou a instalação em todos os aparelhos físicos.
+
+## Complemento 0.7.1 — apresentações da CMED
+
+A importação oficial da CMED preenche concentrações e embalagens por registro MS e nome do produto. **25.219 apresentações foram relacionadas a 8.355 fichas** da base real consultada. Não são doses recomendadas, confirmação de disponibilidade ou preços efetivos. Colunas de preços não são importadas para as cotações comerciais.
+
+A descrição original fica preservada junto da URL, data de conferência e hash do arquivo. Abreviações conhecidas de formas farmacêuticas são expandidas para facilitar a leitura, sem calcular quantidade ou supor que apresentações sejam intercambiáveis. Campos clínicos como dose, idade, contraindicações e interações continuam exigindo bula ou documento específico; não são preenchidos a partir de uma embalagem.
+
+Falhas de rede mantêm a versão previamente importada com sua data original. Se a lista oficial mudar e uma apresentação deixar de constar, ela sai da importação correspondente. O app não cria marcas novas com base apenas numa tabela de preços.

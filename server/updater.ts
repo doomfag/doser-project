@@ -1,3 +1,4 @@
+import type { PresentationStatus } from "./presentations.ts";
 import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ANVISA_URL, importAnvisa, type ImportReport } from "./anvisa.ts";
@@ -17,6 +18,7 @@ export interface UpdateStatus {
   report?: ImportReport;
   etag?: string;
   clinical?: ClinicalStatus;
+  presentations?: PresentationStatus;
 }
 export interface CatalogSnapshot {
   version: 1;
@@ -118,7 +120,12 @@ export class CatalogUpdater {
         const nextStatus = {
           ...this.status,
           lastSuccess: new Date().toISOString(),
-          ...(enriched ? { clinical: enriched.clinicalStatus } : {}),
+          ...(enriched
+            ? {
+                clinical: enriched.clinicalStatus,
+                presentations: enriched.presentationStatus,
+              }
+            : {}),
         };
         await this.persist({
           ...previous,
@@ -174,7 +181,12 @@ export class CatalogUpdater {
         count: imported.medicines.length,
         report: imported.report,
         etag: response.headers.get("etag") || undefined,
-        ...(enriched ? { clinical: enriched.clinicalStatus } : {}),
+        ...(enriched
+          ? {
+              clinical: enriched.clinicalStatus,
+              presentations: enriched.presentationStatus,
+            }
+          : {}),
         updating: false,
       };
       await this.persist({

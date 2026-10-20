@@ -52,6 +52,12 @@ try {
     await page.getByRole("button", { name: "Gases", exact: true }).waitFor();
     await page.getByRole("button", { name: "Gases", exact: true }).click();
     assert((await page.locator(".medicine-row,.reference-result").count()) > 0);
+    await query("DORFLEX");
+    await page.locator(".medicine-main").first().click();
+    const packageSection = page.locator(".detail-section details.fact").first();
+    await packageSection.locator("summary").first().click();
+    assert((await packageSection.locator("li").count()) > 0);
+    await page.getByRole("button", { name: "Voltar", exact: true }).click();
     await query("Diarreia");
     await page.locator(".reference-result summary").first().waitFor();
     await query("Aquipta");
@@ -96,6 +102,7 @@ try {
         checkedAt: new Date().toISOString(),
         count: snapshot.medicines.length,
         references: snapshot.clinicalReferences.length,
+        presentationStatus: snapshot.status.presentations,
         headacheResults: headaches.length,
         searchMs,
         results,

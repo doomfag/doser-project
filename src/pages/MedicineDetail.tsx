@@ -1,3 +1,4 @@
+import { presentationLabel } from "../domain/presentationLabel";
 import ProductPhotos from "../components/ProductPhotos";
 import { normalize } from "../domain/catalog";
 import ClinicalReferences from "../components/ClinicalReferences";
@@ -111,6 +112,7 @@ export default function MedicineDetail({
           key={detail.id}
           medicineId={detail.id}
           name={detail.name}
+          presentations={detail.presentations}
         />
       )}
       {tab === "overview" && related.length > 0 && (
@@ -139,8 +141,7 @@ export default function MedicineDetail({
         <div className="info-strip">
           <span>
             A ficha ainda não tem uma bula conferida. Consulte o documento
-            oficial abaixo; não há dose, idade ou apresentação confirmada neste
-            cadastro.
+            oficial abaixo; não há dose ou idade confirmada neste cadastro.
           </span>
         </div>
       )}
@@ -161,18 +162,32 @@ export default function MedicineDetail({
             <>
               {tab === "overview" && detail.presentations.length > 0 && (
                 <section className="detail-section">
-                  <h2>Apresentações</h2>
-                  {detail.presentations.length ? (
+                  <details className="fact">
+                    <summary>
+                      Embalagens e concentrações ({detail.presentations.length})
+                    </summary>
+                    <p className="small-note">
+                      Concentrações e embalagens listadas na fonte. Isso não
+                      confirma disponibilidade nem define a dose para uma
+                      pessoa.
+                    </p>
                     <ul>
                       {detail.presentations.map((p) => (
-                        <li key={p}>{p}</li>
+                        <li key={p}>{presentationLabel(p)}</li>
                       ))}
                     </ul>
-                  ) : (
-                    <p className="muted">
-                      Nenhuma apresentação documentada neste catálogo.
-                    </p>
-                  )}
+                    {detail.presentationSource && (
+                      <details className="clinical-provenance">
+                        <summary>Descrições originais e fonte</summary>
+                        <ul>
+                          {detail.presentations.map((p) => (
+                            <li key={p}>{p}</li>
+                          ))}
+                        </ul>
+                        <SourceReference source={detail.presentationSource} />
+                      </details>
+                    )}
+                  </details>
                 </section>
               )}
               {keys

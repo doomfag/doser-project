@@ -33,7 +33,7 @@ export function parseOffers(input: unknown): Offer[] {
       ids.has(x.id) ||
       !str(x.medicineId, 200) ||
       !str(x.product, 200) ||
-      !str(x.presentation, 300) ||
+      !str(x.presentation, 1000) ||
       !str(x.pharmacy, 100) ||
       !safeUrl(x.url) ||
       !/^\d{8}$/.test(x.cep) ||

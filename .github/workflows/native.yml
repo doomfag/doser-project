@@ -105,9 +105,9 @@ jobs:
           python3 - <<'PYCODE'
           from pathlib import Path
           text = Path('android-badging.txt').read_text()
-          assert "package: name='io.github.doomfag.doser.preview07'" in text
-          assert "versionCode='7'" in text
-          assert "versionName='0.7.0'" in text
+          assert "package: name='io.github.doomfag.doser.preview071'" in text
+          assert "versionCode='8'" in text
+          assert "versionName='0.7.1'" in text
           print('Prévia Android confirmada: pacote separado da versão anterior.')
           PYCODE
       - uses: actions/upload-artifact@v4
@@ -134,13 +134,13 @@ jobs:
         run: |
           mkdir -p release-files
           find release-input -type f \( -name '*.exe' -o -name '*.deb' -o -name '*.dmg' \) -exec cp {} release-files/ \;
-          cp release-input/Doser-Android-APK-teste/app-debug.apk release-files/Doser-Android-PREVIA-SEPARADA-0.7.apk
+          cp release-input/Doser-Android-APK-teste/app-debug.apk release-files/Doser-Android-PREVIA-SEPARADA-0.7.1.apk
           cp docs/melhorias-0.7.md release-files/LEIA-ME.md
           cd release-files
           sha256sum * > SHA256SUMS.txt
           cd ..
-          tag="v0.7.0-desktop-android-preview"
+          tag="v0.7.1-desktop-android-preview"
           if ! gh release view "$tag" > /dev/null 2>&1; then
-            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title "Doser 0.7 — PC e prévia Android" --notes-file docs/melhorias-0.7.md
+            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title "Doser 0.7.1 — PC e prévia Android" --notes-file docs/melhorias-0.7.md
           fi
           gh release upload "$tag" release-files/* --clobber
