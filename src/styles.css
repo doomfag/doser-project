@@ -2522,3 +2522,9 @@ html[data-doser-tv="true"] .dose-unit-input {
 html[data-doser-tv="true"] .dose-unit-input select {
   width: 100%;
 }
+
+@media (max-width: 800px) {
+  .app-shell {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
