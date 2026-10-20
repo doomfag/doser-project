@@ -39,14 +39,27 @@ const gzip = gzipSync(
   }),
   { level: 9 },
 );
-const envelope = JSON.stringify({
+const gzipEnvelope = JSON.stringify({
   encoding: "gzip-base64",
   sha256: createHash("sha256").update(gzip).digest("hex"),
   data: gzip.toString("base64"),
 });
+const nativeJson = process.argv.includes("--native-json");
+const tv = process.argv.includes("--tv");
+const envelope = nativeJson
+  ? JSON.stringify({
+      encoding: "native-json",
+      snapshot: {
+        version: 1,
+        medicines,
+        clinicalReferences: snapshot.clinicalReferences ?? [],
+        status: snapshot.status,
+      },
+    }).replace(/</g, "\\u003c")
+  : gzipEnvelope;
 html = html.replace(
   '<html lang="pt-BR">',
-  '<html lang="pt-BR" data-doser-standalone="true">',
+  `<html lang="pt-BR" data-doser-standalone="true"${nativeJson ? ' data-doser-native="true"' : ""}${tv ? ' data-doser-tv="true"' : ""}>`,
 );
 html = html.replace(
   /<script[^>]+src="[^"]+"[^>]*><\/script>/,

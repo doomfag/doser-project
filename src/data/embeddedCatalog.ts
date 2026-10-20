@@ -25,7 +25,14 @@ export interface EmbeddedCatalog {
 export async function readEmbeddedCatalog(): Promise<EmbeddedCatalog | null> {
   const element = document.getElementById("doser-catalog");
   if (!element?.textContent) return null;
+  if (element.textContent.length > 100 * 1024 * 1024)
+    throw new Error("Base incluída excede o limite permitido.");
   const envelope = JSON.parse(element.textContent);
+  if (envelope.encoding === "native-json") {
+    if (document.documentElement.dataset.doserNative !== "true")
+      throw new Error("Formato de base exclusivo de aplicativo empacotado.");
+    return validateSnapshot(envelope.snapshot);
+  }
   if (
     envelope.encoding !== "gzip-base64" ||
     typeof envelope.data !== "string" ||
@@ -64,17 +71,24 @@ export async function readEmbeddedCatalog(): Promise<EmbeddedCatalog | null> {
   }
   const raw = await new Blob(chunks as BlobPart[]).text();
   const snapshot = JSON.parse(raw);
+  return validateSnapshot(snapshot);
+}
+function validateSnapshot(snapshot: unknown): EmbeddedCatalog {
+  const value = snapshot as {
+    clinicalReferences?: unknown;
+    status?: EmbeddedCatalog["status"];
+  };
   const medicines = parseCatalog(snapshot);
   const clinicalReferences = parseClinicalReferences(
-    snapshot.clinicalReferences ?? [],
+    value.clinicalReferences ?? [],
   );
   assertReferenceLinks(medicines, clinicalReferences);
   if (
-    !snapshot.status ||
-    typeof snapshot.status.lastSuccess !== "string" ||
-    !Number.isFinite(Date.parse(snapshot.status.lastSuccess)) ||
-    snapshot.status.count !== medicines.length
+    !value.status ||
+    typeof value.status.lastSuccess !== "string" ||
+    !Number.isFinite(Date.parse(value.status.lastSuccess)) ||
+    value.status.count !== medicines.length
   )
     throw new Error("Os metadados da base incluída estão incompletos.");
-  return { version: 1, medicines, clinicalReferences, status: snapshot.status };
+  return { version: 1, medicines, clinicalReferences, status: value.status };
 }

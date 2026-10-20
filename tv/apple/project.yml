@@ -1,0 +1,23 @@
+name: DoserTV
+options:
+  bundleIdPrefix: io.github.doomfag
+  deploymentTarget:
+    tvOS: '17.0'
+targets:
+  DoserTV:
+    type: application
+    platform: tvOS
+    sources: [Sources]
+    resources: [Resources]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.doomfag.doser.tv
+        PRODUCT_NAME: DoserTV
+        MARKETING_VERSION: 0.6.0
+        CURRENT_PROJECT_VERSION: 6
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Doser
+        SWIFT_VERSION: '5.0'
+        CODE_SIGNING_ALLOWED: NO
+    scheme:
+      testTargets: []

@@ -1,4 +1,9 @@
-import { nativeAndroid } from "./data/runtime";
+import { localId } from "./data/localId";
+import {
+  useTelevisionNavigation,
+  television,
+} from "./hooks/useTelevisionNavigation";
+import { nativeMobile } from "./data/runtime";
 import { savePortableApplication } from "./data/savePortable";
 import DoseConverter from "./components/DoseConverter";
 import ComparisonFact from "./components/ComparisonFact";
@@ -76,6 +81,7 @@ const modes = [
   { id: "ingredients", label: "Princípios ativos", icon: FlaskConical },
 ] as const;
 export default function App() {
+  useTelevisionNavigation();
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [page, setPage] = useState<Page>(() => pageFromHash());
   const [personal, setPersonal] = useState(loadPersonal);
@@ -248,7 +254,7 @@ export default function App() {
   function saveNote(e: FormEvent) {
     e.preventDefault();
     const note = {
-      id: editingNote ?? crypto.randomUUID(),
+      id: editingNote ?? localId(),
       title: noteTitle.trim(),
       body: noteBody.trim(),
       category: noteCategory.trim() || "Geral",
@@ -351,7 +357,7 @@ export default function App() {
             <Calculator size={18} />
             <span>Calculadora</span>
           </button>
-          {catalogState.portable && !nativeAndroid && (
+          {catalogState.portable && !nativeMobile && !television && (
             <button
               className="text-button portable-save"
               title="Salvar HTML"
@@ -807,7 +813,7 @@ export default function App() {
                                 ...personal,
                                 comparisons: [
                                   {
-                                    id: crypto.randomUUID(),
+                                    id: localId(),
                                     ids: selected,
                                     createdAt: new Date().toISOString(),
                                   },

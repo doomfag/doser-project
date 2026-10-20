@@ -31,3 +31,9 @@ linux:
   category: Education
   maintainer: Doser
   artifactName: Doser-${version}-Linux-amd64.${ext}
+
+mac:
+  target: dmg
+  icon: desktop/icon.png
+  category: public.app-category.reference
+  artifactName: Doser-${version}-macOS-${arch}.${ext}

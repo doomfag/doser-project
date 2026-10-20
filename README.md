@@ -1,8 +1,12 @@
-# Doser 0.5
+# Doser 0.6
 
 Consulta pessoal de medicamentos em React e TypeScript. Sem chatbot, conta, hospedagem ou API paga.
 
 A base real foi consultada na Anvisa em **20/10/2026**: **10.326 registros ativos únicos**, após processar 228.869 linhas, excluir 156.100 linhas fora do critério e remover 62.443 duplicatas. Treze registros incluídos não trazem princípio ativo, sinalizado como ausente. Registro ativo na fonte não confirma estoque ou comercialização. Dose, idade, apresentação e indicação não são fornecidas por esse arquivo cadastral. Em coleção separada, há **19 referências PCDT de HAS e DM2 em adultos**, relacionadas por princípio ativo a 368 registros. Não são bulas desses produtos.
+
+## Apple e TVs
+
+A extensão 0.6 acrescenta projetos/builds para iPhone/iPad, Apple TV, Android TV/Google TV/Fire TV e LG webOS, além de um projeto Samsung Tizen. [Veja a matriz de suporte e as limitações de assinatura](docs/apple-e-tvs.md). Não há alegação de compatibilidade universal: versões Apple sem assinatura não são instaladores prontos para dispositivo físico; Samsung requer certificado do SDK. As compilações ficam no workflow [iOS e TVs](https://github.com/doomfag/doser-project/actions/workflows/extended-platforms.yml).
 
 ## Aplicativos para instalar
 

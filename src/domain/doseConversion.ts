@@ -62,8 +62,8 @@ export function convertDose(input: ConversionInput): {
 } {
   if (
     !["tablet", "capsule", "liquid", "drops"].includes(input.form) ||
-    !Object.hasOwn(factors, input.prescribedUnit) ||
-    !Object.hasOwn(factors, input.strengthUnit)
+    !Object.prototype.hasOwnProperty.call(factors, input.prescribedUnit) ||
+    !Object.prototype.hasOwnProperty.call(factors, input.strengthUnit)
   )
     throw new Error("Forma ou unidade inválida.");
   const dose = multiply(number(input.prescribed, "Dose prescrita"), {

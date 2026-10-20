@@ -28,6 +28,9 @@ jobs:
           - os: windows-latest
             target: Windows
             args: --win nsis --x64
+          - os: macos-15
+            target: macOS
+            args: --mac dmg
           - os: ubuntu-24.04
             target: Linux
             args: --linux deb --x64
@@ -43,7 +46,7 @@ jobs:
       - run: npm test
       - run: npm run native:prepare
       - run: npm run test:desktop
-        if: runner.os == 'Windows'
+        if: runner.os == 'Windows' || runner.os == 'macOS'
       - run: xvfb-run -a npm run test:desktop
         if: runner.os == 'Linux'
       - run: npx electron-builder --publish never ${{ matrix.args }}
@@ -55,8 +58,9 @@ jobs:
           path: |
             native-releases/*.exe
             native-releases/*.deb
+            native-releases/*.dmg
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 3
   android:
     name: Android APK
     runs-on: ubuntu-24.04
@@ -95,4 +99,4 @@ jobs:
           name: Doser-Android-APK-teste
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 3

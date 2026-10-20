@@ -24,6 +24,7 @@ class ErrorBoundary extends React.Component<
     );
   }
 }
+document.getElementById("doser-platform-notice")?.remove();
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ErrorBoundary>

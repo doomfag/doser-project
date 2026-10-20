@@ -1,4 +1,4 @@
-import { nativeAndroid } from "../data/runtime";
+import { nativePackaged } from "../data/runtime";
 import {
   RefreshCw,
   CalendarClock,
@@ -66,7 +66,7 @@ export default function CatalogUpdates({
         </div>
         {portable ? (
           <span className="portable-label">
-            {nativeAndroid
+            {nativePackaged
               ? "Base incluída no aplicativo"
               : "Base incluída no arquivo"}
           </span>
@@ -88,8 +88,8 @@ export default function CatalogUpdates({
       )}
       {portable ? (
         <p className="small-note">
-          {nativeAndroid
-            ? "Consulta offline. A atualização automática no Android ainda não está disponível. Para renovar, importe um"
+          {nativePackaged
+            ? "Consulta offline. A atualização automática nesta plataforma ainda não está disponível. Para renovar, importe um"
             : "Consulta offline com a base incluída. Para renovar, importe um"}
           catálogo ou use o programa local, que permite a verificação semanal.
         </p>

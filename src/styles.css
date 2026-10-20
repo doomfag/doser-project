@@ -2482,3 +2482,43 @@ button:active:not(:disabled),
     justify-content: center;
   }
 }
+html[data-doser-tv="true"] {
+  font-size: 20px;
+}
+html[data-doser-tv="true"] body {
+  padding: 18px;
+  background: #14261e;
+}
+html[data-doser-tv="true"] .app-shell {
+  min-height: calc(100vh - 36px);
+}
+html[data-doser-tv="true"] :focus {
+  outline: 4px solid #bd8939 !important;
+  outline-offset: 4px;
+}
+html[data-doser-tv="true"] button,
+html[data-doser-tv="true"] input,
+html[data-doser-tv="true"] select {
+  min-height: 52px;
+}
+html[data-doser-tv="true"] .medicine-row {
+  min-height: 86px;
+}
+html[data-doser-tv="true"] .medicine-main strong {
+  font-size: 20px;
+}
+html[data-doser-tv="true"] .medicine-main small {
+  font-size: 16px;
+}
+html[data-doser-tv="true"] .main {
+  padding-bottom: 80px;
+}
+html[data-doser-tv="true"] .dose-fields {
+  grid-template-columns: 1fr;
+}
+html[data-doser-tv="true"] .dose-unit-input {
+  flex-direction: column;
+}
+html[data-doser-tv="true"] .dose-unit-input select {
+  width: 100%;
+}

@@ -2,6 +2,14 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { createCatalogMiddleware } from "./server/middleware.ts";
 export default defineConfig({
+  build: {
+    target:
+      process.env.DOSER_TARGET === "ios"
+        ? "safari15.4"
+        : process.env.DOSER_TARGET?.includes("tv")
+          ? "chrome87"
+          : "baseline-widely-available",
+  },
   plugins: [
     react(),
     {

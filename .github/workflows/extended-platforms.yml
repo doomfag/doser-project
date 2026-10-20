@@ -1,0 +1,182 @@
+name: iOS e TVs
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/doser-download]
+    paths:
+      - "src/**"
+      - "tv/**"
+      - "scripts/**"
+      - "desktop/icon*.png"
+      - "desktop/tv-banner.png"
+      - "capacitor.config.json"
+      - "package*.json"
+      - ".github/workflows/extended-platforms.yml"
+concurrency:
+  group: extended-${{ github.ref }}
+  cancel-in-progress: true
+permissions:
+  contents: read
+jobs:
+  ios:
+    name: iPhone e iPad (sem assinatura)
+    runs-on: macos-15
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run ios:prepare
+        env:
+          DOSER_TARGET: ios
+      - name: Compilar para simulador e dispositivo
+        run: |
+          xcodebuild -version
+          if xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Debug -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -derivedDataPath build-ios/simulator CODE_SIGNING_ALLOWED=NO build > ios-simulator.log 2>&1; then
+            tail -20 ios-simulator.log
+          else
+            tail -100 ios-simulator.log >> "$GITHUB_STEP_SUMMARY"; exit 1
+          fi
+          if xcodebuild -project ios/App/App.xcodeproj -scheme App -configuration Release -sdk iphoneos -destination 'generic/platform=iOS' -derivedDataPath build-ios/device CODE_SIGNING_ALLOWED=NO build > ios-device.log 2>&1; then
+            tail -20 ios-device.log
+          else
+            tail -100 ios-device.log >> "$GITHUB_STEP_SUMMARY"; exit 1
+          fi
+          mkdir -p build-ios/Payload
+          ditto build-ios/device/Build/Products/Release-iphoneos/App.app build-ios/Payload/Doser.app
+          cp docs/apple-e-tvs.md build-ios/LEIA-ME.md
+          cd build-ios
+          zip -qr Doser-iOS-SEM-ASSINATURA.ipa Payload
+          ditto -c -k --keepParent simulator/Build/Products/Debug-iphonesimulator/App.app Doser-iOS-SIMULADOR.zip
+      - name: Iniciar aplicativo no simulador
+        run: |
+          device_id=$(xcrun simctl list devices available -j | python3 -c 'import sys,json; x=json.load(sys.stdin); print(next(d["udid"] for a in x["devices"].values() for d in a if "iPhone" in d["name"] and d["isAvailable"]))')
+          xcrun simctl boot "$device_id"
+          xcrun simctl bootstatus "$device_id" -b
+          xcrun simctl install "$device_id" build-ios/simulator/Build/Products/Debug-iphonesimulator/App.app
+          xcrun simctl launch "$device_id" io.github.doomfag.doser
+          sleep 5
+          xcrun simctl io "$device_id" screenshot build-ios/iPhone.png
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Doser-iOS-ASSINATURA-NECESSARIA
+          path: |
+            build-ios/Doser-*.ipa
+            build-ios/Doser-*.zip
+            build-ios/LEIA-ME.md
+            build-ios/iPhone.png
+          if-no-files-found: error
+          retention-days: 3
+  android-tv:
+    name: Android TV Google TV Fire TV
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: Preparar SDK
+        run: |
+          sdk_dir="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          "$sdk_dir/cmdline-tools/latest/bin/sdkmanager" "platforms;android-36" "build-tools;36.0.0"
+      - run: npm ci
+      - run: npm run android:tv:prepare
+        env:
+          DOSER_TARGET: android-tv
+      - name: Compilar APK TV
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          if ./gradlew assembleDebug --no-daemon > tv-build.log 2>&1; then
+            tail -20 tv-build.log
+          else
+            tail -100 tv-build.log >> "$GITHUB_STEP_SUMMARY"; exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Doser-Android-TV-Fire-TV-APK-teste
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 3
+  apple-tv:
+    name: Apple TV (sem assinatura)
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run tv:prepare
+        env:
+          DOSER_TARGET: apple-tv
+      - name: Gerar projeto e compilar
+        run: |
+          command -v xcodegen || brew install xcodegen
+          cd tv/apple
+          xcodegen generate
+          if xcodebuild -project DoserTV.xcodeproj -scheme DoserTV -sdk appletvsimulator -destination 'generic/platform=tvOS Simulator' -derivedDataPath build/simulator CODE_SIGNING_ALLOWED=NO build > tvos.log 2>&1; then
+            tail -20 tvos.log
+          else
+            tail -100 tvos.log >> "$GITHUB_STEP_SUMMARY"; exit 1
+          fi
+          if xcodebuild -project DoserTV.xcodeproj -scheme DoserTV -sdk appletvos -destination 'generic/platform=tvOS' -derivedDataPath build/device CODE_SIGNING_ALLOWED=NO build > tvos-device.log 2>&1; then
+            tail -20 tvos-device.log
+          else
+            tail -100 tvos-device.log >> "$GITHUB_STEP_SUMMARY"; exit 1
+          fi
+          ditto -c -k --keepParent build/simulator/Build/Products/Debug-appletvsimulator/DoserTV.app Doser-AppleTV-SIMULADOR.zip
+          ditto -c -k --keepParent build/device/Build/Products/Debug-appletvos/DoserTV.app Doser-AppleTV-SEM-ASSINATURA.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Doser-Apple-TV-ASSINATURA-NECESSARIA
+          path: |
+            tv/apple/Doser-*.zip
+            docs/apple-e-tvs.md
+          if-no-files-found: error
+          retention-days: 3
+  vendor-tv:
+    name: LG webOS e projeto Samsung
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run tv:prepare
+        env:
+          DOSER_TARGET: smart-tv
+      - run: npm run test:tv
+      - name: Empacotar webOS e fontes Tizen
+        run: |
+          mkdir -p tv-releases
+          if npx --yes --package @webos-tools/cli@3.2.6 ares-package build-tv/webos -o tv-releases > webos.log 2>&1; then
+            cat webos.log
+          else
+            tail -100 webos.log >> "$GITHUB_STEP_SUMMARY"; exit 1
+          fi
+          cd build-tv/tizen
+          zip -qr ../../tv-releases/Doser-Samsung-PROJETO-NAO-ASSINADO.zip .
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Doser-LG-webOS-e-projeto-Samsung
+          path: |
+            tv-releases/*
+            docs/apple-e-tvs.md
+          if-no-files-found: error
+          retention-days: 3

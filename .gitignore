@@ -16,3 +16,11 @@ native-releases/
 mobile/www/
 android/
 .electron-cache/
+
+ios/
+build-ios/
+build-tv/
+tv-releases/
+tv/apple/Resources/
+tv/apple/*.xcodeproj/
+tv/apple/build/
