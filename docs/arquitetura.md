@@ -1,8 +1,8 @@
-# Arquitetura do Doser 0.4
+# Arquitetura do Doser 0.5
 
 ## Interface e domínio
 
-React 19, TypeScript estrito e Vite, sem serviços pagos. CSS com tokens preserva a identidade visual e permite novas referências. Navegação por fragmentos de URL; mesma interface planejada para Tauri e Capacitor. Ainda não há contêiner nativo ou serviço em segundo plano instalado.
+React 19, TypeScript estrito e Vite, sem serviços pagos. CSS com tokens preserva a identidade visual e permite novas referências. Navegação por fragmentos de URL; mesma interface planejada para Tauri e Capacitor. Há contêiner Electron para Windows/Linux e Capacitor para Android. Não há serviço de sistema em segundo plano.
 
 - `src/domain/catalog.ts`: medicamentos, proveniência por campo, regimes documentados por apresentação/população, normalização, índice textual em memória, comparação e validação de importações.
 - `src/domain/updateSchedule.ts`: agenda semanal e intervalo mínimo de uma hora após tentativa automática.
@@ -74,3 +74,11 @@ Importação de bulas, cobertura clínica de medicamentos de uso comum, revisão
 `server/clinical.ts` verifica PDFs oficiais contra versões fixas do manifesto, retira referências quando o documento muda e preserva cache anterior com data original durante falhas de rede. `server/createUpdater.ts` compõe o importador de cadastro com essa verificação. Referências normalizadas ficam na raiz do snapshot; registros guardam apenas IDs, evitando replicar texto clínico em centenas de produtos. `ClinicalReferences` mostra o contexto separado da bula; `ComparisonFact` identifica a origem na comparação.
 
 `src/domain/doseConversion.ts` usa BigInt e frações reduzidas, converte somente unidades de massa suportadas e recusa quantidades que exijam arredondamento/fracionamento. `DoseConverter` usa diálogo nativo acessível, limpa o resultado a cada edição e explica finalidade, método e limitações. Não há persistência de valores ou preenchimento automático por dose de protocolo.
+
+## Distribuição instalada (0.5)
+
+A distribuição desktop usa Electron para reaproveitar o importador Node verificado, com custo de instalador maior que Tauri. Não abre navegador ou servidor TCP. O protocolo interno doser://app serve arquivos e uma API restrita; a origem estável preserva IndexedDB. A janela não acessa Node, possui contexto isolado e sandbox configurado. O primeiro catálogo é copiado para userData sem sobrescrever versões existentes. O manifesto clínico permanece no pacote e seu caminho é passado explicitamente ao importador.
+
+Capacitor usa o catálogo verificado embutido no Android; o adaptador automático de atualização Android ainda está pendente e a interface informa essa limitação. O projeto é gerado por scripts/android.ts com backup Android desativado e identidade visual Doser. A assinatura inicial é de depuração. SQLite e assinatura definitiva continuam pendentes. Consulte aplicativos.md para distribuição e limites.
+
+O workflow nativo compila em Windows e Ubuntu, testa a janela Electron e publica artefatos do instalador; compila o APK com Java 21/Android SDK 36 em trabalho separado. Artefatos não equivalem a instalação validada em dispositivos físicos.

@@ -61,3 +61,12 @@ O pacote Windows 0.4 foi extraído em pasta isolada. Com Node Linux, o servidor 
 ## Alternativa ao download da prévia
 
 O botão Salvar HTML da distribuição portátil cria um Blob local com os recursos estáticos e a base incluída, sem serializar a interface renderizada ou dados pessoais. O teste de distribuição capturou o download e reabriu a cópia com os 10.326 registros, sem erros JavaScript, em 1440 × 1000 e 390 × 844. Um ZIP contendo o HTML foi conferido por integridade e correspondência de conteúdo. Isso não testa nem corrige o serviço de transferência do ChatGPT ou permissões do iframe dessa plataforma.
+
+## Aplicativos instaláveis — 0.5
+
+- Desktop Electron: janela independente, origem doser://app, 10.326 registros, pesquisa e calculadora passaram no teste de execução nativa. A interface não expôs require/Node. O teste passou neste Linux com servidor gráfico virtual e nos jobs Windows/Linux do GitHub.
+- O aplicativo Linux já empacotado em ASAR foi executado separadamente e carregou a base real. O pacote .deb foi gerado e seus metadados conferidos. A instalação pelo gerenciador de pacotes ainda requer teste no computador do usuário.
+- O teste Linux em ambiente de automação usa --no-sandbox devido às limitações do executor. Essa opção não é enviada ao aplicativo instalado; a janela de produção configura sandbox e isolamento. Isso limita a verificação de sandbox Linux neste ambiente.
+- Android: projeto gerado/sincronizado localmente; APK compilado com sucesso no workflow 39450238625. Ainda não foi instalado nem exercitado em aparelho/emulador Android. A atualização automática permanece indisponível nessa plataforma e a assinatura é de depuração.
+- 57 testes unitários/serviço e TypeScript passaram após a adaptação. Auditoria npm completa apontou zero vulnerabilidades conhecidas com as versões e override de empacotamento atuais.
+- Windows/Linux são artefatos instaláveis, distintos do ZIP anterior que apenas iniciava o navegador. Não há afirmação de assinatura comercial ou instalação física validada.
