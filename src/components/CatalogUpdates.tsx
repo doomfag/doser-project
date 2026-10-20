@@ -1,3 +1,4 @@
+import { nativeAndroid } from "../data/runtime";
 import {
   RefreshCw,
   CalendarClock,
@@ -64,7 +65,11 @@ export default function CatalogUpdates({
           </p>
         </div>
         {portable ? (
-          <span className="portable-label">Base incluída no arquivo</span>
+          <span className="portable-label">
+            {nativeAndroid
+              ? "Base incluída no aplicativo"
+              : "Base incluída no arquivo"}
+          </span>
         ) : (
           <button
             className="primary-button"
@@ -83,7 +88,9 @@ export default function CatalogUpdates({
       )}
       {portable ? (
         <p className="small-note">
-          Consulta offline com a base incluída. Para renovar, importe um
+          {nativeAndroid
+            ? "Consulta offline. A atualização automática no Android ainda não está disponível. Para renovar, importe um"
+            : "Consulta offline com a base incluída. Para renovar, importe um"}
           catálogo ou use o programa local, que permite a verificação semanal.
         </p>
       ) : (

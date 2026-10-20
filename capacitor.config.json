@@ -1,0 +1,7 @@
+{
+  "appId": "io.github.doomfag.doser",
+  "appName": "Doser",
+  "webDir": "mobile/www",
+  "android": { "allowMixedContent": false },
+  "server": { "androidScheme": "https", "cleartext": false }
+}

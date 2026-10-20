@@ -10,3 +10,9 @@ test-results/
 
 releases/
 Doser.html
+
+build-native/
+native-releases/
+mobile/www/
+android/
+.electron-cache/

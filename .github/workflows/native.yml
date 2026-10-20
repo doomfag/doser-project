@@ -1,0 +1,81 @@
+name: Aplicativos instaláveis
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/doser-download]
+    paths:
+      - "desktop/**"
+      - "server/**"
+      - "src/**"
+      - "scripts/prepare-native.ts"
+      - "package*.json"
+      - "electron-builder.yml"
+      - "capacitor.config.json"
+      - ".github/workflows/native.yml"
+permissions:
+  contents: read
+jobs:
+  desktop:
+    name: ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            target: Windows
+            args: --win nsis --x64
+          - os: ubuntu-latest
+            target: Linux
+            args: --linux deb --x64
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run native:prepare
+      - run: npm run test:desktop
+        if: runner.os == 'Windows'
+      - run: xvfb-run -a npm run test:desktop
+        if: runner.os == 'Linux'
+      - run: npx electron-builder --publish never ${{ matrix.args }}
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Doser-${{ matrix.target }}
+          path: |
+            native-releases/*.exe
+            native-releases/*.deb
+          if-no-files-found: error
+          retention-days: 14
+  android:
+    name: Android APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: android-actions/setup-android@v3
+      - run: npm ci
+      - run: npm run android:prepare
+      - run: chmod +x android/gradlew
+      - run: ./gradlew assembleDebug --no-daemon
+        working-directory: android
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Doser-Android-APK-teste
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14

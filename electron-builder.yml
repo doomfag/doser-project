@@ -1,0 +1,31 @@
+appId: io.github.doomfag.doser
+productName: Doser
+asar: true
+directories:
+  output: native-releases
+files:
+  - desktop/main.cjs
+  - desktop/icon.png
+  - build-native/**/*
+  - dist/**/*
+  - data/clinical/curated.json
+  - package.json
+  - "!node_modules/**/*"
+win:
+  icon: desktop/icon.png
+  target:
+    - target: nsis
+      arch: [x64]
+  artifactName: Doser-${version}-Windows-Setup.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+linux:
+  icon: desktop/icon.png
+  target: [deb]
+  category: Education
+  maintainer: Doser
+  artifactName: Doser-${version}-Linux-amd64.${ext}

@@ -1,3 +1,4 @@
+import { nativeAndroid } from "./data/runtime";
 import { savePortableApplication } from "./data/savePortable";
 import DoseConverter from "./components/DoseConverter";
 import ComparisonFact from "./components/ComparisonFact";
@@ -325,7 +326,7 @@ export default function App() {
             <Settings2 size={19} />
             <span>Dados e ajustes</span>
           </button>
-          <span className="version">DOSER / VERSÃO 0.4</span>
+          <span className="version">DOSER / VERSÃO 0.5</span>
         </div>
       </aside>
       <div className="workspace">
@@ -350,7 +351,7 @@ export default function App() {
             <Calculator size={18} />
             <span>Calculadora</span>
           </button>
-          {catalogState.portable && (
+          {catalogState.portable && !nativeAndroid && (
             <button
               className="text-button portable-save"
               title="Salvar HTML"

@@ -1,6 +1,6 @@
 {
   "name": "doser",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,9 +13,16 @@
     "start": "node --use-env-proxy server/index.ts",
     "catalog:update": "node --use-env-proxy server/update.ts",
     "build:portable": "npm run build && node scripts/portable.ts",
-    "test:release": "node scripts/verify-release.ts"
+    "test:release": "node scripts/verify-release.ts",
+    "native:prepare": "npm run build && node scripts/prepare-native.ts",
+    "desktop:dev": "npm run native:prepare && electron .",
+    "desktop:build": "npm run native:prepare && electron-builder --publish never",
+    "android:prepare": "npm run native:prepare && node scripts/portable.ts mobile/www/index.html && node scripts/android.ts",
+    "test:desktop": "node scripts/smoke-desktop.ts"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
     "csv-parse": "^7.0.3",
     "idb": "^8.0.4",
     "lucide-react": "^0.468.0",
@@ -23,11 +30,15 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.3",
     "@playwright/test": "^1.58.0",
     "@types/node": "^26.6.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.0.0",
+    "electron": "^44.9.1",
+    "electron-builder": "^26.15.3",
+    "esbuild": "^0.28.2",
     "prettier": "^3.9.10",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
@@ -35,5 +46,8 @@
   },
   "engines": {
     "node": ">=24.5.0"
-  }
+  },
+  "main": "desktop/main.cjs",
+  "description": "Consulta farmacol\u00f3gica pessoal com cat\u00e1logo local",
+  "author": "Doser"
 }

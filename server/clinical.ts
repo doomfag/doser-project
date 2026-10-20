@@ -40,10 +40,10 @@ export type ClinicalEnricher = (
   medicines: Medicine[],
   previous?: ClinicalStatus,
 ) => Promise<EnrichedCatalog>;
-export async function loadClinicalManifest(): Promise<ClinicalManifest> {
-  const raw = JSON.parse(
-    await readFile(resolve("data/clinical/curated.json"), "utf8"),
-  );
+export async function loadClinicalManifest(
+  path = resolve("data/clinical/curated.json"),
+): Promise<ClinicalManifest> {
+  const raw = JSON.parse(await readFile(path, "utf8"));
   if (
     raw.version !== 1 ||
     !Array.isArray(raw.documents) ||

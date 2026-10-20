@@ -1,10 +1,14 @@
-# Doser 0.4
+# Doser 0.5
 
 Consulta pessoal de medicamentos em React e TypeScript. Sem chatbot, conta, hospedagem ou API paga.
 
 A base real foi consultada na Anvisa em **20/10/2026**: **10.326 registros ativos únicos**, após processar 228.869 linhas, excluir 156.100 linhas fora do critério e remover 62.443 duplicatas. Treze registros incluídos não trazem princípio ativo, sinalizado como ausente. Registro ativo na fonte não confirma estoque ou comercialização. Dose, idade, apresentação e indicação não são fornecidas por esse arquivo cadastral. Em coleção separada, há **19 referências PCDT de HAS e DM2 em adultos**, relacionadas por princípio ativo a 368 registros. Não são bulas desses produtos.
 
-## Usar agora
+## Aplicativos para instalar
+
+A distribuição nativa está em implementação: Electron para Windows/Linux e Capacitor para Android. O workflow [Aplicativos instaláveis](https://github.com/doomfag/doser-project/actions/workflows/native.yml) produz instaladores e APK quando os trabalhos concluem com sucesso. Consulte [instruções e limites](docs/aplicativos.md). Não é necessário abrir o aplicativo instalado no navegador. A atualização Android ainda está pendente.
+
+## Formatos anteriores de consulta
 
 ### Arquivo portátil
 
