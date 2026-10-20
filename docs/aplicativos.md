@@ -1,4 +1,4 @@
-# Aplicativos instaláveis — Doser 0.5
+# Aplicativos instaláveis — Doser 0.6
 
 O objetivo de distribuição passa a ser aplicativo instalado. O HTML permanece uma alternativa de consulta; não é o instalador.
 
@@ -10,7 +10,7 @@ A escolha inicial de Electron reutiliza o importador Node já testado, sem insta
 
 A base inicial é copiada uma única vez para a pasta de dados do usuário. Atualizar ou reinstalar o programa não deve sobrescrever o catálogo existente. Fontes clínicas mantêm a verificação de versão. A interface não recebe acesso ao Node: sandbox, isolamento de contexto, permissões negadas e navegação externa controlada. Links de bulas/farmácias abrem o navegador por ação do usuário.
 
-Gerar: `npm ci`, `npm run desktop:build`. Windows gera instalador NSIS .exe; Linux gera pacote .deb com entrada no menu de aplicativos. O instalador Windows inicial não possui assinatura comercial. Não desative proteções do sistema para instalá-lo; assinatura e instalação em dispositivos reais ainda precisam de validação.
+Gerar: `npm ci`, `npm run desktop:build`. Windows gera instalador NSIS .exe; Linux gera pacote .deb com entrada no menu de aplicativos; macOS gera DMG sem assinatura/notarização comercial, na arquitetura indicada no arquivo. O instalador Windows inicial não possui assinatura comercial. Não desative proteções do sistema para instalá-lo; assinatura e instalação em dispositivos reais ainda precisam de validação.
 
 ## Android
 
@@ -20,8 +20,8 @@ Não é um atalho de navegador. O catálogo inicial, pesquisa, fichas, comparaç
 
 ## Obter os instaladores
 
-A automação `Aplicativos instaláveis`, na aba Actions do GitHub, compila Windows, Linux e Android em máquinas adequadas. Os resultados aparecem em Artifacts somente após conclusão bem-sucedida dos trabalhos. É necessário entrar no GitHub para baixar artefatos. Retenção inicial de 14 dias. Os executores padrão de repositório público são usados; não ativa hospedagem, Pages ou publicação em lojas.
+A automação `Aplicativos instaláveis`, na aba Actions do GitHub, compila Windows, Linux, macOS e Android em máquinas adequadas. Os resultados aparecem em Artifacts somente após conclusão bem-sucedida dos trabalhos. É necessário entrar no GitHub para baixar artefatos. Retenção atual de três dias. Os executores padrão de repositório público são usados; não ativa hospedagem, Pages ou publicação em lojas.
 
 A janela Electron foi executada neste ambiente Linux com um servidor gráfico virtual: catálogo, pesquisa, calculadora e isolamento Node passaram. A auditoria npm não apontou vulnerabilidades conhecidas após ajuste das dependências de empacotamento. Isso não substitui instalação em computador/aparelho real.
 
-Não confunda automação configurada com build aprovado. Consulte os resultados de cada sistema. A configuração testa a janela Electron e seu isolamento, pesquisa e catálogo no Windows/Linux; APK requer teste posterior em aparelho Android. iOS continua pendente.
+Não confunda automação configurada com build aprovado. Consulte os resultados de cada sistema. A configuração testa a janela Electron e seu isolamento, pesquisa e catálogo no Windows/Linux/macOS; APK requer teste posterior em aparelho Android. iOS e TVs têm workflow separado, com [matriz de suporte](apple-e-tvs.md). A IPA para iPhone/iPad precisa de assinatura pessoal, possível via [AltStore Classic + Windows](ios-gratuito.md), com renovação a cada sete dias. Apple TV continua sem provisionamento físico; Samsung é projeto sem WGT assinado. Os downloads de teste de iPhone e TVs são publicados em [Releases](https://github.com/doomfag/doser-project/releases) após os quatro jobs passarem.
