@@ -61,7 +61,9 @@ jobs:
 
           Fonte: 969f8fc. Build verificado: https://github.com/doomfag/doser-project/actions/runs/39456098574 . Teste da janela desktop, TypeScript, build e 61 testes passaram. Atualização de dados no Android permanece pendente. Arquivo SHA256SUMS.txt disponível para conferência de integridade.
           NOTES
+          tag_sha=$(gh api "repos/$GH_REPO/git/ref/tags/$tag" --jq .object.sha)
+          test "$tag_sha" = "$DOSER_BUILD_SHA"
           if ! gh release view "$tag" > /dev/null 2>&1; then
-            gh release create "$tag" --verify-tag --target "$DOSER_BUILD_SHA" --prerelease --title "Doser 0.6 — PC e Android (teste)" --notes-file release-notes.md
+            gh release create "$tag" --verify-tag --prerelease --title "Doser 0.6 — PC e Android (teste)" --notes-file release-notes.md
           fi
           gh release upload "$tag" package-downloads/* --clobber
