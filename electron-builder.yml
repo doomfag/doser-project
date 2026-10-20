@@ -25,6 +25,7 @@ nsis:
   createDesktopShortcut: true
   createStartMenuShortcut: true
 linux:
+  syncDesktopName: true
   icon: desktop/icon.png
   target: [deb]
   category: Education

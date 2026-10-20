@@ -48,9 +48,10 @@
     "node": ">=24.5.0"
   },
   "main": "desktop/main.cjs",
-  "description": "Consulta farmacológica pessoal com catálogo local",
+  "description": "Consulta farmacol\u00f3gica pessoal com cat\u00e1logo local",
   "author": "Doser",
   "overrides": {
     "global-agent": "^4.1.3"
-  }
+  },
+  "desktopName": "doser.desktop"
 }
