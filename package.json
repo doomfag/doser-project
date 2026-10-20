@@ -21,8 +21,8 @@
     "test:desktop": "node scripts/smoke-desktop.ts"
   },
   "dependencies": {
-    "@capacitor/android": "^8.5.3",
-    "@capacitor/core": "^8.5.3",
+    "@capacitor/android": "8.4.3",
+    "@capacitor/core": "8.4.3",
     "csv-parse": "^7.0.3",
     "idb": "^8.0.4",
     "lucide-react": "^0.468.0",
@@ -30,14 +30,14 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@capacitor/cli": "^8.5.3",
+    "@capacitor/cli": "8.4.3",
     "@playwright/test": "^1.58.0",
     "@types/node": "^26.6.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.0.0",
     "electron": "^44.9.1",
-    "electron-builder": "^26.15.3",
+    "electron-builder": "26.15.3",
     "esbuild": "^0.28.2",
     "prettier": "^3.9.10",
     "typescript": "~5.9.3",
@@ -48,6 +48,9 @@
     "node": ">=24.5.0"
   },
   "main": "desktop/main.cjs",
-  "description": "Consulta farmacol\u00f3gica pessoal com cat\u00e1logo local",
-  "author": "Doser"
+  "description": "Consulta farmacológica pessoal com catálogo local",
+  "author": "Doser",
+  "overrides": {
+    "global-agent": "^4.1.3"
+  }
 }

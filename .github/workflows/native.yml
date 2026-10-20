@@ -12,6 +12,9 @@ on:
       - "electron-builder.yml"
       - "capacitor.config.json"
       - ".github/workflows/native.yml"
+concurrency:
+  group: native-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
@@ -24,7 +27,7 @@ jobs:
           - os: windows-latest
             target: Windows
             args: --win nsis --x64
-          - os: ubuntu-latest
+          - os: ubuntu-24.04
             target: Linux
             args: --linux deb --x64
     runs-on: ${{ matrix.os }}
@@ -55,7 +58,7 @@ jobs:
           retention-days: 14
   android:
     name: Android APK
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4

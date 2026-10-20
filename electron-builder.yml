@@ -1,6 +1,7 @@
 appId: io.github.doomfag.doser
 productName: Doser
 asar: true
+electronDist: node_modules/electron/dist
 directories:
   output: native-releases
 files:
