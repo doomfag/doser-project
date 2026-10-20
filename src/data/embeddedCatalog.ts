@@ -1,0 +1,80 @@
+import {
+  parseCatalog,
+  parseClinicalReferences,
+  assertReferenceLinks,
+  type ClinicalReference,
+  type Medicine,
+} from "../domain/catalog";
+export interface EmbeddedCatalog {
+  version: 1;
+  medicines: Medicine[];
+  clinicalReferences: ClinicalReference[];
+  status: {
+    lastSuccess: string;
+    count: number;
+    report?: {
+      rows: number;
+      included: number;
+      excluded: number;
+      duplicates: number;
+      missingIngredient: number;
+      sha256: string;
+    };
+  };
+}
+export async function readEmbeddedCatalog(): Promise<EmbeddedCatalog | null> {
+  const element = document.getElementById("doser-catalog");
+  if (!element?.textContent) return null;
+  const envelope = JSON.parse(element.textContent);
+  if (
+    envelope.encoding !== "gzip-base64" ||
+    typeof envelope.data !== "string" ||
+    envelope.data.length > 16_000_000 ||
+    !/^[a-f0-9]{64}$/.test(envelope.sha256)
+  )
+    throw new Error(
+      "A base incluída neste arquivo é inválida. Baixe uma nova cópia.",
+    );
+  const bytes = Uint8Array.from(atob(envelope.data), (c) => c.charCodeAt(0));
+  const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
+  const hash = [...digest].map((b) => b.toString(16).padStart(2, "0")).join("");
+  if (hash !== envelope.sha256)
+    throw new Error(
+      "A integridade da base incluída não confere. O catálogo não foi carregado.",
+    );
+  const reader = new Blob([bytes])
+    .stream()
+    .pipeThrough(new DecompressionStream("gzip"))
+    .getReader();
+  const chunks: Uint8Array[] = [];
+  let size = 0;
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.length;
+      if (size > 100 * 1024 * 1024) {
+        await reader.cancel();
+        throw new Error("A base incluída excede o limite permitido.");
+      }
+      chunks.push(value);
+    }
+  } finally {
+    reader.releaseLock();
+  }
+  const raw = await new Blob(chunks as BlobPart[]).text();
+  const snapshot = JSON.parse(raw);
+  const medicines = parseCatalog(snapshot);
+  const clinicalReferences = parseClinicalReferences(
+    snapshot.clinicalReferences ?? [],
+  );
+  assertReferenceLinks(medicines, clinicalReferences);
+  if (
+    !snapshot.status ||
+    typeof snapshot.status.lastSuccess !== "string" ||
+    !Number.isFinite(Date.parse(snapshot.status.lastSuccess)) ||
+    snapshot.status.count !== medicines.length
+  )
+    throw new Error("Os metadados da base incluída estão incompletos.");
+  return { version: 1, medicines, clinicalReferences, status: snapshot.status };
+}

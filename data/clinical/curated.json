@@ -1,0 +1,1397 @@
+{
+  "version": 1,
+  "documents": [
+    {
+      "id": "hipertensao",
+      "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf",
+      "sha256": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608"
+    },
+    {
+      "id": "diabetes2",
+      "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+      "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf",
+      "sha256": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09"
+    }
+  ],
+  "references": [
+    {
+      "id": "pcdt-has-captopril",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Captopril",
+      "ingredients": [
+        "captopril"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimido de 25 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Captopril: hipersensibilidade a outro inibidor da IECA; não deve ser utilizado por mulheres\n    grávidas sem orientação médica.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimido de 25 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "25 a 150 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "2 a 3 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "250 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-enalapril",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Maleato de enalapril",
+      "ingredients": [
+        "maleato de enalapril"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 5 mg, 10 mg e 20 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Maleato de enalapril: pacientes com histórico de edema angioneurótico relacionado a\n    utilização de inibidores da enzima conversora de angiotensina e pacientes com angioedema\n    hereditário ou idiopático. Não deve ser administrado com alisquireno em pacientes com\n    diabetes. É contraindicado em combinação com um inibidor de neprilisina (por exemplo,\n    sacubitril), devendo ser administrado 36 horas antes ou depois de utilizar sacubitril valsartana.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 5 mg, 10 mg e 20 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "5 a 40 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 2 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "40 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-losartana",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Losartana potássica",
+      "ingredients": [
+        "losartana potássica"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimido de 50 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Losartana potássica: insuficiência hepática grave. O uso concomitante com produtos\n      contendo alisquireno é contraindicado em pacientes com diabetes e insuficiência renal (TGF\n      < 60 mL/min/1,73m2). O medicamento não deve ser administrado durante o segundo ou o\n      terceiro trimestre de gestação.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimido de 50 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "50 a 100 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 2 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "100 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-anlodipino",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Besilato de anlodipino",
+      "ingredients": [
+        "besilato de anlodipino"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 5 mg e 10 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Besilato de anlodipino: não deve ser utilizado por mulheres grávidas sem orientação médica.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 5 mg e 10 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "2,5 a 10 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "10 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-nifedipino",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Nifedipino",
+      "ingredients": [
+        "nifedipino"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Cápsulas ou comprimidos de 10 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Nifedipino: casos de choque cardiovascular; gravidez antes da 20ª semana de gestação e\n      durante a amamentação. Não deve ser usado em associação com a rifampicina, pois, devido\n      à indução enzimática, o nifedipino pode não atingir níveis plasmáticos eficazes.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Cápsulas ou comprimidos de 10 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "10 a 60 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 3 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "60 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-verapamil",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Cloridrato de verapamil",
+      "ingredients": [
+        "cloridrato de verapamil"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 80 mg e 120 mg — referência ao esquema oral"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Cloridrato de verapamil: choque cardiogênico; bloqueio atrioventricular de segundo ou\n      terceiro grau (exceto em pacientes com marcapasso artificial em funcionamento); síndrome\n      do nódulo sinusal (exceto em pacientes com marcapasso artificial em funcionamento);\n      insuficiência cardíaca com fração de ejeção menor que 35 % e/ou pressão pulmonar acima de\n      20 mmHg (a não ser que secundário para taquicardia supraventricular sensível ao tratamento\n      com verapamil); “flutter” ou fibrilação atrial na presença de feixes de condução acessórios\n      (ou seja, síndrome de WolffParkinson-White e Lown-Ganong-Levine).",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 80 mg e 120 mg — referência ao esquema oral",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "120 a 360 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 2 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "480 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-propranolol",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Cloridrato de propranolol",
+      "ingredients": [
+        "cloridrato de propranolol"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 10 mg e 40 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Cloridrato de propranolol: hipotensão; bradicardia; distúrbios graves da circulação arterial\n    periférica; síndrome do nó sinoatrial; feocromocitoma não tratado (com um antagonista do\n    receptor alfa-adrenérgico); insuficiência cardíaca descompensada; angina de Prinzmetal;\n    choque cardiogênico; acidose metabólica; pacientes com predisposição à hipoglicemia, isto\n    é, após jejum prolongado ou pacientes com reservas contrarregulatórias restritas; bloqueio\n    cardíaco de segundo ou terceiro grau; histórico de asma brônquica ou broncoespasmo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 10 mg e 40 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "80 a 320 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "2 a 3 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "640 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-atenolol",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Atenolol",
+      "ingredients": [
+        "atenolol"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 50 mg e 100 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Atenolol: bradicardia, choque cardiogênico, hipotensão, acidose metabólica, distúrbios\n      graves da circulação arterial periférica, bloqueio cardíaco de segundo ou terceiro grau,\n      síndrome do nodo sinusal, feocromocitoma não tratado, insuficiência cardíaca\n      descompensada.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 50 mg e 100 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "50 a 100 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 2 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "100 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-carvedilol",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Carvedilol",
+      "ingredients": [
+        "carvedilol"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 3,125 mg, 6,25 mg, 12,5 mg e 25 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Carvedilol: insuficiência cardíaca descompensada/instável, que exija terapia inotrópica\n      intravenosa; insuficiência hepática clinicamente manifesta; asma brônquica ou doença\n      pulmonar obstrutiva crônica com componente broncoespástico; bloqueio atrioventricular de\n      segundo ou terceiro grau (a menos que o paciente tenha um marca-passo permanente);\n      bradicardia grave (< 50 batimentos por minuto); síndrome do nó sinusal (incluindo bloqueio\n      sinoatrial); choque cardiogênico; hipotensão grave (pressão arterial sistólica < 85 mmHg);\n      pessoas com insuficiência de sacarose-isomaltase.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 3,125 mg, 6,25 mg, 12,5 mg e 25 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "12,5 a 50 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 2 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "50 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-metoprolol",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Metoprolol",
+      "ingredients": [
+        "succinato de metoprolol",
+        "tartarato de metoprolol"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Succinato: comprimidos de liberação prolongada de 25 mg, 50 mg e 100 mg; tartarato: comprimido de 100 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Succinato: comprimidos de liberação prolongada de 25 mg, 50 mg e 100 mg; tartarato: comprimido de 100 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "50 a 200 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 2 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente. O protocolo agrupa succinato e tartarato na tabela. A seleção e o intervalo dependem da formulação prescrita; essa referência não estabelece intercambialidade entre liberação prolongada e convencional.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "200 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-hidroclorotiazida",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Hidroclorotiazida",
+      "ingredients": [
+        "hidroclorotiazida"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 12,5 mg e 25 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Hidroclorotiazida: comprometimento grave da função renal (depuração da creatinina abaixo\n    de 30 mL/min), com distúrbio hepático grave, icterícia em crianças, com distúrbio grave do\n    equilíbrio de eletrólitos, anúria. Não deve ser usado por pessoas com síndrome de má-\n    absorção de glicose-galactose.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 12,5 mg e 25 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "25 a 50 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 2 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "200 mg/dia, conforme a coluna de dose máxima do Quadro 18; não é a faixa diária habitual"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-furosemida",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Furosemida",
+      "ingredients": [
+        "furosemida"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimido de 40 mg — referência ao esquema oral"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Furosemida: lactantes, pacientes com insuficiência renal com anúria, pré-coma e coma\n    associado à encefalopatia hepática, hipopotassemia severa, hiponatremia severa, hipovolemia\n    (com ou sem hipotensão) ou desidratação, hipersensibilidade às sulfonamidas. Não deve ser\n    usado por pessoas com síndrome de má-absorção de glicose-galactose.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimido de 40 mg — referência ao esquema oral",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "20 a 80 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 3 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "O Quadro 18 não fixa um número: depende da resposta do paciente."
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-espironolactona",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Espironolactona",
+      "ingredients": [
+        "espironolactona"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 25 mg e 100 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Espironolactona: insuficiência renal aguda, diminuição significativa da função renal, anúria;\n    doença de Addison; hipercalemia; uso concomitante de eplerenona.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 25 mg e 100 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "25 a 100 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 a 2 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "200 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-metildopa",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Metildopa",
+      "ingredients": [
+        "metildopa"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimido de 250 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Metildopa: hepatopatias ativas, tais como hepatite aguda e cirrose ativa; tratamento com\n      inibidores da monoaminoxidase (MAO).",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimido de 250 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "500 a 2.000 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "2 a 3 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "3 g/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-doxazosina",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Mesilato de doxazosina",
+      "ingredients": [
+        "mesilato de doxazosina"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 2 mg e 4 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Mesilato de doxazosina: hipersensibilidade a outros tipos de quinazolinas (por exemplo,\n    prazosina, terazosina), história de hipotensão ortostática, hiperplasia prostática benigna e\n    congestão concomitante do trato urinário superior, infecção crônica do trato urinário ou\n    cálculos na bexiga, pacientes com histórico de obstrução gastrointestinal, obstrução esofágica\n    ou qualquer grau de diminuição do diâmetro do lúmen do trato gastrointestinal. Está\n    contraindicado como monoterapia em pacientes com transbordamento da bexiga ou anúria\n    com ou sem insuficiência renal progressiva.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 2 mg e 4 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "1 a 16 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "1 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "16 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-has-hidralazina",
+      "documentId": "hipertensao",
+      "subject": "Hipertensão arterial sistêmica — Cloridrato de hidralazina",
+      "ingredients": [
+        "cloridrato de hidralazina"
+      ],
+      "scope": "Referência por princípio ativo, em contexto de protocolo. Não é bula nem confirmação da apresentação deste registro. Esquema oral de adultos; não se aplica automaticamente a gestantes, crianças ou emergências.",
+      "presentations": [
+        "Comprimidos de 25 mg e 50 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento da hipertensão arterial sistêmica (HAS) em adultos, no contexto do PCDT. A indicação para uma pessoa depende da avaliação e dos critérios do protocolo.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18"
+          }
+        },
+        "contraindications": {
+          "text": "Cloridrato de hidralazina: lúpus eritematoso sistêmico idiopático e doenças correlatas,\n    taquicardia grave e insuficiência cardíaca com alto débito cardíaco (por exemplo, em\n    tireotoxicose), insuficiência do miocárdio devido à obstrução mecânica (por exemplo, em\n    estenose aórtica ou mitral e na pericardite constritiva); insuficiência cardíaca isolada do\n    ventrículo direito devido à hipertensão pulmonar (cor pulmonale); e aneurisma dissecante da\n    aorta.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=53",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 53 do PDF · Seção vii — contraindicações, páginas 53–55"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-has-adultos",
+          "presentation": "Comprimidos de 25 mg e 50 mg",
+          "population": "Adultos com HAS — Quadro 18 do PCDT",
+          "dose": "50 a 200 mg/dia",
+          "doseBasis": "per-day",
+          "interval": "2 a 3 administrações ao dia, conforme o Quadro 18; não equivale a um horário fixo de relógio.",
+          "route": "Via oral",
+          "age": "Esquema para adultos; o fluxograma de adultos do PCDT utiliza idade maior ou igual a 18 anos. Isso não define a idade mínima aprovada em bula.",
+          "conditions": "Quadro 18: tratamento da HAS em adultos, por via oral. Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida pela quantidade de administrações. A tabela não estabelece um número universal de comprimidos. Não converta doses entre formulações ou apresentações. Situações especiais, gestação, doença renal e contraindicações exigem consulta ao protocolo e à bula correspondente.",
+          "source": {
+            "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+            "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+          },
+          "maxDaily": "200 mg/dia"
+        }
+      ],
+      "source": {
+        "title": "PCDT Hipertensão Arterial Sistêmica — Portaria de 23/07/2025",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/h/hipertensao-arterial-sistemica.pdf#page=52",
+        "version": "1f39016a1f1df510b5221d1809a6ff40674d9bad6797bb68b7fc14094c85b608",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 52 do PDF · Quadro 18 e nota de administração; apresentações na página 51"
+      }
+    },
+    {
+      "id": "pcdt-dm2-metformina",
+      "documentId": "diabetes2",
+      "subject": "Diabete melito tipo 2 — cloridrato de metformina",
+      "ingredients": [
+        "cloridrato de metformina"
+      ],
+      "scope": "Referência por princípio ativo em adultos com DM2 diagnosticado. As apresentações citadas pertencem ao protocolo e não confirmam a apresentação ou a bula deste registro. Critérios, função renal, comorbidades e avaliação profissional condicionam o uso.",
+      "presentations": [
+        "Cloridrato de metformina — comprimidos de 500 mg e 850 mg, seção 8.7"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Pessoas com idade igual ou superior a 18 anos e diagnóstico confirmado de diabete melito tipo 2, segundo os critérios do PCDT.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=12",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 12 do PDF · Critérios de inclusão"
+          }
+        },
+        "precautions": {
+          "text": "O cloridrato de metformina é indicado como primeira opção terapêutica no tratamento de\npacientes com DM2, como forma de melhorar o controle da glicemia e prevenir complicações.\nPertence à classe das biguanidas e reduz a glicose por múltiplos mecanismos, entre eles a\ndiminuição da produção hepática de glicose e aumento da captação muscular de glicose95.\n        Sugere-se iniciar o tratamento com doses baixas (500 mg ou 850 mg), em dose única\ndiária, durante ou após as refeições (café da manhã ou jantar), para prevenir sintomas\ngastrointestinais. Após 5 a 7 dias, caso não surjam eventos adversos, pode-se aumentar para 500\nmg ou 850 mg, duas vezes ao dia, durante ou após as refeições (café da manhã e jantar). Na\npresença de efeitos gastrointestinais, a dose poderá ser diminuída e, após 3 a 6 meses, conforme\nnecessidade, uma nova tentativa de aumentá-la poderá ser realizada. A dose máxima terapêutica\né de 850 mg no café, almoço e jantar, totalizando 2.550 mg por dia (dose máxima efetiva).\n        Em indivíduos idosos, também é considerada o medicamento de primeira escolha, pois\napresenta boa eficácia e segurança, baixo risco de hipoglicemia, além de trazer benefícios na\nredução do risco cardiovascular96.\n        Em geral, o medicamento é seguro e bem tolerado. Contudo, é contraindicado em\npacientes com insuficiência renal (TFG menor que 30 mL/min/1,73 m2)97 ou qualquer situação de\nmaior risco de hiperlactatemia, como insuficiência hepática descompensada, sepse e hipotensão.\nNa maioria das vezes, o uso de cloridrato de metformina deve ser suspenso em caso de internação\nhospitalar. O cloridrato de metformina deve ser mantida quando o paciente inicia o uso de\ninsulina, a fim de manter seus benefícios glicêmicos e metabólicos, a não ser que tenha alguma\ncontraindicação ou efeito adverso que não seja tolerado92,93. Nas pessoas idosas, desconforto\ngastrointestinal, sensação de boca metálica, náuseas, diarreia e emagrecimento progressivo\npodem ser efeitos adversos comuns e potencialmente severos. Nesses casos, considerar a\nsubstituição por formulações de liberação prolongada ou a desprescrição em caso de intolerância\nsevera especialmente se associada a risco nutricional98.\n        Não se deve usar mais de 1 g/dia em pessoas com TFG 30 a 45 mL/min/1.73 m² e deve\nser suspensa quando TFG < 30 mL/min/1.73 m². É um medicamento altamente eficaz, reduzindo\nHbA1c em 1,5% a 2% e glicemia de jejum em 60 mg/dL a 70 mg/dL, com baixo risco de\nhipoglicemia, sem associação com ganho de peso e baixo custo99,100.\n        Seus potenciais eventos adversos são99: Gastrointestinais: diarréia, náuseas, vômitos,\nhipermeteorismo, dor abdominal, distensão abdominal, constipação, dispepsia, alteração de\npaladar, flatulências; deficiência de vitamina B12; acidose láctica (rara).\n        A versão de liberação estendida reduz o risco de eventos adversos gastrointestinais e\ngeralmente é mais bem tolerada, estando disponível no programa Farmácia Popular do Brasil\n(PFPB). O início em dose baixa, com titulação progressiva, reduz o risco desses eventos adversos.\nO cloridrato de metformina é contraindicado se houver sensibilidade ao medicamento, doença\nrenal com TFG < 30 mL/min/1,73 m², insuficiência cardíaca congestiva, alcoolismo, sepse ou\noutros quadros clínicos graves, doença hepática grave ou lactação99,100.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=23",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 23 do PDF · Seção 8.3 — trecho completo sobre o medicamento/classe"
+          }
+        },
+        "contraindications": {
+          "text": "Cloridrato de metformina: gravidez e durante amamentação; insuficiência renal (TFG\n        menor que 30 mL/min/1,73 m2), insuficiência hepática descompensada, insuficiência\n        cardíaca ou insuficiência pulmonar, e acidose grave; infecção grave; pré-operatório e pós-\n        operatório, em pacientes submetidos a exame de imagem com contraste.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=39",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 39 do PDF · Seção 8.9 — Contraindicações"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-dm2-adultos",
+          "presentation": "Cloridrato de metformina — comprimidos de 500 mg e 850 mg, seção 8.7",
+          "population": "Adultos com diagnóstico confirmado de diabete melito tipo 2 — critérios do PCDT",
+          "dose": "500 mg ou 850 mg em dose única diária ao iniciar; após 5 a 7 dias, se não houver eventos adversos, 500 mg ou 850 mg duas vezes ao dia. A titulação e limitações renais constam do trecho completo.",
+          "doseBasis": "document-text",
+          "interval": "Durante ou após café da manhã ou jantar no início; depois café da manhã e jantar, conforme seção 8.3.1.",
+          "age": "Idade igual ou superior a 18 anos, conforme critérios de inclusão do PCDT. Não é idade mínima regulatória do medicamento.",
+          "route": "Esquema de antidiabético oral do protocolo",
+          "maxDaily": "2.550 mg/dia na seção 8.3.1. Para TFG de 30 a 45 mL/min/1,73 m², o próprio texto limita a 1 g/dia; TFG menor que 30 exige suspensão.",
+          "conditions": "O cloridrato de metformina é indicado como primeira opção terapêutica no tratamento de\npacientes com DM2, como forma de melhorar o controle da glicemia e prevenir complicações.\nPertence à classe das biguanidas e reduz a glicose por múltiplos mecanismos, entre eles a\ndiminuição da produção hepática de glicose e aumento da captação muscular de glicose95.\n        Sugere-se iniciar o tratamento com doses baixas (500 mg ou 850 mg), em dose única\ndiária, durante ou após as refeições (café da manhã ou jantar), para prevenir sintomas\ngastrointestinais. Após 5 a 7 dias, caso não surjam eventos adversos, pode-se aumentar para 500\nmg ou 850 mg, duas vezes ao dia, durante ou após as refeições (café da manhã e jantar). Na\npresença de efeitos gastrointestinais, a dose poderá ser diminuída e, após 3 a 6 meses, conforme\nnecessidade, uma nova tentativa de aumentá-la poderá ser realizada. A dose máxima terapêutica\né de 850 mg no café, almoço e jantar, totalizando 2.550 mg por dia (dose máxima efetiva).\n        Em indivíduos idosos, também é considerada o medicamento de primeira escolha, pois\napresenta boa eficácia e segurança, baixo risco de hipoglicemia, além de trazer benefícios na\nredução do risco cardiovascular96.\n        Em geral, o medicamento é seguro e bem tolerado. Contudo, é contraindicado em\npacientes com insuficiência renal (TFG menor que 30 mL/min/1,73 m2)97 ou qualquer situação de\nmaior risco de hiperlactatemia, como insuficiência hepática descompensada, sepse e hipotensão.\nNa maioria das vezes, o uso de cloridrato de metformina deve ser suspenso em caso de internação\nhospitalar. O cloridrato de metformina deve ser mantida quando o paciente inicia o uso de\ninsulina, a fim de manter seus benefícios glicêmicos e metabólicos, a não ser que tenha alguma\ncontraindicação ou efeito adverso que não seja tolerado92,93. Nas pessoas idosas, desconforto\ngastrointestinal, sensação de boca metálica, náuseas, diarreia e emagrecimento progressivo\npodem ser efeitos adversos comuns e potencialmente severos. Nesses casos, considerar a\nsubstituição por formulações de liberação prolongada ou a desprescrição em caso de intolerância\nsevera especialmente se associada a risco nutricional98.\n        Não se deve usar mais de 1 g/dia em pessoas com TFG 30 a 45 mL/min/1.73 m² e deve\nser suspensa quando TFG < 30 mL/min/1.73 m². É um medicamento altamente eficaz, reduzindo\nHbA1c em 1,5% a 2% e glicemia de jejum em 60 mg/dL a 70 mg/dL, com baixo risco de\nhipoglicemia, sem associação com ganho de peso e baixo custo99,100.\n        Seus potenciais eventos adversos são99: Gastrointestinais: diarréia, náuseas, vômitos,\nhipermeteorismo, dor abdominal, distensão abdominal, constipação, dispepsia, alteração de\npaladar, flatulências; deficiência de vitamina B12; acidose láctica (rara).\n        A versão de liberação estendida reduz o risco de eventos adversos gastrointestinais e\ngeralmente é mais bem tolerada, estando disponível no programa Farmácia Popular do Brasil\n(PFPB). O início em dose baixa, com titulação progressiva, reduz o risco desses eventos adversos.\nO cloridrato de metformina é contraindicado se houver sensibilidade ao medicamento, doença\nrenal com TFG < 30 mL/min/1,73 m², insuficiência cardíaca congestiva, alcoolismo, sepse ou\noutros quadros clínicos graves, doença hepática grave ou lactação99,100.\n\nSeção 8.9 — contraindicações: Cloridrato de metformina: gravidez e durante amamentação; insuficiência renal (TFG\n        menor que 30 mL/min/1,73 m2), insuficiência hepática descompensada, insuficiência\n        cardíaca ou insuficiência pulmonar, e acidose grave; infecção grave; pré-operatório e pós-\n        operatório, em pacientes submetidos a exame de imagem com contraste.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=23",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 23 do PDF · Seção 8.3; apresentações na página 37; Quadro 15 na página 39"
+          }
+        }
+      ],
+      "source": {
+        "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=23",
+        "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 23 do PDF · Seção 8.3; apresentações na página 37; Quadro 15 na página 39"
+      }
+    },
+    {
+      "id": "pcdt-dm2-glibenclamida",
+      "documentId": "diabetes2",
+      "subject": "Diabete melito tipo 2 — glibenclamida",
+      "ingredients": [
+        "glibenclamida"
+      ],
+      "scope": "Referência por princípio ativo em adultos com DM2 diagnosticado. As apresentações citadas pertencem ao protocolo e não confirmam a apresentação ou a bula deste registro. Critérios, função renal, comorbidades e avaliação profissional condicionam o uso.",
+      "presentations": [
+        "Glibenclamida — comprimido de 5 mg, seção 8.7"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Pessoas com idade igual ou superior a 18 anos e diagnóstico confirmado de diabete melito tipo 2, segundo os critérios do PCDT.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=12",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 12 do PDF · Critérios de inclusão"
+          }
+        },
+        "precautions": {
+          "text": "As sulfoniluréias são secretagogos de insulina. Geralmente indicada como associação a\noutros agentes hipoglicemiantes, em especial ao cloridrato de metformina, quando for necessária\na intensificação terapêutica para controle glicêmico. Esta classe medicamentosa promove a\nliberação de insulina a partir das células beta pancreáticas, o que também aumenta o risco de\nhipoglicemia. A glibenclamida e a gliclazida são as sulfonilureias disponíveis no SUS. A\ngliclazida de liberação prolongada (MR) (30 e 60 mg/dia, com uso uma vez ao dia e dose máxima\nde 120 mg/dia), e glibenclamida (5 mg/dia, com uso uma a duas vezes ao dia e dose máxima de\n20 mg/dia) possuem eficácia similares. Contudo, a gliclazida liberação pronlongada está\nassociada a uma menor taxa de hipoglicemia, sendo preferível em pacientes com episódios de\nhipoglicemia recorrente ou risco aumentado de hipoglicemia101.\n        As sulfoniluréias são altamente eficazes, levando a uma redução de glicemia de jejum em\n60 mg/dL a 70 mg/dL e de HbA1c em 1,5% a 2,0%. Entretanto, apresentam risco significativo de\nhipoglicemia (especialmente a glibenclamida), além de ganho de peso. São contraindicadas se\nhouver TFG < 30 mL/min/1,73 m² (gliclazida Modified Realease – liberação modificada) pode\nser considerada em pessoas com DM2 e DRD, com TFG menor que 30 mL/min/1,73m2 desde\nque haja muita cautela e em doses reduzidas), insuficiência hepática, sinais de deficiência grave\nde insulina, infecções graves, gestação99,100. A gliclazida MR pode ser utilizada em pacientes com\ninsuficiência renal leve a moderada, sob monitoramento cauteloso. Assim como o cloridrato de\nmetformina, na maioria das vezes, não devem ser usadas em pacientes internados.\n        Embora associadas a eventos hipoglicêmicos, são medicamentos bem tolerados, possuem\nbaixo custo e segurança cardiovascular. Para pacientes idosos, recomenda-se utilizar\npreferencialmente gliclazida, visando a diminuição do risco de hipoglicemia102. Nas pessoas\nidosas, as sulfonilureias de ação curta devem ser evitadas, além das sulfonilureias de ação\nprolongada, devido ao maior risco de hipoglicemia e de mortalidade cardiovascular e por todas\nas causas em idosos. Nas circunstâncias em que for usada uma sulfonilureia, as formas de ação\ncurta são preferidas às de ação prolongada, para reduzir o risco de hipoglicemia prolongada103.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=24",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 24 do PDF · Seção 8.3 — trecho completo sobre o medicamento/classe"
+          }
+        },
+        "contraindications": {
+          "text": "Sulfonilureias — glibenclamida e gliclazida: gravidez, lactantes,\n                         insuficiência renal (TFG menor que 30 mL/min/1,73 m2); infecção grave\n                         ou insuficiência hepática. Além disso, glibenclamida não é recomendada\n                         para pacientes com idade superior ou igual a 60 anos.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=40",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 40 do PDF · Seção 8.9 — Contraindicações"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-dm2-adultos",
+          "presentation": "Glibenclamida — comprimido de 5 mg, seção 8.7",
+          "population": "Adultos com diagnóstico confirmado de diabete melito tipo 2 — critérios do PCDT",
+          "dose": "5 mg/dia, conforme o Quadro 15; a titulação é individualizada.",
+          "doseBasis": "per-day",
+          "interval": "1 a 2 administrações ao dia, conforme Quadro 15.",
+          "age": "Idade igual ou superior a 18 anos, conforme critérios de inclusão do PCDT. Não é idade mínima regulatória do medicamento. A seção 8.9 não recomenda glibenclamida em pessoas com 60 anos ou mais.",
+          "route": "Esquema de antidiabético oral do protocolo",
+          "maxDaily": "20 mg/dia",
+          "conditions": "As sulfoniluréias são secretagogos de insulina. Geralmente indicada como associação a\noutros agentes hipoglicemiantes, em especial ao cloridrato de metformina, quando for necessária\na intensificação terapêutica para controle glicêmico. Esta classe medicamentosa promove a\nliberação de insulina a partir das células beta pancreáticas, o que também aumenta o risco de\nhipoglicemia. A glibenclamida e a gliclazida são as sulfonilureias disponíveis no SUS. A\ngliclazida de liberação prolongada (MR) (30 e 60 mg/dia, com uso uma vez ao dia e dose máxima\nde 120 mg/dia), e glibenclamida (5 mg/dia, com uso uma a duas vezes ao dia e dose máxima de\n20 mg/dia) possuem eficácia similares. Contudo, a gliclazida liberação pronlongada está\nassociada a uma menor taxa de hipoglicemia, sendo preferível em pacientes com episódios de\nhipoglicemia recorrente ou risco aumentado de hipoglicemia101.\n        As sulfoniluréias são altamente eficazes, levando a uma redução de glicemia de jejum em\n60 mg/dL a 70 mg/dL e de HbA1c em 1,5% a 2,0%. Entretanto, apresentam risco significativo de\nhipoglicemia (especialmente a glibenclamida), além de ganho de peso. São contraindicadas se\nhouver TFG < 30 mL/min/1,73 m² (gliclazida Modified Realease – liberação modificada) pode\nser considerada em pessoas com DM2 e DRD, com TFG menor que 30 mL/min/1,73m2 desde\nque haja muita cautela e em doses reduzidas), insuficiência hepática, sinais de deficiência grave\nde insulina, infecções graves, gestação99,100. A gliclazida MR pode ser utilizada em pacientes com\ninsuficiência renal leve a moderada, sob monitoramento cauteloso. Assim como o cloridrato de\nmetformina, na maioria das vezes, não devem ser usadas em pacientes internados.\n        Embora associadas a eventos hipoglicêmicos, são medicamentos bem tolerados, possuem\nbaixo custo e segurança cardiovascular. Para pacientes idosos, recomenda-se utilizar\npreferencialmente gliclazida, visando a diminuição do risco de hipoglicemia102. Nas pessoas\nidosas, as sulfonilureias de ação curta devem ser evitadas, além das sulfonilureias de ação\nprolongada, devido ao maior risco de hipoglicemia e de mortalidade cardiovascular e por todas\nas causas em idosos. Nas circunstâncias em que for usada uma sulfonilureia, as formas de ação\ncurta são preferidas às de ação prolongada, para reduzir o risco de hipoglicemia prolongada103.\n\nSeção 8.9 — contraindicações: Sulfonilureias — glibenclamida e gliclazida: gravidez, lactantes,\n                         insuficiência renal (TFG menor que 30 mL/min/1,73 m2); infecção grave\n                         ou insuficiência hepática. Além disso, glibenclamida não é recomendada\n                         para pacientes com idade superior ou igual a 60 anos.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=24",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 24 do PDF · Seção 8.3; apresentações na página 37; Quadro 15 na página 39"
+          }
+        }
+      ],
+      "source": {
+        "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=24",
+        "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 24 do PDF · Seção 8.3; apresentações na página 37; Quadro 15 na página 39"
+      },
+      "issues": [
+        "Divergência interna no PCDT: a seção 8.9 contraindica sulfonilureias com TFG menor que 30 mL/min/1,73 m²; a seção 8.3.2 admite considerar gliclazida MR abaixo desse valor, com cautela e redução. O Doser preserva ambos os trechos e não resolve essa divergência nem sugere ajuste renal. A seção 8.3.2 também contém orientações conflitantes sobre duração de ação em idosos. Confira o documento e a bula com o profissional responsável."
+      ]
+    },
+    {
+      "id": "pcdt-dm2-gliclazida",
+      "documentId": "diabetes2",
+      "subject": "Diabete melito tipo 2 — gliclazida",
+      "ingredients": [
+        "gliclazida"
+      ],
+      "scope": "Referência por princípio ativo em adultos com DM2 diagnosticado. As apresentações citadas pertencem ao protocolo e não confirmam a apresentação ou a bula deste registro. Critérios, função renal, comorbidades e avaliação profissional condicionam o uso.",
+      "presentations": [
+        "Gliclazida de liberação prolongada (MR) — comprimidos de 30 mg e 60 mg"
+      ],
+      "facts": {
+        "indications": {
+          "text": "Pessoas com idade igual ou superior a 18 anos e diagnóstico confirmado de diabete melito tipo 2, segundo os critérios do PCDT.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=12",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 12 do PDF · Critérios de inclusão"
+          }
+        },
+        "precautions": {
+          "text": "As sulfoniluréias são secretagogos de insulina. Geralmente indicada como associação a\noutros agentes hipoglicemiantes, em especial ao cloridrato de metformina, quando for necessária\na intensificação terapêutica para controle glicêmico. Esta classe medicamentosa promove a\nliberação de insulina a partir das células beta pancreáticas, o que também aumenta o risco de\nhipoglicemia. A glibenclamida e a gliclazida são as sulfonilureias disponíveis no SUS. A\ngliclazida de liberação prolongada (MR) (30 e 60 mg/dia, com uso uma vez ao dia e dose máxima\nde 120 mg/dia), e glibenclamida (5 mg/dia, com uso uma a duas vezes ao dia e dose máxima de\n20 mg/dia) possuem eficácia similares. Contudo, a gliclazida liberação pronlongada está\nassociada a uma menor taxa de hipoglicemia, sendo preferível em pacientes com episódios de\nhipoglicemia recorrente ou risco aumentado de hipoglicemia101.\n        As sulfoniluréias são altamente eficazes, levando a uma redução de glicemia de jejum em\n60 mg/dL a 70 mg/dL e de HbA1c em 1,5% a 2,0%. Entretanto, apresentam risco significativo de\nhipoglicemia (especialmente a glibenclamida), além de ganho de peso. São contraindicadas se\nhouver TFG < 30 mL/min/1,73 m² (gliclazida Modified Realease – liberação modificada) pode\nser considerada em pessoas com DM2 e DRD, com TFG menor que 30 mL/min/1,73m2 desde\nque haja muita cautela e em doses reduzidas), insuficiência hepática, sinais de deficiência grave\nde insulina, infecções graves, gestação99,100. A gliclazida MR pode ser utilizada em pacientes com\ninsuficiência renal leve a moderada, sob monitoramento cauteloso. Assim como o cloridrato de\nmetformina, na maioria das vezes, não devem ser usadas em pacientes internados.\n        Embora associadas a eventos hipoglicêmicos, são medicamentos bem tolerados, possuem\nbaixo custo e segurança cardiovascular. Para pacientes idosos, recomenda-se utilizar\npreferencialmente gliclazida, visando a diminuição do risco de hipoglicemia102. Nas pessoas\nidosas, as sulfonilureias de ação curta devem ser evitadas, além das sulfonilureias de ação\nprolongada, devido ao maior risco de hipoglicemia e de mortalidade cardiovascular e por todas\nas causas em idosos. Nas circunstâncias em que for usada uma sulfonilureia, as formas de ação\ncurta são preferidas às de ação prolongada, para reduzir o risco de hipoglicemia prolongada103.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=24",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 24 do PDF · Seção 8.3 — trecho completo sobre o medicamento/classe"
+          }
+        },
+        "contraindications": {
+          "text": "Sulfonilureias — glibenclamida e gliclazida: gravidez, lactantes,\n                         insuficiência renal (TFG menor que 30 mL/min/1,73 m2); infecção grave\n                         ou insuficiência hepática. Além disso, glibenclamida não é recomendada\n                         para pacientes com idade superior ou igual a 60 anos.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=40",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 40 do PDF · Seção 8.9 — Contraindicações"
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "pcdt-dm2-adultos",
+          "presentation": "Gliclazida de liberação prolongada (MR) — comprimidos de 30 mg e 60 mg",
+          "population": "Adultos com diagnóstico confirmado de diabete melito tipo 2 — critérios do PCDT",
+          "dose": "30 mg ou 60 mg/dia para a formulação MR, conforme seção 8.3.2 e Quadro 15.",
+          "doseBasis": "per-day",
+          "interval": "Uma vez ao dia para a formulação MR. Não transpor para o comprimido convencional de 80 mg.",
+          "age": "Idade igual ou superior a 18 anos, conforme critérios de inclusão do PCDT. Não é idade mínima regulatória do medicamento.",
+          "route": "Esquema de antidiabético oral do protocolo",
+          "maxDaily": "120 mg/dia para a formulação MR",
+          "conditions": "As sulfoniluréias são secretagogos de insulina. Geralmente indicada como associação a\noutros agentes hipoglicemiantes, em especial ao cloridrato de metformina, quando for necessária\na intensificação terapêutica para controle glicêmico. Esta classe medicamentosa promove a\nliberação de insulina a partir das células beta pancreáticas, o que também aumenta o risco de\nhipoglicemia. A glibenclamida e a gliclazida são as sulfonilureias disponíveis no SUS. A\ngliclazida de liberação prolongada (MR) (30 e 60 mg/dia, com uso uma vez ao dia e dose máxima\nde 120 mg/dia), e glibenclamida (5 mg/dia, com uso uma a duas vezes ao dia e dose máxima de\n20 mg/dia) possuem eficácia similares. Contudo, a gliclazida liberação pronlongada está\nassociada a uma menor taxa de hipoglicemia, sendo preferível em pacientes com episódios de\nhipoglicemia recorrente ou risco aumentado de hipoglicemia101.\n        As sulfoniluréias são altamente eficazes, levando a uma redução de glicemia de jejum em\n60 mg/dL a 70 mg/dL e de HbA1c em 1,5% a 2,0%. Entretanto, apresentam risco significativo de\nhipoglicemia (especialmente a glibenclamida), além de ganho de peso. São contraindicadas se\nhouver TFG < 30 mL/min/1,73 m² (gliclazida Modified Realease – liberação modificada) pode\nser considerada em pessoas com DM2 e DRD, com TFG menor que 30 mL/min/1,73m2 desde\nque haja muita cautela e em doses reduzidas), insuficiência hepática, sinais de deficiência grave\nde insulina, infecções graves, gestação99,100. A gliclazida MR pode ser utilizada em pacientes com\ninsuficiência renal leve a moderada, sob monitoramento cauteloso. Assim como o cloridrato de\nmetformina, na maioria das vezes, não devem ser usadas em pacientes internados.\n        Embora associadas a eventos hipoglicêmicos, são medicamentos bem tolerados, possuem\nbaixo custo e segurança cardiovascular. Para pacientes idosos, recomenda-se utilizar\npreferencialmente gliclazida, visando a diminuição do risco de hipoglicemia102. Nas pessoas\nidosas, as sulfonilureias de ação curta devem ser evitadas, além das sulfonilureias de ação\nprolongada, devido ao maior risco de hipoglicemia e de mortalidade cardiovascular e por todas\nas causas em idosos. Nas circunstâncias em que for usada uma sulfonilureia, as formas de ação\ncurta são preferidas às de ação prolongada, para reduzir o risco de hipoglicemia prolongada103.\n\nSeção 8.9 — contraindicações: Sulfonilureias — glibenclamida e gliclazida: gravidez, lactantes,\n                         insuficiência renal (TFG menor que 30 mL/min/1,73 m2); infecção grave\n                         ou insuficiência hepática. Além disso, glibenclamida não é recomendada\n                         para pacientes com idade superior ou igual a 60 anos.",
+          "source": {
+            "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+            "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=24",
+            "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+            "checkedAt": "2026-10-20",
+            "status": "validated",
+            "kind": "guideline",
+            "locator": "Página 24 do PDF · Seção 8.3; apresentações na página 37; Quadro 15 na página 39"
+          }
+        }
+      ],
+      "source": {
+        "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
+        "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf#page=24",
+        "version": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09",
+        "checkedAt": "2026-10-20",
+        "status": "validated",
+        "kind": "guideline",
+        "locator": "Página 24 do PDF · Seção 8.3; apresentações na página 37; Quadro 15 na página 39"
+      },
+      "issues": [
+        "Divergência interna no PCDT: a seção 8.9 contraindica sulfonilureias com TFG menor que 30 mL/min/1,73 m²; a seção 8.3.2 admite considerar gliclazida MR abaixo desse valor, com cautela e redução. O Doser preserva ambos os trechos e não resolve essa divergência nem sugere ajuste renal. A seção 8.3.2 também contém orientações conflitantes sobre duração de ação em idosos. Confira o documento e a bula com o profissional responsável."
+      ]
+    }
+  ],
+  "evidence": {
+    "hipertensao": {
+      "51": "leite materno é muito baixa 6. Em puérperas, recomenda-se priorizar o uso de nifedipino (ou\nbesilato de anlodipino para mulheres que já fizerem seu uso) 131. O uso de clonidina e atenolol é\ncontraindicado devido à grande excreção no leite, assim como o uso de BRA devido à ausência\nde estudos suficientes para aprová-lo em lactantes 6.\n\n\n1.1.1.6.       População preta\n\n        Estudos demonstram que pessoas adultas pretas hipertensas tendem a ter menor resposta\nà monoterapia com IECA ou BRA, medicamentos que atuam na via renina-angiotensina-\naldosterona 132. Por essa razão, as diretrizes sugerem priorizar outras classes de anti-hipertensivos\nem vez de IECA ou BRA como medicamentos de primeira escolha em monoterapia para esse\ngrupo populacional 6,26,28–30 Nesses casos, os diuréticos tiazídicos são considerados a primeira\nopção terapêutica, podendo ser utilizados isoladamente ou em associação com bloqueadores dos\ncanais de cálcio, especialmente em esquemas de terapia combinada 17.\n\n\n                      v. Medicamentos\n\n              Atenolol: comprimidos de 50 mg e 100 mg;\n              Besilato de anlodipino: comprimidos de 5 mg e 10 mg;\n              Captopril: comprimidos de 25 mg;\n              Carvedilol: comprimidos de 3,125 mg, 6,25 mg, 12,5 mg e 25 mg;\n              Cloridrato de hidralazina: comprimidos de 25 mg e 50 mg;\n              Cloridrato de propranolol: comprimidos de 10 mg e 40 mg;\n              Cloridrato de verapamil: comprimidos de 80 mg e 120 mg; solução injetável de 2,5\n               mg/mL.\n              Espironolactona: comprimidos de 25 mg e 100 mg;\n              Furosemida: comprimidos de 40 mg e solução injetável de 10 mg/mL;\n              Hidroclorotiazida: comprimidos de 12,5 mg e 25 mg;\n              Losartana potássica: comprimidos de 50 mg;\n              Maleato de enalapril: comprimidos de 5 mg, 10 mg e 20 mg;\n              Mesilato de doxazosina: comprimidos de 2 mg e 4 mg;\n              Metildopa: comprimidos de 250 mg;\n              Nifedipino: cápsulas ou comprimidos de 10 mg;\n              Succinato de metoprolol: comprimidos de liberação prolongada de 25 mg, 50 mg e\n               100 mg;\n              Tartarato de metoprolol: comprimidos de 100 mg;\n\n\n        Nota: Estão disponíveis por meio do Programa “Aqui Tem – Farmácia Popular” 133 os\nseguintes medicamentos para o tratamento da HAS: atenolol: comprimidos de 25 mg; besilato de\nanlodipino: comprimidos de 5 mg; captopril: comprimidos de 25 mg; cloridrato de propranolol:\ncomprimidos de 40mg; espironolactona: comprimidos de 25 mg; furosemida: comprimidos de 40\nmg; hidroclorotiazida: comprimidos de 25mg; losartana potássica: comprimidos de 50mg;\nmaleato de enalapril: comprimidos de 10mg; e succinato de metoprolol: comprimidos de liberação\nprolongada de 25 mg.\n\n\n\n\n                                                                                                  51\n",
+      "52": "                    vi. Esquemas de administração\n\n       Os esquemas de administração, via oral, segundo a classe terapêutica, estão descritos nos\nQuadro 18 (tratamento de adultos) e Quadro 19 (tratamento de crianças e adolescentes).\n\n\nQuadro 18. Esquemas de administração dos medicamentos disponíveis no SUS para tratamento\nda HAS em adultos.\n\n                                                    Dose diária    Dose diária\n                                                                                  Frequência\n   Classe terapêutica          Medicamento           habitual       máxima\n                                                                                    diária a\n                                                       (mg)           (mg)\n  Inibidores da enzima           Captopril           25 a 150          250            2a3\n      conversora de\n                            Maleato de enalapril       5 a 40          40             1a2\n       angiotensina\n Bloqueador do receptor\n                            Losartana potássica      50 a 100          100            1a2\n    de angiotensina\n                                Besilato de\n                                                      2,5 a 10         10               1\n                                anlodipino\n Bloqueadores do Canal\n                                Nifedipino            10 a 60          60             1a3\n       de Cálcio\n                               Cloridrato de\n                                                     120 a 360         480            1a2\n                                 verapamil\n  Betabloqueadores não         Cloridrato de\n                                                     80 a 320          640            2a3\n    cardiosseletivos           propranolol\n                                  Atenolol           50 a 100          100            1a2\n                                 Carvedilol          12,5 a 50          50            1a2\n    Betabloqueadores\n                               Succinato ou\n     cardiosseletivos\n                                tartarato de         50 a 200          200            1a2\n                                metoprolol\n   Diuréticos tiazídicos     Hidroclorotiazida        25 a 50          200            1a2\n                                                                        b\n    Diurético de alça          Furosemida             20 a 80                         1a3\n  Diurético poupador de\n                              Espironolactona        25 a 100          200            1a2\n         potássio\n  Simpatolítico de ação\n                                 Metildopa          500 a 2000         3g             2a3\n          central\n                               Mesilato de\n     Alfabloqueador                                   1 a 16           16               1\n                                doxazosina\n                               Cloridrato de\n   Vasodilatador direto                             50 a 200          200             2a3\n                                hidralazina\nNota: a - Quando houver múltiplas administrações ao dia, a dose habitual diária deve ser dividida\npela quantidade de administrações. b – depende da resposta do paciente.\nFonte: Adaptado de Barroso et al. (2021) 6.\n\n\n\n\n                                                                                              52\n",
+      "53": "Quadro 19. Esquemas de administração dos medicamentos disponíveis no SUS para tratamento\nda HAS em crianças e adolescentes.\n\n     Classe terapêutica        Medicamento                 Esquemas de administração\n                                                   Inicial: 0,3 a 0,5 mg/kg/dose (três vezes/dia)\n     Inibidores da enzima         Captoprila\n                                                                Máximo: 6 mg/kg/dia\n         conversora de\n                                 Maleato de           Inicial: 0,08 mg/kg/dia (duas vezes/dia)\n     angiotensina – IECA\n                                 enalaprila            Máximo: 0,6 mg/kg/dia ou 40 mg/dia\n    Bloqueador do receptor\n                                  Losartana                 Inicial: 0,7 mg/kg/dia\n     de angiotensina II –\n                                  potássicaa          Máximo: 1,4 mg/kg/dia ou 100 mg/dia\n            BRA\n                                 Besilato de                   Inicial: 0,1 mg/kg/dia\n    Bloqueadores do Canal        anlodipinoa         Máximo: 0,6 mg/kg/dia ou 10 mg/dia\n       de Cálcio - BCC                                    Inicial: 0,04 a 0,25 mg/kg/dia\n                              Nifedipinoa\n                                                             Máximo: 1 a 2 mg/kg/dia\n                                                                Inicial: 1 mg/kg/dia\n        Diurético          Hidroclorotiazida\n                                                       Máximo: 3 mg/kg/dia ou 50 mg/dia\n                                                            Inicial: 0.5 a 1 mg/kg/dose\n                               Atenolola\n                                                      Máximo: 2 mg/kg/dia ou 100 mg/dia\n  Beta Bloqueadores –        Succinato de                     Inicial: 1 a 2 mg/kg/dia\n           BB                 metoprolola             Máximo: 6 mg/kg/dia ou 200 mg/dia\n                             Cloridrato de                    Inicial: 1 a 2 mg/kg/dia\n                                          a\n                              propranolol             Máximo: 4 mg/kg/dia ou 640 mg/dia\nFonte: Traduzido e adaptado de Siddiqui et al. (2020) 37.\n       Nota: a Aprovado para uso adulto, mas com relatos de uso pediátrico.\n\n\n                    vii. Contraindicações\n\n\n\n        Além de hipersensibilidade ao fármaco ou qualquer componente da fórmula, as\ncontraindicações de uso dos medicamentos preconizados por este Protocolo são:\n\n     Besilato de anlodipino: não deve ser utilizado por mulheres grávidas sem orientação médica.\n     Nifedipino: casos de choque cardiovascular; gravidez antes da 20ª semana de gestação e\n      durante a amamentação. Não deve ser usado em associação com a rifampicina, pois, devido\n      à indução enzimática, o nifedipino pode não atingir níveis plasmáticos eficazes.\n     Atenolol: bradicardia, choque cardiogênico, hipotensão, acidose metabólica, distúrbios\n      graves da circulação arterial periférica, bloqueio cardíaco de segundo ou terceiro grau,\n      síndrome do nodo sinusal, feocromocitoma não tratado, insuficiência cardíaca\n      descompensada.\n     Carvedilol: insuficiência cardíaca descompensada/instável, que exija terapia inotrópica\n      intravenosa; insuficiência hepática clinicamente manifesta; asma brônquica ou doença\n      pulmonar obstrutiva crônica com componente broncoespástico; bloqueio atrioventricular de\n      segundo ou terceiro grau (a menos que o paciente tenha um marca-passo permanente);\n      bradicardia grave (< 50 batimentos por minuto); síndrome do nó sinusal (incluindo bloqueio\n      sinoatrial); choque cardiogênico; hipotensão grave (pressão arterial sistólica < 85 mmHg);\n      pessoas com insuficiência de sacarose-isomaltase.\n     Succinato de metoprolol: hipersensibilidade a outros betabloqueadores, Bloqueio\n      atrioventricular de grau II ou de grau III, pacientes com insuficiência cardíaca não\n      compensada instável (edema pulmonar, hipoperfusão ou hipotensão), e pacientes com terapia\n\n\n\n                                                                                                53\n",
+      "54": "    inotrópica contínua ou intermitente agindo por meio de agonista do receptor beta, bradicardia\n    sinusal clinicamente relevante, síndrome do nó sino-atrial (a não ser que um marcapasso\n    permanente esteja em uso), choque cardiogênico e arteriopatia periférica grave. O metoprolol\n    não deve ser administrado em pacientes com suspeita de infarto agudo do miocárdio,\n    enquanto a frequência cardíaca for < 45 batimentos/minuto, o intervalo PQ for > 0,24\n    segundos ou a pressão sistólica for < 100 mmHg.\n   Tartarato de metoprolol: hipersensibilidade a outros betabloqueadores, Bloqueio\n    atrioventricular de grau II ou III insuficiência cardíaca não compensada; Bradicardia sinusal\n    clinicamente relevante (frequência cardíaca menor que 45 a 50 batimentos por minuto);\n    Doença do nó sinusal; Distúrbios circulatórios arteriais periféricos graves; Choque\n    cardiogênico; Feocromocitoma não tratado; Hipotensão; Asma brônquica grave ou história\n    de broncoespasmo grave; Infarto do miocárdio com frequência cardíaca menor que 45 a 50\n    batimentos por minuto, intervalo P-R maior que 0,24 segundos, pressão sistólica menor que\n    100 mmHg e/ou insuficiência cardíaca grave.\n   Cloridrato de propranolol: hipotensão; bradicardia; distúrbios graves da circulação arterial\n    periférica; síndrome do nó sinoatrial; feocromocitoma não tratado (com um antagonista do\n    receptor alfa-adrenérgico); insuficiência cardíaca descompensada; angina de Prinzmetal;\n    choque cardiogênico; acidose metabólica; pacientes com predisposição à hipoglicemia, isto\n    é, após jejum prolongado ou pacientes com reservas contrarregulatórias restritas; bloqueio\n    cardíaco de segundo ou terceiro grau; histórico de asma brônquica ou broncoespasmo.\n   Captopril: hipersensibilidade a outro inibidor da IECA; não deve ser utilizado por mulheres\n    grávidas sem orientação médica.\n   Maleato de enalapril: pacientes com histórico de edema angioneurótico relacionado a\n    utilização de inibidores da enzima conversora de angiotensina e pacientes com angioedema\n    hereditário ou idiopático. Não deve ser administrado com alisquireno em pacientes com\n    diabetes. É contraindicado em combinação com um inibidor de neprilisina (por exemplo,\n    sacubitril), devendo ser administrado 36 horas antes ou depois de utilizar sacubitril valsartana.\n   Mesilato de doxazosina: hipersensibilidade a outros tipos de quinazolinas (por exemplo,\n    prazosina, terazosina), história de hipotensão ortostática, hiperplasia prostática benigna e\n    congestão concomitante do trato urinário superior, infecção crônica do trato urinário ou\n    cálculos na bexiga, pacientes com histórico de obstrução gastrointestinal, obstrução esofágica\n    ou qualquer grau de diminuição do diâmetro do lúmen do trato gastrointestinal. Está\n    contraindicado como monoterapia em pacientes com transbordamento da bexiga ou anúria\n    com ou sem insuficiência renal progressiva.\n   Espironolactona: insuficiência renal aguda, diminuição significativa da função renal, anúria;\n    doença de Addison; hipercalemia; uso concomitante de eplerenona.\n   Furosemida: lactantes, pacientes com insuficiência renal com anúria, pré-coma e coma\n    associado à encefalopatia hepática, hipopotassemia severa, hiponatremia severa, hipovolemia\n    (com ou sem hipotensão) ou desidratação, hipersensibilidade às sulfonamidas. Não deve ser\n    usado por pessoas com síndrome de má-absorção de glicose-galactose.\n   Cloridrato de hidralazina: lúpus eritematoso sistêmico idiopático e doenças correlatas,\n    taquicardia grave e insuficiência cardíaca com alto débito cardíaco (por exemplo, em\n    tireotoxicose), insuficiência do miocárdio devido à obstrução mecânica (por exemplo, em\n    estenose aórtica ou mitral e na pericardite constritiva); insuficiência cardíaca isolada do\n    ventrículo direito devido à hipertensão pulmonar (cor pulmonale); e aneurisma dissecante da\n    aorta.\n   Hidroclorotiazida: comprometimento grave da função renal (depuração da creatinina abaixo\n    de 30 mL/min), com distúrbio hepático grave, icterícia em crianças, com distúrbio grave do\n    equilíbrio de eletrólitos, anúria. Não deve ser usado por pessoas com síndrome de má-\n    absorção de glicose-galactose.\n\n\n\n                                                                                                  54\n",
+      "55": "     Losartana potássica: insuficiência hepática grave. O uso concomitante com produtos\n      contendo alisquireno é contraindicado em pacientes com diabetes e insuficiência renal (TGF\n      < 60 mL/min/1,73m2). O medicamento não deve ser administrado durante o segundo ou o\n      terceiro trimestre de gestação.\n     Metildopa: hepatopatias ativas, tais como hepatite aguda e cirrose ativa; tratamento com\n      inibidores da monoaminoxidase (MAO).\n     Cloridrato de verapamil: choque cardiogênico; bloqueio atrioventricular de segundo ou\n      terceiro grau (exceto em pacientes com marcapasso artificial em funcionamento); síndrome\n      do nódulo sinusal (exceto em pacientes com marcapasso artificial em funcionamento);\n      insuficiência cardíaca com fração de ejeção menor que 35 % e/ou pressão pulmonar acima de\n      20 mmHg (a não ser que secundário para taquicardia supraventricular sensível ao tratamento\n      com verapamil); “flutter” ou fibrilação atrial na presença de feixes de condução acessórios\n      (ou seja, síndrome de WolffParkinson-White e Lown-Ganong-Levine).\n\n                    viii. Critérios de interrupção\n\n       O tratamento medicamentoso pode ser interrompido em situações específicas, a critério\nmédico, considerando efetividade ou segurança subótima.\n        Para interrupção de uso de betabloqueadores, recomenda-se a retirada gradual (em duas\na quatro semanas) para evitar taquicardia reflexa e mal-estar 6.\n\n\n11.           ADESÃO TERAPÊUTICA\n\n         Apesar da eficácia comprovada do tratamento, o controle dos níveis da PA ainda é pouco\nsatisfatório, tanto em países de alta renda (com taxas de controle da PA de 50% a 58% para\nmulheres e 48% a 69% para homens, respectivamente) 134, e países de baixa renda (com taxas de\ncontrole menor que 10%) 134. Dados nacionais mostram que as taxas de controle da HAS têm\nampla variação e encontram-se entre 10% e 50% 135–137. Os índices de não adesão são variados,\ncom taxas de 8,2% a 74,9%, dependendo da forma de avaliação 6.\n        Diversos fatores podem influenciar o controle da HAS, embora a falta de adesão ao\ntratamento seja o mais frequente 6,28. A adesão ao tratamento no contexto das doenças crônicas\nnão transmissíveis corresponde ao grau em que o comportamento de uma pessoa atende às\nrecomendações relacionadas ao tratamento medicamentoso ou não medicamentoso, estabelecidas\ncom o profissional de saúde 138.\n        A adesão terapêutica pode ser definida como um processo caracterizado por três grandes\ncomponentes: o início, a implementação e a descontinuação. O início é o tempo desde a prescrição\naté a administração da primeira dose do medicamento. Já a implementação corresponde à\ncoincidência entre a dose que o paciente utiliza e a prescrita, enquanto a descontinuação marca a\ninterrupção, quando a próxima dose a ser administrada é omitida e o tratamento é interrompido\nposteriormente. Nesse contexto, a persistência ao tratamento é estabelecida pelo período entre a\nsua iniciação e a interrupção 139. Promover a adesão terapêutica ainda é um grande desafio no\ntratamento da HAS 140.\n           Devido à sua multidimensionalidade, a adesão ao tratamento anti-hipertensivo é\nprocessual e influenciada por múltiplos fatores, que podem ser divididos em cinco dimensões 6,\n19,28,140–148\n             .\n\n              Socioeconômica: sexo, idade, escolaridade, renda, acesso a transporte, distância aos\n               serviços de saúde, moradia em zona rural e situações de desastres e pandemia.\n\n\n                                                                                                  55\n"
+    },
+    "diabetes2": {
+      "12": "        Para indivíduos com idade menor ou igual a 39 anos e maior ou igual a 75 anos, a\navaliação do risco cardiovascular deve ser individualizada com recomendação da adoção do\nautocuidado apoiado, da alimentação adequada e saudável, da prática regular de atividade física,\nda cessação do tabagismo e da redução do consumo de álcool. Em indivíduos com idade menor\nou igual a 39 anos deve-se considerar de alto risco aqueles com nefropatia ou retinopatia. No caso\nde indivíduos que vivem com DM1, deve-se avaliar o risco cardiovascular de forma\nindividualizada, preferencialmente, em conjunto com a atenção especializada26.\n        Ressalta-se que a estratificação de risco cardiovascular não altera a conduta terapêutica\npara DM2. No entanto, visando à integralidade do cuidado, recomenda-se a estratificação do\npaciente para apoiar a tomada de decisão quanto ao tratamento de outras comorbidades\nassociadas, como a prevenção e tratamento de dislipidemias, conforme estabelecido no respectivo\nProtocolo Clínico e Diretrizes Terapêuticas vigente. Essa abordagem também contribui para a\nadequada organização do cuidado e definição das estratégias de acompanhamento26,42,43.\n\n\n6. CRITÉRIOS DE INCLUSÃO\n\n\n       Devem ser incluídos nesse PCDT todos os indivíduos com idade igual ou superior a 18\nanos e com diagnóstico confirmado de DM2, com ou sem complicações microvasculares ou\nmacrovasculares.\n        Para a realização do rastreamento e confirmação diagnóstica, devem ser incluídos os\nindivíduos que apresentarem os respectivos critérios de rastreamento e diagnóstico.\n        Para que o paciente seja elegível ao tratamento com dapagliflozina, requer-se o\ndiagnóstico de DM2, com necessidade de segunda intensificação de tratamento e um dos\nseguintes critérios:\n\n           Ter 40 anos ou mais e doença cardiovascular estabelecida (infarto agudo do\n            miocárdio prévio, cirurgia de revascularização do miocárdio prévia, angiosplastia\n            prévia das coronárias, angina estável ou instável, acidente vascular cerebral\n            isquêmico prévio, ataque isquêmico transitório prévio, e insuficiência cardíaca com\n            fração de ejeção abaixo de 40%), ou;\n           Ter 55 anos ou mais (no caso de homens) ou ter 60 anos ou mais (no caso de\n            mulheres) e alto risco de desenvolver doença cardiovascular, definido como ao menos\n            um dos seguintes fatores de risco cardiovascular: hipertensão arterial sistêmica,\n            dislipidemia ou tabagismo.\n\n\n        NOTAS:\n        Gestantes com DM2 pré-gestacional também são contempladas por este Protocolo.\n        Pacientes com DM2 em cetoacidose diabética ou coma hiperosmolar não são incluídos\nneste Protocolo, uma vez que o cuidado destes pacientes deve ser conduzido de acordo com\nprotocolos de urgência. Após a alta, estes pacientes poderão ser reincluídos ou permanecerão\nneste Protocolo.\n\n\n\n\n                                                                                               12\n",
+      "23": "8.3.1.   Cloridrato de metformina\n\n\n        O cloridrato de metformina é indicado como primeira opção terapêutica no tratamento de\npacientes com DM2, como forma de melhorar o controle da glicemia e prevenir complicações.\nPertence à classe das biguanidas e reduz a glicose por múltiplos mecanismos, entre eles a\ndiminuição da produção hepática de glicose e aumento da captação muscular de glicose95.\n        Sugere-se iniciar o tratamento com doses baixas (500 mg ou 850 mg), em dose única\ndiária, durante ou após as refeições (café da manhã ou jantar), para prevenir sintomas\ngastrointestinais. Após 5 a 7 dias, caso não surjam eventos adversos, pode-se aumentar para 500\nmg ou 850 mg, duas vezes ao dia, durante ou após as refeições (café da manhã e jantar). Na\npresença de efeitos gastrointestinais, a dose poderá ser diminuída e, após 3 a 6 meses, conforme\nnecessidade, uma nova tentativa de aumentá-la poderá ser realizada. A dose máxima terapêutica\né de 850 mg no café, almoço e jantar, totalizando 2.550 mg por dia (dose máxima efetiva).\n        Em indivíduos idosos, também é considerada o medicamento de primeira escolha, pois\napresenta boa eficácia e segurança, baixo risco de hipoglicemia, além de trazer benefícios na\nredução do risco cardiovascular96.\n        Em geral, o medicamento é seguro e bem tolerado. Contudo, é contraindicado em\npacientes com insuficiência renal (TFG menor que 30 mL/min/1,73 m2)97 ou qualquer situação de\nmaior risco de hiperlactatemia, como insuficiência hepática descompensada, sepse e hipotensão.\nNa maioria das vezes, o uso de cloridrato de metformina deve ser suspenso em caso de internação\nhospitalar. O cloridrato de metformina deve ser mantida quando o paciente inicia o uso de\ninsulina, a fim de manter seus benefícios glicêmicos e metabólicos, a não ser que tenha alguma\ncontraindicação ou efeito adverso que não seja tolerado92,93. Nas pessoas idosas, desconforto\ngastrointestinal, sensação de boca metálica, náuseas, diarreia e emagrecimento progressivo\npodem ser efeitos adversos comuns e potencialmente severos. Nesses casos, considerar a\nsubstituição por formulações de liberação prolongada ou a desprescrição em caso de intolerância\nsevera especialmente se associada a risco nutricional98.\n        Não se deve usar mais de 1 g/dia em pessoas com TFG 30 a 45 mL/min/1.73 m² e deve\nser suspensa quando TFG < 30 mL/min/1.73 m². É um medicamento altamente eficaz, reduzindo\nHbA1c em 1,5% a 2% e glicemia de jejum em 60 mg/dL a 70 mg/dL, com baixo risco de\nhipoglicemia, sem associação com ganho de peso e baixo custo99,100.\n        Seus potenciais eventos adversos são99: Gastrointestinais: diarréia, náuseas, vômitos,\nhipermeteorismo, dor abdominal, distensão abdominal, constipação, dispepsia, alteração de\npaladar, flatulências; deficiência de vitamina B12; acidose láctica (rara).\n        A versão de liberação estendida reduz o risco de eventos adversos gastrointestinais e\ngeralmente é mais bem tolerada, estando disponível no programa Farmácia Popular do Brasil\n(PFPB). O início em dose baixa, com titulação progressiva, reduz o risco desses eventos adversos.\nO cloridrato de metformina é contraindicado se houver sensibilidade ao medicamento, doença\nrenal com TFG < 30 mL/min/1,73 m², insuficiência cardíaca congestiva, alcoolismo, sepse ou\noutros quadros clínicos graves, doença hepática grave ou lactação99,100.\n\n\n\n\n                                                                                              23\n",
+      "24": "8.3.2.   Sulfoniluréias\n\n\n         As sulfoniluréias são secretagogos de insulina. Geralmente indicada como associação a\noutros agentes hipoglicemiantes, em especial ao cloridrato de metformina, quando for necessária\na intensificação terapêutica para controle glicêmico. Esta classe medicamentosa promove a\nliberação de insulina a partir das células beta pancreáticas, o que também aumenta o risco de\nhipoglicemia. A glibenclamida e a gliclazida são as sulfonilureias disponíveis no SUS. A\ngliclazida de liberação prolongada (MR) (30 e 60 mg/dia, com uso uma vez ao dia e dose máxima\nde 120 mg/dia), e glibenclamida (5 mg/dia, com uso uma a duas vezes ao dia e dose máxima de\n20 mg/dia) possuem eficácia similares. Contudo, a gliclazida liberação pronlongada está\nassociada a uma menor taxa de hipoglicemia, sendo preferível em pacientes com episódios de\nhipoglicemia recorrente ou risco aumentado de hipoglicemia101.\n        As sulfoniluréias são altamente eficazes, levando a uma redução de glicemia de jejum em\n60 mg/dL a 70 mg/dL e de HbA1c em 1,5% a 2,0%. Entretanto, apresentam risco significativo de\nhipoglicemia (especialmente a glibenclamida), além de ganho de peso. São contraindicadas se\nhouver TFG < 30 mL/min/1,73 m² (gliclazida Modified Realease – liberação modificada) pode\nser considerada em pessoas com DM2 e DRD, com TFG menor que 30 mL/min/1,73m2 desde\nque haja muita cautela e em doses reduzidas), insuficiência hepática, sinais de deficiência grave\nde insulina, infecções graves, gestação99,100. A gliclazida MR pode ser utilizada em pacientes com\ninsuficiência renal leve a moderada, sob monitoramento cauteloso. Assim como o cloridrato de\nmetformina, na maioria das vezes, não devem ser usadas em pacientes internados.\n        Embora associadas a eventos hipoglicêmicos, são medicamentos bem tolerados, possuem\nbaixo custo e segurança cardiovascular. Para pacientes idosos, recomenda-se utilizar\npreferencialmente gliclazida, visando a diminuição do risco de hipoglicemia102. Nas pessoas\nidosas, as sulfonilureias de ação curta devem ser evitadas, além das sulfonilureias de ação\nprolongada, devido ao maior risco de hipoglicemia e de mortalidade cardiovascular e por todas\nas causas em idosos. Nas circunstâncias em que for usada uma sulfonilureia, as formas de ação\ncurta são preferidas às de ação prolongada, para reduzir o risco de hipoglicemia prolongada103.\n\n\n8.3.3.   Inibidores do cotransportador sódio-glicose 2 (iSGLT2)\n\n\n        Essa classe de medicamentos está indicada em associação ao cloridrato de metformina ou\na outros hipoglicemiantes. Os iSGLT2 agem principalmente diminuindo a reabsorção renal de\nglicose, consequentemente aumentando a excreção urinária, favorecendo a redução da glicemia\nindependentemente da secreção endógena ou da ação da insulina, além de perda de peso104.\n        Esses medicamentos inibem a absorção de glicose e sódio no túbulo proximal por meio\nda inibição do SGLT2, levando à glicosúria e natriurese99,100. Essa classe de medicamentos leva\na uma redução de glicemia de jejum de 30 mg/dL e da HbA1c de 0,5% a 1,0%. Em pessoas com\ndoença cardiovascular, há redução de eventos cardiovasculares e de mortalidade cardiovascular,\nredução de hospitalização ou descompensação da insuficiência cardíaca. Os iSGLT2 raramente\ncausam hipoglicemia e levam a uma redução discreta de peso e da pressão arterial. Nos pacientes\ncom DM2, têm benefícios na preservação de função renal99,100. Adultos com DM2 que apresentam\ndiagnóstico simultâneo com doença renal crônica (DRC) crônica105 ou insuficiência cardíaca106\ndevem ser assistidos também conforme recomendação dos respectivos Protocolos vigentes.\n       O medicamento da classe dos iSGLT2 disponibilizado pelo SUS para a intensificação do\ntratamento é a dapagliflozina. O uso da dapagliflozina é recomendado para DM2, em indivíduos\n\n\n\n                                                                                               24\n",
+      "37": "         A avaliação neurológica visa a identificação da perda de sensibilidade protetora e inclui\ntestes com monofilamento de 10 g, diapasão de 128 Hz, teste de sensação tátil (percepção de\npicada) e reflexo Aquileu. Para tal avaliação, recomenda-se realizar ao menos dois desses testes,\nsendo um deles o do monofilamento e o outro à escolha do profissional e conforme disponível\npara a equipe de saúde, sendo preferencial como segundo o diapasão. Deve-se proceder com as\ndevidas avaliações, a partir dos aspectos citados anteriormente e do uso de ferramentas e escalas\nde classificação, como de estratificação de risco do pé e intervalo de seguimento, o cálculo do\nÍndice Tornozelo-Braquial para avaliação de doença arterial periférica, o escore Site, Ischemia,\nNeuropathy, Bacterial infection, Area, Depth (SINBAD) para avaliar a gravidade de feridas, o\nsistema Wound, Ischemia, Foot Infection (WIFI) para avaliar o risco de amputação em um ano\n142–145\n       .\n\n\n8.6. Cuidado farmacêutico\n\n\n        Ressalta-se a importância do acompanhamento dos usuários em relação ao uso dos\nmedicamentos preconizados neste PCDT para que alcancem os resultados positivos em relação à\nefetividade do tratamento e para monitorar o surgimento de problemas relacionados à segurança.\nNesse aspecto, a prática do Cuidado Farmacêutico, por meio de orientação, educação em saúde e\nacompanhamento contínuo, contribui diretamente para o alcance dos melhores resultados em\nsaúde, ao incentivar o uso apropriado dos medicamentos que sejam indicados, seguros e efetivos,\nao estimular a adesão ao tratamento, ao fornecer apoio e informações que promovam a autonomia\ne o autocuidado dos pacientes. Como a adesão ao tratamento é essencial para que o usuário\nalcance os resultados esperados, é fundamental que sejam fornecidas, no momento da dispensação\ndos medicamentos, informações acerca do processo de uso do medicamento, interações\nmedicamentosas e possíveis reações adversas. A integração do Cuidado Farmacêutico aos\nprotocolos clínicos e diretrizes terapêuticas é, portanto, fundamental para proporcionar uma\nassistência à saúde mais segura, efetiva e centrada na pessoa, abordando de forma abrangente as\nnecessidades de cada indivíduo.\n\n\n8.7. Medicamentos\n\n\n         Biguanidas:\n         - Cloridrato de metformina: comprimido de 500 mg e 850 mg;\n         Sulfonilureias:\n         - Glibenclamida: comprimido de 5 mg;\n         - Gliclazida: comprimido de liberação prolongada de 30 mg e 60 mg, e comprimido de\n80 mg.\n         Inibidores de SGLT2:\n         - Dapagliflozina: comprimidos de 10 mg.\n         Insulinas:\n         - Insulina humana NPH: suspensão injetável de 100 U/mL;\n         - Insulina humana regular: solução injetável de 100 U/mL;\n\n\n                                                                                               37\n",
+      "39": "Quadro 15. Esquemas de administração dos medicamentos disponíveis no Sistema Único de\nSaúde para tratamento do diabete melito tipo 2.\n\n                                           Dose diária          Dose diária        Frequência\n           Medicamento\n                                            habitual             máxima              diária\n                    Cloridrato de\n   Biguanidas                          500 mg ou 850 mg           2550 mg           2 a 3 vezes\n                     metformina\n                    Glibenclamida                5 mg                20 mg          1 a 2 vezes\n Sulfonilureias\n                      Gliclazida          30 mg ou 60 mg            120 mg              1 vez\n      iSGLT2        Dapagliflozina              10 mg                10 mg              1 vez\n                                        Dose inicial 0,1-0,2\n                                                                0,5 U/kg/dia.\n                                              U/kg/diaa,b\n                                                              Em pessoas com\n                                          Em pessoas com\n                                                                 obesidade e\n                                             obesidade e\n         Insulina humana NPH                                     resistência à      1 a 2 vezesc\n                                             resistência à\n                                                                    insulina\n                                               insulina\n                                                                 importantes\n                                          importantes 0,5-\n                                                                0,75 U/kg/dia\n                                           0,75 U/Kg/dia.\n                                         Dose inicial de 3 U\n                                          a 4 U e titular de                         Antes das\n       Insulina Humana Regular              acordo com a      > 50% da DTDI           refeições\n                                            glicemia pós-                            principais\n                                               prandiald\n                                         Dose inicial de 3 U\n                                          a 4 U e titular de                         Antes das\n    Insulina análoga de ação rápida         acordo com a      > 50% da DTDI           refeições\n                                            glicemia pós-                            principais\n                                               prandiald\n                                         Dose inicial 0,1 U-\n                                                                   0,5 U/kg.\n                                         0,2 U/kg/diaa,b. Em\n                                                              Em pessoas com\n                                            pessoas com\n                                                                 obesidade e\n        Insulina análoga de ação             obesidade e\n                                                                 resistência à          1 vez\n               prolongada                    resistência à\n                                                                    insulina\n                                               insulina\n                                                                 importantes\n                                          importantes 0,5-\n                                                                0,75 U/kg/dia\n                                           0,75 U/kg/dia.\nLegendaDTDI – dose total diária de insulina.\nNotas: a. ajustando em 2 U a cada 3 dias até atingir a meta estabelecida para glicemia em jejum;\nb.\n   0,3 a 0,5U/kg dose de manutenção; c. ajuste a cada 3 dias até atingir o objetivo; d. dose deverá\nser titulada até atingir glicemia pré-prandial entre 90 mg/dL e 180 mg/dL, com aumento de 1 U,\nduas vezes por semana.\nFonte: Elaboração própria.\n\n\n\n8.9. Contraindicações\n\n\n        Além de hipersensibilidade ao medicamento ou qualquer componente da fórmula, as\ncontraindicações de uso dos medicamentos preconizados por este Protocolo são:\n\n       Cloridrato de metformina: gravidez e durante amamentação; insuficiência renal (TFG\n        menor que 30 mL/min/1,73 m2), insuficiência hepática descompensada, insuficiência\n        cardíaca ou insuficiência pulmonar, e acidose grave; infecção grave; pré-operatório e pós-\n        operatório, em pacientes submetidos a exame de imagem com contraste.\n\n\n                                                                                                  39\n",
+      "40": "                        Sulfonilureias – glibenclamida e gliclazida: gravidez, lactantes,\n                         insuficiência renal (TFG menor que 30 mL/min/1,73 m2); infecção grave\n                         ou insuficiência hepática. Além disso, glibenclamida não é recomendada\n                         para pacientes com idade superior ou igual a 60 anos. iSGLT2 -\n                         dapagliflozina: gravidez e período de lactação; não deve ser usado em\n                         pacientes com TFG estimada persistentemente inferior a 25 mL/min/1,73\n                         m2.\n    ‒   Insulinas humana NPH e insulina humana regular, AIAR e AIAP: não há\n        contraindicações absolutas. Deve-se observar ocorrência de hipoglicemias. Reações\n        alérgicas são raras, usualmente cutâneas e passíveis de tratamento com dessensibilização\n        ou troca de apresentação.\n\n\n8.10.   Benefícios esperados\n\n\n            ‒   Melhor controle glicêmico possível.\n            ‒   Melhora dos sintomas relacionados à hiperglicemia.\n            ‒   Diminuição das complicações agudas e crônicas de DM2.\n\n\n\n8.11.   Tratamento em populações específicas\n\n\n8.11.1. Tratamento de crianças e adolescentes com DM2\n\n\n        Em indivíduos com diabetes diagnosticado incidentalmente ou metabolicamente estável,\nHbA1c < 8,5% e assintomáticos, o cloridrato de metformina é o tratamento medicamentoso inicial\nde escolha, desde que a função renal esteja normal31. Jovens com hiperglicemia acentuada\n(glicemia ≥ 250 mg/dL e HbA1c ≥ 8,5%) sem acidose no momento do diagnóstico, mas\nsintomáticos com poliúria, polidipsia, noctúria ou perda de peso, devem ser tratados inicialmente\ncom insulina de ação prolongada enquanto o cloridrato de metformina é iniciado e titulado31.\n       Em indivíduos inicialmente tratados com insulina e cloridrato de metformina ou outros\nmedicamentos para redução da glicose que estejam atingindo as metas glicêmicas com base no\nmonitoramento da glicose, pode-se tentar reduzir a dose de insulina ao longo de 2 a 6 semanas,\ncom reduções de dose de 10% a 30% em intervalos de alguns dias31.\n\n\n8.11.2. Tratamento de pessoas idosas com DM2\n\n\n         Pessoas idosas que apresentam perda de capacidade funcional, comprometimento\ncognitivo, multimorbidades, polifarmácia, sarcopenia ou fragilidade têm maior risco de eventos\nadversos relacionados ao tratamento, especialmente hipoglicemia, além de uma resposta menos\neficaz146,147. Nesses casos, recomenda-se individualizar o cuidado, priorizando terapias de menor\nrisco e esquemas terapêuticos simplificados. A avaliação deve considerar a capacidade cognitiva\ne funcional para administrar medicamentos, a regularidade da ingestão alimentar, o uso adequado\nde dispositivos de monitorização e a função renal. Em situações de baixo peso e hiperglicemia\nque compromete o estado nutricional, a introdução cautelosa de insulina basal pode ser indicada,\ncom monitorização próxima e ajustes graduais146,147.\n\n\n                                                                                              40\n"
+    }
+  }
+}
