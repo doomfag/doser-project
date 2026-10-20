@@ -43,7 +43,16 @@ jobs:
       - name: Publicar downloads
         run: |
           exec > >(tee publication.log) 2>&1
-          trap 'tail -80 publication.log >> "$GITHUB_STEP_SUMMARY"' EXIT
+          report_failure() {
+            status=$?
+            if [ "$status" != 0 ]; then
+              message=$(tail -12 publication.log | tr '\n' ' ')
+              echo "::error::$message"
+            fi
+            tail -80 publication.log >> "$GITHUB_STEP_SUMMARY"
+            exit "$status"
+          }
+          trap report_failure EXIT
           tag="v0.6.0-desktop-android-preview"
           cat > release-notes.md <<'NOTES'
           Aplicativos de teste: Windows (.exe), Linux (.deb), macOS (.dmg) e Android (.apk).
