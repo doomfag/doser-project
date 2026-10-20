@@ -115,3 +115,12 @@ Relatórios e capturas locais: `releases/validacao-melhorias-0.7.json`, `release
 - O updater compilado em `build-native/updater.mjs` foi executado separadamente com a base real em pasta temporária: atualização concluída, 8.355 produtos/25.219 apresentações, sem erro. Testes de importação cobrem formato, registro/nome, ausência de inferência clínica, retirada de apresentações, cache datado e fallback do snapshot distribuído.
 - A preparação de TV e `test:tv` passaram com dados reais, teclado/controle simulado, retorno e calculadora. Isso continua sendo teste em Chromium, não em firmware de TV.
 - O projeto Android gerado confirmou `io.github.doomfag.doser.preview071`, versão 0.7.1/código 8. A prévia mantém os dados do APK antigo no aplicativo antigo; não há migração automática. A compilação e o manifesto do APK são conferidos no workflow antes de publicar. Instalações físicas, assinatura definitiva e restauração nativa permanecem pendentes.
+
+### Downloads públicos 0.7.1
+
+O workflow [39516615752](https://github.com/doomfag/doser-project/actions/runs/39516615752), fonte `11ba06e`, passou em Windows, Linux, macOS, Android e publicação. [Release desktop/Android](https://github.com/doomfag/doser-project/releases/tag/v0.7.1-desktop-android-preview). Os downloads foram refeitos por HTTPS público, sem login, e os hashes corresponderam ao arquivo SHA256SUMS.txt publicado:
+
+- APK separado: 5.574.417 bytes; SHA-256 `22a8d3d257ca2117fb43c8d7613d8cde14b6c211ee72cf29e4a328f92551df15`.
+- Windows Setup: 112.165.645 bytes; SHA-256 `3bc7e142bf3bb74a0e646867512d1da6ac7a9ca612dd8f025f196ac7d12196c3`.
+
+O manifesto Android compilado foi conferido com aapt2 no CI (pacote separado, código 8, versão 0.7.1). O HTML nativo extraído do APK público confirmou 10.326 registros, 30 referências e 25.219 apresentações em 8.355 fichas. O teste local da janela Electron 0.7.1 passou; `npm audit` completo não apontou vulnerabilidades conhecidas. Isso não atesta instalação física nem ausência absoluta de falhas. `main` foi preservado, com trabalho no branch `codex/doser-download`.
