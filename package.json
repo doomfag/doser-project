@@ -1,6 +1,6 @@
 {
   "name": "doser",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,7 +17,7 @@
     "native:prepare": "npm run build && node scripts/prepare-native.ts",
     "desktop:dev": "npm run native:prepare && electron .",
     "desktop:build": "npm run native:prepare && electron-builder --publish never",
-    "android:prepare": "npm run native:prepare && node scripts/portable.ts mobile/www/index.html && node scripts/android.ts",
+    "android:prepare": "npm run native:prepare && node scripts/portable.ts mobile/www/index.html --native-json && node scripts/android.ts",
     "test:desktop": "node scripts/smoke-desktop.ts",
     "ios:prepare": "npm run native:prepare && node scripts/portable.ts mobile/www/index.html --native-json && node scripts/ios.ts",
     "android:tv:prepare": "npm run native:prepare && node scripts/portable.ts mobile/www/index.html --native-json --tv && node scripts/android.ts --tv",

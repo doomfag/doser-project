@@ -79,11 +79,17 @@ try {
       .fill("dor de cabeça e febre");
     await page.getByRole("button", { name: "Pesquisar", exact: true }).click();
     await page
-      .getByRole("heading", {
-        name: "Nenhum resultado encontrado",
-        exact: true,
-      })
+      .locator(".medicine-row")
+      .filter({ hasText: "paracetamol" })
+      .first()
       .waitFor();
+    assert.equal(
+      await page
+        .locator(".medicine-row")
+        .filter({ hasText: "AQUIPTA" })
+        .count(),
+      0,
+    );
     await page
       .getByRole("button", { name: "Medicamentos", exact: true })
       .click();
@@ -119,7 +125,7 @@ try {
     await page.getByRole("button", { name: "Como usar", exact: true }).click();
     await page
       .getByRole("heading", {
-        name: "Referência por princípio ativo",
+        name: "Informações sobre a substância",
         exact: true,
       })
       .waitFor();
@@ -251,7 +257,10 @@ try {
   assert.equal(updated.status, 200, JSON.stringify(updated.body));
   assert.equal(updated.body.count, count);
   assert(!updated.body.lastError);
-  assert.equal(updated.body.clinical.references, 19);
+  assert.equal(
+    updated.body.clinical.references,
+    snapshot.clinicalReferences.length,
+  );
   assert(
     updated.body.clinical.documents.every(
       (d: { status: string }) => d.status === "verified",

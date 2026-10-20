@@ -27,8 +27,12 @@ export default function ClinicalReferences({
       <div className="clinical-panel-heading">
         <BookOpen size={20} />
         <div>
-          <span className="eyebrow">MINISTÉRIO DA SAÚDE · PCDT</span>
-          <h2>Referência por princípio ativo</h2>
+          <span className="eyebrow">
+            {ref.source.kind === "regulatory"
+              ? "ANVISA · DOCUMENTO OFICIAL"
+              : "MINISTÉRIO DA SAÚDE · PCDT"}
+          </span>
+          <h2>Informações sobre a substância</h2>
         </div>
       </div>
       {references.length > 1 && (
@@ -45,11 +49,22 @@ export default function ClinicalReferences({
       )}
       <h3 className="clinical-subject">{ref.subject}</h3>
       <p className="clinical-scope">{ref.scope}</p>
-      {ref.issues?.map((issue) => (
-        <p className="info-strip warning" key={issue}>
-          {issue}
-        </p>
-      ))}
+      {ref.source.kind === "regulatory" &&
+        ref.source.publishedAt?.startsWith("2021") && (
+          <p className="small-note">
+            Referência de 2021. Confira também a bula atual antes de usar.
+          </p>
+        )}
+      {!!ref.issues?.length && (
+        <details className="clinical-provenance">
+          <summary>Cuidados e limites desta referência</summary>
+          {ref.issues.map((issue) => (
+            <p className="small-note" key={issue}>
+              {issue}
+            </p>
+          ))}
+        </details>
+      )}
       {mode === "usage" ? (
         <UsageSection
           key={ref.id}
@@ -57,7 +72,7 @@ export default function ClinicalReferences({
             id: ref.id,
             name: ref.subject,
             ingredient: ref.ingredients.join("; "),
-            drugClass: "Referência PCDT",
+            drugClass: "Referência documental",
             aliases: [],
             presentations: ref.presentations,
             facts: ref.facts,
@@ -66,10 +81,10 @@ export default function ClinicalReferences({
         />
       ) : (
         <>
-          {mode === "overview" && (
+          {mode === "overview" && ref.presentations.length > 0 && (
             <details className="fact">
               <summary>
-                Apresentações citadas no protocolo
+                Formas citadas no documento
                 <Plus size={15} />
               </summary>
               <div className="fact-content">
@@ -88,14 +103,21 @@ export default function ClinicalReferences({
           {keys
             .filter((k) => ref.facts[k])
             .map((k) => (
-              <details key={k} className="fact">
+              <details
+                key={k}
+                className="fact"
+                open={mode === "overview" && k === "indications"}
+              >
                 <summary>
                   {sectionLabels[k]}
                   <Plus size={15} />
                 </summary>
                 <div className="fact-content">
                   <p>{ref.facts[k]!.text}</p>
-                  <SourceReference source={ref.facts[k]!.source} />
+                  <details className="clinical-provenance">
+                    <summary>Conferir a fonte deste trecho</summary>
+                    <SourceReference source={ref.facts[k]!.source} />
+                  </details>
                 </div>
               </details>
             ))}

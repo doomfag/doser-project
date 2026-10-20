@@ -2528,3 +2528,98 @@ html[data-doser-tv="true"] .dose-unit-input select {
     padding-top: env(safe-area-inset-top, 0px);
   }
 }
+
+/* Consultation tools stay behind disclosure controls to keep the first screen short. */
+.symptom-help {
+  padding: 18px 0 24px;
+  border-bottom: 1px solid var(--line, #dce8e1);
+}
+.symptom-help p {
+  margin: 0 0 14px;
+  line-height: 1.6;
+}
+.symptom-help small {
+  display: block;
+  color: #64748b;
+  line-height: 1.6;
+}
+.offer-filters,
+.offer-entry {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 22px 0;
+}
+.offer-entry {
+  padding: 18px 0;
+}
+.offers-workbench .fact {
+  padding: 12px 0;
+}
+.offers-workbench h3 {
+  margin: 0;
+}
+.offer-entry button {
+  justify-self: start;
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.photo-grid figure {
+  margin: 0;
+}
+.photo-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: white;
+}
+.photo-grid figcaption,
+.photo-grid small {
+  display: block;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.photo-entry {
+  display: grid;
+  gap: 15px;
+  padding: 18px 0;
+  max-width: 600px;
+}
+.related-product {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  cursor: pointer;
+}
+.related-product small {
+  display: block;
+  color: #64748b;
+  margin-top: 6px;
+}
+.reference-result .clinical-panel {
+  margin-top: 12px;
+}
+.reference-result .tabs {
+  overflow-x: auto;
+}
+@media (max-width: 650px) {
+  .offer-filters,
+  .offer-entry {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .offers-workbench .section-heading {
+    align-items: start;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+}

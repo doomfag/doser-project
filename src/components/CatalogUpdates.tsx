@@ -140,8 +140,8 @@ export default function CatalogUpdates({
       {status.clinical && (
         <details className="update-report">
           <summary>
-            Referências clínicas: {status.clinical.references} esquemas PCDT ·{" "}
-            {status.clinical.coveredRecords} registros relacionados
+            Referências clínicas: {status.clinical.references} documentos por
+            substância · {status.clinical.coveredRecords} registros relacionados
           </summary>
           <p>
             Referências por princípio ativo, separadas das bulas de cada

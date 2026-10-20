@@ -5,6 +5,8 @@ on:
     branches: [codex/doser-download]
     paths:
       - "src/**"
+      - "data/clinical/**"
+      - "downloads/Doser.html"
       - "tv/**"
       - "scripts/**"
       - "desktop/icon*.png"
@@ -207,8 +209,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          tag="v0.6.0-apple-tv-preview"
+          tag="v0.7.0-apple-tv-preview"
           if ! gh release view "$tag" > /dev/null 2>&1; then
-            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title "Doser 0.6 — iPhone e TVs (teste)" --notes-file docs/apple-e-tvs.md
+            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title "Doser 0.7 — iPhone e TVs (teste)" --notes-file docs/apple-e-tvs.md
           fi
           gh release upload "$tag" release-files/* --clobber

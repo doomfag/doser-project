@@ -65,8 +65,8 @@ const validFetch = (async () => new Response(pdf)) as typeof fetch;
 describe("versioned official clinical references", () => {
   it("validates curated source versions and locators", async () => {
     const curated = await loadClinicalManifest();
-    expect(curated.references).toHaveLength(19);
-    expect(curated.documents).toHaveLength(2);
+    expect(curated.references).toHaveLength(30);
+    expect(curated.documents).toHaveLength(4);
     expect(
       curated.references.every((r) => r.usage.every((u) => !!u.doseBasis)),
     ).toBe(true);
@@ -171,4 +171,90 @@ describe("versioned official clinical references", () => {
     );
     expect(searchIndex(index, "dor de cabeça e febre", "symptoms")).toEqual([]);
   });
+});
+
+describe("official public JSON documentary versions", () => {
+  it("withdraws clinical references when the approved text changes", async () => {
+    const { officialText } = await import("./officialDocument");
+    const body = {
+      title: "Synthetic official notice",
+      effective: "2026-10-20",
+      description: "Fixture",
+      blocks_layout: { items: ["one"] },
+      blocks: { one: { plaintext: "Original approved text" } },
+    };
+    const version = createHash("sha256")
+      .update(officialText(body))
+      .digest("hex");
+    const url = "https://www.gov.br/anvisa/pt-br/test";
+    const s = { ...source, url, version, kind: "regulatory" as const };
+    const m: ClinicalManifest = {
+      version: 1,
+      documents: [
+        {
+          id: "json",
+          title: s.title,
+          url,
+          sha256: version,
+          format: "plone-json",
+        },
+      ],
+      references: [
+        {
+          ...manifest.references[0],
+          documentId: "json",
+          source: s,
+          usage: [],
+          facts: { indications: { text: "Fixture", source: s } },
+        },
+      ],
+    };
+    let requested = "";
+    const ok = await enrichClinical([], m, undefined, (async (u) => {
+      requested = String(u);
+      return Response.json(body);
+    }) as typeof fetch);
+    expect(requested).toBe("https://www.gov.br/anvisa/++api++/pt-br/test");
+    expect(ok.clinicalReferences).toHaveLength(1);
+    const changed = await enrichClinical([], m, ok.clinicalStatus, (async () =>
+      Response.json({
+        ...body,
+        blocks: { one: { plaintext: "Changed approved text" } },
+      })) as typeof fetch);
+    expect(changed.clinicalReferences).toHaveLength(0);
+    expect(changed.clinicalStatus.documents[0].status).toBe("changed");
+  });
+  it("ignores navigation metadata, but rejects absent text", async () => {
+    const { officialText } = await import("./officialDocument");
+    const d = {
+      title: "Fixture",
+      blocks_layout: { items: ["a"] },
+      blocks: { a: { plaintext: "Clinical text" } },
+    };
+    expect(officialText({ ...d, navigation: "A" })).toBe(
+      officialText({ ...d, navigation: "B" }),
+    );
+    expect(() => officialText({ title: "Empty" })).toThrow();
+  });
+});
+
+it("does not attach route-specific reference-only documents to every registration of the ingredient", async () => {
+  const restricted: ClinicalManifest = {
+    ...manifest,
+    references: manifest.references.map((r) => ({ ...r, referenceOnly: true })),
+  };
+  const result = await enrichClinical(
+    [medicine("substancia a")],
+    restricted,
+    undefined,
+    validFetch,
+  );
+  expect(result.clinicalReferences).toHaveLength(1);
+  expect(result.medicines[0].clinicalReferenceIds).toBeUndefined();
+  expect(() =>
+    assertReferenceLinks(
+      [{ ...medicine("substancia a"), clinicalReferenceIds: ["ref"] }],
+      restricted.references,
+    ),
+  ).toThrow();
 });

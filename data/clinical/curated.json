@@ -12,6 +12,19 @@
       "title": "PCDT Diabete Melito Tipo 2 — Portaria de 21/02/2026",
       "url": "https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf",
       "sha256": "f90b782997a5f90842877c6526432cd382b596ad6cb7ad95da0a2fd776dfae09"
+    },
+    {
+      "id": "anvisa-lmn-2021",
+      "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+      "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+      "sha256": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699"
+    },
+    {
+      "id": "anvisa-aquipta",
+      "title": "Anvisa aprova medicamento para prevenção de enxaqueca",
+      "url": "https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/anvisa-aprova-medicamento-para-prevencao-de-enxaqueca",
+      "format": "plone-json",
+      "sha256": "cd298aa456dafdc85a57df861dd361455876f787ce73c740e2f67fd5466e41d7"
     }
   ],
   "references": [
@@ -1375,6 +1388,874 @@
       "issues": [
         "Divergência interna no PCDT: a seção 8.9 contraindica sulfonilureias com TFG menor que 30 mL/min/1,73 m²; a seção 8.3.2 admite considerar gliclazida MR abaixo desse valor, com cautela e redução. O Doser preserva ambos os trechos e não resolve essa divergência nem sugere ajuste renal. A seção 8.3.2 também contém orientações conflitantes sobre duração de ação em idosos. Confira o documento e a bula com o profissional responsável."
       ]
+    },
+    {
+      "id": "anvisa-lmn-paracetamol",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Paracetamol — dor e febre",
+      "ingredients": [
+        "paracetamol"
+      ],
+      "presentations": [
+        "Comprimido de 500 mg",
+        "Comprimido de 750 mg"
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "facts": {
+        "indications": {
+          "text": "Indicado para redução da febre e o alívio temporário de dores leves a moderadas, tais como dores associadas a resfriados comuns, dor de cabeça, dor no corpo, dor de dente, dor nas costas, dores musculares, dores leves associadas a artrites, dor de garganta e cólica menstrual.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 68 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "precautions": {
+          "text": "Não use com outro produto que contenha paracetamol. O documento alerta para insuficiência hepática aguda com excesso de dose, uso concomitante de outros medicamentos com paracetamol ou três ou mais doses de bebida alcoólica por dia. Consulte o médico se possui problemas no fígado.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 68 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "interactions": {
+          "text": "Consulte o médico antes de utilizar se está tomando varfarina ou outros derivados cumarínicos. Não combinar com outro produto que contenha paracetamol.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 68 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "pregnancy": {
+          "text": "Não deve ser utilizado por mulheres grávidas sem orientação médica ou do cirurgião-dentista.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 68 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "routes": {
+          "text": "Os comprimidos citados são administrados por via oral, com líquido.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 68 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "usage": [
+        {
+          "id": "lmn-paracetamol-500",
+          "presentation": "Comprimido de 500 mg",
+          "population": "Acima de 12 anos, conforme item 68 do documento de 2021",
+          "dose": "O documento informa limite diário total de 4.000 mg, em doses fracionadas, sem exceder 1.000 mg por dose. Esses são limites documentais, não uma dose inicial ou recomendação individual.",
+          "doseBasis": "document-text",
+          "interval": "Intervalos de 4 a 6 horas, conforme o documento; não define um horário de relógio.",
+          "age": "O texto diz ‘Uso adulto (acima de 12 anos)’. Não foi extrapolado para crianças.",
+          "route": "Via oral, com líquido",
+          "conditions": "Confira a bula atual e a orientação profissional; necessidades individuais podem exigir limites menores. Não use outro produto com paracetamol e não arredonde a quantidade de comprimidos para alcançar um limite máximo.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 68 do PDF; use a numeração do produto no documento."
+          }
+        },
+        {
+          "id": "lmn-paracetamol-750",
+          "presentation": "Comprimido de 750 mg",
+          "population": "Acima de 12 anos, conforme item 68 do documento de 2021",
+          "dose": "O documento informa limite diário total de 4.000 mg, em doses fracionadas, sem exceder 1.000 mg por dose. Esses são limites documentais, não uma dose inicial ou recomendação individual.",
+          "doseBasis": "document-text",
+          "interval": "Intervalos de 4 a 6 horas, conforme o documento; não define um horário de relógio.",
+          "age": "O texto diz ‘Uso adulto (acima de 12 anos)’. Não foi extrapolado para crianças.",
+          "route": "Via oral, com líquido",
+          "conditions": "Confira a bula atual e a orientação profissional; necessidades individuais podem exigir limites menores. Não use outro produto com paracetamol e não arredonde a quantidade de comprimidos para alcançar um limite máximo.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 68 do PDF; use a numeração do produto no documento."
+          }
+        }
+      ],
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 68 do PDF; use a numeração do produto no documento."
+      }
+    },
+    {
+      "id": "anvisa-lmn-simeticona",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Simeticona — excesso de gases",
+      "ingredients": [
+        "simeticona"
+      ],
+      "presentations": [
+        "Emulsão oral de 75 mg/mL",
+        "Emulsão oral de 150 mg/mL"
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "facts": {
+        "indications": {
+          "text": "Alívio dos sintomas relacionados ao excesso de gases no aparelho digestivo, que geram flatulência, desconforto abdominal, aumento de volume abdominal, dor ou cólicas no abdômen. O documento também cita preparo para endoscopia digestiva e/ou colonoscopia, conforme indicação médica.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 88–89 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "contraindications": {
+          "text": "Distensão abdominal grave; cólica grave; dor persistente por mais de 36 horas; massa palpável no abdômen; alergia à simeticona e derivados; perfuração ou obstrução intestinal suspeita ou conhecida.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 88–89 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "precautions": {
+          "text": "Não ultrapassar a dose máxima indicada, a menos que sob orientação médica. Em gotas, a quantidade equivalente à dose depende das características de cada produto; não existe um fator de gotas universal.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 88–89 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "adverse": {
+          "text": "O documento cita diarreia, náusea, regurgitação e vômito.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 88–89 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "usage": [],
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 88–89 do PDF; use a numeração do produto no documento."
+      }
+    },
+    {
+      "id": "anvisa-lmn-antacido",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Hidróxido de alumínio + hidróxido de magnésio + simeticona — acidez e gases",
+      "ingredients": [
+        "hidróxido de alumínio, hidróxido de magnésio, simeticona"
+      ],
+      "presentations": [
+        "Comprimido mastigável: 153 mg + 200 mg + 25 mg",
+        "Suspensão: 37 mg/mL + 40 mg/mL + 5 mg/mL"
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "facts": {
+        "indications": {
+          "text": "Tratamento dos sintomas da acidez estomacal, azia, desconforto estomacal, dor de estômago, dispepsia (indigestão), queimação, esofagite péptica e hérnia de hiato. Também citado como antiflatulento para alívio dos sintomas de excesso de gases.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 43–44 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "contraindications": {
+          "text": "Hipersensibilidade aos componentes, insuficiência renal severa, hipofosfatemia, gravidez, amamentação e obstrução intestinal.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 43–44 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "precautions": {
+          "text": "Cautela em pessoas com porfiria em hemodiálise e dietas pobres em fósforo. O documento não aconselha prolongar o tratamento por mais de 14 dias com dose máxima. Pessoas com insuficiência renal precisam de supervisão médica.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 43–44 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "interactions": {
+          "text": "Pode reduzir a absorção de outros medicamentos; o documento orienta separação de duas horas antes ou depois deles.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 43–44 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "usage": [],
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 43–44 do PDF; use a numeração do produto no documento."
+      }
+    },
+    {
+      "id": "anvisa-lmn-reidratacao",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Sais de reidratação oral — diarreia",
+      "ingredients": [
+        "cloreto de sódio, cloreto de potássio, citrato de sódio di-hidratado, glicose"
+      ],
+      "presentations": [
+        "Pó: NaCl 3,5 g + KCl 1,5 g + citrato de sódio di-hidratado 2,9 g + glicose 20 g, para diluição em 1 litro",
+        "Pó: NaCl 2,6 g + KCl 1,5 g + citrato de sódio di-hidratado 2,9 g + glicose 13,5 g, para diluição em 1 litro"
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "facts": {
+        "indications": {
+          "text": "Reposição das perdas acumuladas de água e eletrólitos (reidratação) ou manutenção da hidratação após a fase de reidratação, em caso de diarreia aguda.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 86–87 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "contraindications": {
+          "text": "Obstrução, paralisia ou perfuração intestinal e vômitos persistentes.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 86–87 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "precautions": {
+          "text": "Usar com cautela em pessoas com função renal comprometida. Seguir a quantidade de água indicada para a formulação exata; o volume de diluição não é igual para todos os envelopes. O documento orienta desprezar o restante da solução após 24 horas. Se os vômitos impedirem a ingestão nas primeiras duas horas de tratamento, procurar imediatamente o médico.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 86–87 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "usage": [],
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 86–87 do PDF; use a numeração do produto no documento."
+      }
+    },
+    {
+      "id": "anvisa-lmn-macrogol",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Polietilenoglicol 3350 — intestino preso",
+      "ingredients": [
+        "polietilenoglicol 3350",
+        "macrogol 3350"
+      ],
+      "presentations": [
+        "Pó para solução"
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "facts": {
+        "indications": {
+          "text": "Desimpactação e manutenção no quadro de constipação (intestino preso) persistente e ocasional. O documento também cita preparação para colonoscopia; esse preparo exige contexto próprio.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 81 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "contraindications": {
+          "text": "Quadro conhecido ou suspeito de obstrução, perfuração intestinal, apendicite e sangramento retal.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 81 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "adverse": {
+          "text": "Pode causar diarreias, flatulências, náuseas, cólicas abdominais ou inchaços.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 81 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "precautions": {
+          "text": "Não deve ser usado por mulheres grávidas ou amamentando sem orientação médica ou do cirurgião-dentista. Administrar conforme a rotulagem, bula ou orientação médica; não armazenar a solução para uso posterior.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 81 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "usage": [],
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 81 do PDF; use a numeração do produto no documento."
+      }
+    },
+    {
+      "id": "anvisa-aquipta",
+      "documentId": "anvisa-aquipta",
+      "subject": "Aquipta (atogepanto) — prevenção de enxaqueca",
+      "ingredients": [
+        "atogepanto hidratado"
+      ],
+      "presentations": [],
+      "scope": "Notícia de aprovação da Anvisa para Aquipta. Não é bula completa nem orientação para tratar uma dor de cabeça isolada.",
+      "issues": [
+        "Prevenção da enxaqueca não equivale ao tratamento de uma crise ou de qualquer dor de cabeça. A notícia não informa dose, idade mínima numérica, contraindicações ou apresentações; esses campos não foram preenchidos por suposição."
+      ],
+      "facts": {
+        "indications": {
+          "text": "Prevenção da enxaqueca episódica e crônica em adultos com pelo menos quatro episódios mensais de enxaqueca, conforme a aprovação descrita pela Anvisa.",
+          "source": {
+            "title": "Anvisa aprova medicamento para prevenção de enxaqueca",
+            "url": "https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/anvisa-aprova-medicamento-para-prevencao-de-enxaqueca",
+            "version": "cd298aa456dafdc85a57df861dd361455876f787ce73c740e2f67fd5466e41d7",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2026-09-08",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Notícia oficial de aprovação — parágrafos sobre indicação e mecanismo"
+          }
+        },
+        "dynamics": {
+          "text": "O atogepanto bloqueia uma via envolvida na transmissão da dor e na fisiopatologia da enxaqueca, prevenindo o aparecimento de crises, segundo a notícia oficial.",
+          "source": {
+            "title": "Anvisa aprova medicamento para prevenção de enxaqueca",
+            "url": "https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/anvisa-aprova-medicamento-para-prevencao-de-enxaqueca",
+            "version": "cd298aa456dafdc85a57df861dd361455876f787ce73c740e2f67fd5466e41d7",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2026-09-08",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Notícia oficial de aprovação — parágrafos sobre indicação e mecanismo"
+          }
+        }
+      },
+      "usage": [],
+      "source": {
+        "title": "Anvisa aprova medicamento para prevenção de enxaqueca",
+        "url": "https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/anvisa-aprova-medicamento-para-prevencao-de-enxaqueca",
+        "version": "cd298aa456dafdc85a57df861dd361455876f787ce73c740e2f67fd5466e41d7",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2026-09-08",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Notícia oficial de aprovação — parágrafos sobre indicação e mecanismo"
+      }
+    },
+    {
+      "id": "anvisa-lmn-nasal",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Soro fisiológico nasal (cloreto de sódio 0,9%) — nariz entupido",
+      "ingredients": [
+        "cloreto de sódio"
+      ],
+      "presentations": [
+        "Solução nasal de cloreto de sódio 0,9% (9 mg/mL), spray estéril",
+        "Solução nasal de cloreto de sódio 0,9% sem conservante"
+      ],
+      "referenceOnly": true,
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "facts": {
+        "indications": {
+          "text": "Fluidificante e descongestionante nasal: ajuda a tornar o muco mais fluido e aliviar o nariz entupido, nas formas nasais descritas no documento.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 98–99 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "contraindications": {
+          "text": "Antecedentes de hipersensibilidade aos componentes da fórmula.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 98–99 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "routes": {
+          "text": "Uso nasal. Essa referência não se aplica a soro para injeção, soluções caseiras ou outras concentrações.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 98–99 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 98–99 do PDF; use a numeração do produto no documento."
+      },
+      "usage": []
+    },
+    {
+      "id": "anvisa-lmn-oleo-mineral",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Óleo mineral — intestino preso",
+      "ingredients": [
+        "óleo mineral"
+      ],
+      "presentations": [
+        "Óleo mineral 100%, uso oral"
+      ],
+      "referenceOnly": false,
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "facts": {
+        "indications": {
+          "text": "Laxante. O documento cita tratamento da prisão de ventre (intestino preso).",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 61 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "contraindications": {
+          "text": "Evitar uso na presença de náuseas, vômitos, dor abdominal, gravidez, dificuldade para engolir, refluxo gastroesofágico e em pessoas acamadas.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 61 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "precautions": {
+          "text": "Não usar por mais de uma semana, a menos que indicado pelo médico. Não administrar junto de alimentos ou quando houver sangramento retal. Mudança repentina dos hábitos intestinais durante duas semanas exige consulta médica antes de laxantes.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 61 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "pregnancy": {
+          "text": "O uso crônico durante a gravidez pode causar doenças hemorrágicas do recém-nascido. Não usar durante gravidez e amamentação, exceto sob orientação médica.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 61 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 61 do PDF; use a numeração do produto no documento."
+      },
+      "usage": []
+    },
+    {
+      "id": "anvisa-lmn-magnesio",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Hidróxido de magnésio — acidez e intestino preso",
+      "ingredients": [
+        "hidróxido de magnésio"
+      ],
+      "presentations": [
+        "Suspensão de hidróxido de magnésio 8% (80 mg/mL)"
+      ],
+      "referenceOnly": false,
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "facts": {
+        "indications": {
+          "text": "Antiácido e laxante suave: uso descrito para neutralizar a acidez e facilitar a evacuação no intestino preso.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 39 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "precautions": {
+          "text": "Como laxativo, não usar na presença de dor abdominal, náuseas, vômitos, alteração dos hábitos intestinais por mais de duas semanas, sangramento retal ou doença renal. Como antiácido, pode ter efeito laxativo. Não usar na gravidez ou amamentação sem orientação médica.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 39 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 39 do PDF; use a numeração do produto no documento."
+      },
+      "usage": []
+    },
+    {
+      "id": "anvisa-lmn-bicarbonato",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Bicarbonato de sódio oral — acidez",
+      "ingredients": [
+        "bicarbonato de sódio"
+      ],
+      "presentations": [
+        "Pó, mínimo de 99% (p/p) de bicarbonato de sódio, para uso oral"
+      ],
+      "referenceOnly": true,
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "facts": {
+        "indications": {
+          "text": "Antiácido: o documento descreve uso para neutralizar o excesso de secreção gástrica no estômago.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 15 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "precautions": {
+          "text": "Uso adulto. Não usar junto de dieta rica em leite e derivados, pela possibilidade de síndrome alcalino-láctea. Pode ocorrer piora dos sintomas por efeito rebote ácido. Uso prolongado, acima de duas semanas, exige acompanhamento médico.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 15 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "interactions": {
+          "text": "Interfere na absorção de medicamentos. O documento orienta administração com duas horas de separação antes ou depois deles.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 15 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "routes": {
+          "text": "Forma em pó de uso oral. Não se aplica a bicarbonato injetável.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 15 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 15 do PDF; use a numeração do produto no documento."
+      },
+      "usage": []
+    },
+    {
+      "id": "anvisa-lmn-paracetamol-cafeina",
+      "documentId": "anvisa-lmn-2021",
+      "subject": "Paracetamol + cafeína — dor de cabeça",
+      "ingredients": [
+        "paracetamol, cafeína",
+        "cafeína, paracetamol"
+      ],
+      "presentations": [
+        "Comprimido: paracetamol 500 mg + cafeína 65 mg"
+      ],
+      "referenceOnly": false,
+      "issues": [
+        "Referência padronizada de 2021, não é bula atual de cada marca. O cabeçalho do PDF registra 2011, embora a retificação cite 2021 e o portal identifique IN 106/2021. Essa divergência foi preservada. Confira a versão atual da bula antes de usar."
+      ],
+      "scope": "Informações do documento da Anvisa para a substância e as formas citadas. Não confirma embalagem, registro ou dose individual desta marca.",
+      "facts": {
+        "indications": {
+          "text": "Alívio dos sintomas de dores de cabeça, redução da febre e alívio temporário de dores leves a moderadas, como as associadas a gripes e resfriados, dor de dente, dor nas costas, dores musculares, dores associadas a artrites e cólica menstrual.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 71 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "precautions": {
+          "text": "Não ultrapassar a dose recomendada, nem usar com outro produto que contenha paracetamol. Adultos podem desenvolver insuficiência hepática aguda com excesso de paracetamol, uso de outros medicamentos que o contenham ou três ou mais doses de bebida alcoólica por dia. Consulte o médico se possui problemas no fígado.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 71 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "interactions": {
+          "text": "Consulte o médico antes de usar se está tomando varfarina ou outros derivados cumarínicos.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 71 do PDF; use a numeração do produto no documento."
+          }
+        },
+        "pregnancy": {
+          "text": "Não usar durante a gravidez sem orientação médica ou do cirurgião-dentista.",
+          "source": {
+            "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+            "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+            "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+            "checkedAt": "2026-10-20",
+            "publishedAt": "2021-11-29",
+            "status": "validated",
+            "kind": "regulatory",
+            "locator": "Item 71 do PDF; use a numeração do produto no documento."
+          }
+        }
+      },
+      "source": {
+        "title": "Anvisa — Lista de medicamentos de baixo risco (IN 106, retificação de 29/11/2021)",
+        "url": "https://www.gov.br/anvisa/pt-br/setorregulado/regularizacao/medicamentos/notificados/arquivos/in-3-2009-lista-padronizada-de-medicamentos-sujeitos-a-notificacao-simplificada.pdf/@@display-file/file",
+        "version": "d3e98bb910036dbf14cc8ed61d49dd4861926f7d9cfc338590be3f8a830fa699",
+        "checkedAt": "2026-10-20",
+        "publishedAt": "2021-11-29",
+        "status": "validated",
+        "kind": "regulatory",
+        "locator": "Item 71 do PDF; use a numeração do produto no documento."
+      },
+      "usage": []
     }
   ],
   "evidence": {

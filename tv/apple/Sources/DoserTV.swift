@@ -43,7 +43,7 @@ struct MedicineView:View {
  var body:some View{List{
   Section("Identificação"){Text(medicine.ingredient);Text(medicine.drugClass);Button(library.favorites.contains(medicine.id) ? "Remover dos favoritos" : "Salvar nos favoritos"){library.toggle(medicine.id)}}
   Section{Text("Consulta documental. Não realiza diagnóstico nem define tratamento.")}
-  ForEach(library.related(medicine)){reference in NavigationLink{ReferenceView(reference:reference)}label:{VStack(alignment:.leading){Text(reference.subject);Text("Referência PCDT separada da bula do produto").font(.subheadline).foregroundStyle(.secondary)}}}
+  ForEach(library.related(medicine)){reference in NavigationLink{ReferenceView(reference:reference)}label:{VStack(alignment:.leading){Text(reference.subject);Text("Referência documental separada da bula da marca").font(.subheadline).foregroundStyle(.secondary)}}}
   if library.related(medicine).isEmpty{Text("Informações clínicas não importadas para este registro. Consulte a bula da apresentação exata.")}
  }.navigationTitle(medicine.name)}
 }
@@ -55,7 +55,7 @@ struct ReferenceView:View {
   ForEach(reference.issues ?? [],id:\.self){Text($0).foregroundStyle(.orange)}
   ForEach(labels.keys.sorted(),id:\.self){key in if let fact=reference.facts[key]{NavigationLink(labels[key] ?? key){DocumentText(title:labels[key] ?? key,text:fact.text,source:fact.source)}}}
   ForEach(reference.usage){regimen in NavigationLink{RegimenView(regimen:regimen)}label:{VStack(alignment:.leading){Text(regimen.presentation);Text(regimen.population).font(.subheadline)}}}
-  NavigationLink("Documento e versão"){DocumentText(title:"Fonte",text:"Referência de protocolo, não é bula nem confirmação da apresentação do registro.",source:reference.source)}
+  NavigationLink("Documento e versão"){DocumentText(title:"Fonte",text:"Referência documental; não é bula nem confirmação da apresentação deste registro.",source:reference.source)}
  }.navigationTitle(reference.subject)}
 }
 struct DocumentText:View {

@@ -131,7 +131,7 @@ test("importação, ficha, favorito e comparação com fontes", async ({
     .getByRole("textbox", { name: "Pesquisar no catálogo" })
     .fill("Registro");
   await page.getByRole("button", { name: "Pesquisar", exact: true }).click();
-  await expect(page.getByText("2 encontrados")).toBeVisible();
+  await expect(page.getByText("2 medicamentos")).toBeVisible();
   await page
     .getByRole("button", {
       name: "Adicionar Registro técnico A aos favoritos",
@@ -167,7 +167,7 @@ test("importação, ficha, favorito e comparação com fontes", async ({
     .click();
   await page
     .locator("summary")
-    .filter({ hasText: /^Indicações/ })
+    .filter({ hasText: /^Para que serve/ })
     .click();
   await expect(
     page.getByText("Informação pendente de validação.", { exact: true }),

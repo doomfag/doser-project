@@ -8,6 +8,11 @@ export default function SourceReference({ source }: { source: Source }) {
           Protocolo clínico por princípio ativo · não é bula deste produto
         </strong>
       )}
+      {source.kind === "regulatory" && (
+        <strong>
+          Documento oficial de referência · não substitui a bula desta marca
+        </strong>
+      )}
       {source.locator && <span>{source.locator}</span>}
       <External href={source.url}>{source.title}</External>
       <span>

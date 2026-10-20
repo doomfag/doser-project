@@ -1,6 +1,8 @@
+import ProductPhotos from "../components/ProductPhotos";
+import { normalize } from "../domain/catalog";
 import ClinicalReferences from "../components/ClinicalReferences";
 import { type ClinicalReference } from "../domain/catalog";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { ArrowLeft, Star, Plus, FileText, Scale } from "lucide-react";
 import { sectionLabels, type Medicine, type Section } from "../domain/catalog";
 import { bularioUrl } from "../domain/bulario";
@@ -9,6 +11,8 @@ import UsageSection from "../components/UsageSection";
 import SourceReference from "../components/SourceReference";
 interface Props {
   onCalculate: () => void;
+  catalog: Medicine[];
+  onOpen: (medicine: Medicine) => void;
   detail: Medicine;
   references: ClinicalReference[];
   saved: boolean;
@@ -18,6 +22,8 @@ interface Props {
 }
 export default function MedicineDetail({
   onCalculate,
+  catalog,
+  onOpen,
   detail,
   references,
   saved,
@@ -26,6 +32,18 @@ export default function MedicineDetail({
   onCompare,
 }: Props) {
   const [tab, setTab] = useState("overview");
+  const related = useMemo(
+    () =>
+      catalog
+        .filter(
+          (m) =>
+            m.id !== detail.id &&
+            normalize(m.ingredient) === normalize(detail.ingredient) &&
+            !normalize(m.ingredient).startsWith("nao informad"),
+        )
+        .slice(0, 12),
+    [catalog, detail.id, detail.ingredient],
+  );
   const keys: Section[] =
     tab === "overview"
       ? ["indications", "contraindications", "precautions"]
@@ -69,8 +87,8 @@ export default function MedicineDetail({
         {documented
           ? "Informações documentais importadas · confira a origem de cada campo"
           : references.length
-            ? "Cadastro do produto com referência PCDT separada por princípio ativo"
-            : "Cadastro de identificação · informações clínicas ainda indisponíveis"}
+            ? "Informações sobre a substância · confira também a bula desta marca"
+            : "Cadastro da Anvisa · bula ainda não conferida"}
       </div>
       <div className="tabs detail-tabs" aria-label="Seções do medicamento">
         {[
@@ -88,6 +106,44 @@ export default function MedicineDetail({
           </button>
         ))}
       </div>
+      {tab === "overview" && (
+        <ProductPhotos
+          key={detail.id}
+          medicineId={detail.id}
+          name={detail.name}
+        />
+      )}
+      {tab === "overview" && related.length > 0 && (
+        <details className="fact related-products">
+          <summary>Outras marcas com a mesma substância</summary>
+          <p className="small-note">
+            Ter a mesma substância não garante que possa trocar. A quantidade, a
+            forma de usar e a aprovação da Anvisa também precisam corresponder.
+          </p>
+          {related.map((m) => (
+            <button
+              className="external-row related-product"
+              key={m.id}
+              onClick={() => onOpen(m)}
+            >
+              <span>
+                <strong>{m.name}</strong>
+                <small>{m.registration?.holder}</small>
+              </span>
+              <span>Ver ficha →</span>
+            </button>
+          ))}
+        </details>
+      )}
+      {!documented && !references.length && (
+        <div className="info-strip">
+          <span>
+            A ficha ainda não tem uma bula conferida. Consulte o documento
+            oficial abaixo; não há dose, idade ou apresentação confirmada neste
+            cadastro.
+          </span>
+        </div>
+      )}
       <div className="detail-grid">
         <div className="detail-tab-content" key={tab}>
           {tab === "usage" ? (
@@ -103,7 +159,7 @@ export default function MedicineDetail({
             </>
           ) : (
             <>
-              {tab === "overview" && (
+              {tab === "overview" && detail.presentations.length > 0 && (
                 <section className="detail-section">
                   <h2>Apresentações</h2>
                   {detail.presentations.length ? (
@@ -120,7 +176,7 @@ export default function MedicineDetail({
                 </section>
               )}
               {keys
-                .filter((key) => detail.facts[key] || !references.length)
+                .filter((key) => detail.facts[key])
                 .map((key) => {
                   const fact = detail.facts[key];
                   return (
@@ -196,13 +252,15 @@ export default function MedicineDetail({
             <External href={detail.professionalLeaflet}>
               Bula profissional
             </External>
-          ) : (
-            <p className="muted">Bula profissional não informada.</p>
-          )}
+          ) : null}
           {detail.patientLeaflet ? (
             <External href={detail.patientLeaflet}>Bula do paciente</External>
-          ) : (
-            <p className="muted">Bula do paciente não informada.</p>
+          ) : null}
+          {!detail.professionalLeaflet && !detail.patientLeaflet && (
+            <p className="muted">
+              A bula desta marca ainda não foi vinculada. Abra a consulta
+              oficial para conferir.
+            </p>
           )}
           <External href={bularioUrl(detail)}>
             Consultar bulas deste medicamento

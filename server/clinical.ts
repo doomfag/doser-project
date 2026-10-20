@@ -1,3 +1,4 @@
+import { officialText } from "./officialDocument.ts";
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { createHash } from "node:crypto";
@@ -12,6 +13,7 @@ export interface ClinicalDocument {
   title: string;
   url: string;
   sha256: string;
+  format?: "pdf" | "plone-json";
 }
 export interface ClinicalDocumentState {
   id: string;
@@ -55,7 +57,14 @@ export async function loadClinicalManifest(
     if (
       url.protocol !== "https:" ||
       url.hostname !== "www.gov.br" ||
-      !url.pathname.startsWith("/saude/") ||
+      !(
+        url.pathname.startsWith("/saude/") ||
+        url.pathname.startsWith("/anvisa/pt-br/")
+      ) ||
+      (document.format !== undefined &&
+        !["pdf", "plone-json"].includes(document.format)) ||
+      (document.format === "plone-json" &&
+        !url.pathname.startsWith("/anvisa/pt-br/")) ||
       !/^\w[\w-]{0,99}$/.test(document.id) ||
       !String(document.title).trim() ||
       !/^[a-f0-9]{64}$/.test(document.sha256)
@@ -70,7 +79,7 @@ export async function loadClinicalManifest(
           (d: ClinicalDocument) =>
             d.id === r.documentId &&
             d.sha256 === r.source.version &&
-            r.source.kind === "guideline" &&
+            ["guideline", "regulatory"].includes(r.source.kind ?? "") &&
             new URL(r.source.url).href.split("#")[0] === d.url &&
             [
               ...Object.values(r.facts).map((f) => f!.source),
@@ -78,7 +87,7 @@ export async function loadClinicalManifest(
             ].every(
               (s) =>
                 s.version === d.sha256 &&
-                s.kind === "guideline" &&
+                s.kind === r.source.kind &&
                 s.status === "validated" &&
                 new URL(s.url).href.split("#")[0] === d.url,
             ),
@@ -134,13 +143,46 @@ export async function enrichClinical(
           Number.isFinite(Date.parse(d.checkedAt)),
       );
       try {
-        const response = await request(doc.url, {
+        const verificationUrl =
+          doc.format === "plone-json"
+            ? doc.url.replace("/anvisa/pt-br/", "/anvisa/++api++/pt-br/")
+            : doc.url;
+        const response = await request(verificationUrl, {
           signal: AbortSignal.timeout(30_000),
           redirect: "error",
-          headers: { Accept: "application/pdf" },
+          headers: {
+            Accept:
+              doc.format === "plone-json"
+                ? "application/json"
+                : "application/pdf",
+          },
         });
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        const version = await documentHash(response);
+        let version: string;
+        if (doc.format === "plone-json") {
+          if (!response.body) throw new Error("Documento JSON vazio.");
+          const reader = response.body.getReader();
+          const chunks: Uint8Array[] = [];
+          let size = 0;
+          try {
+            while (true) {
+              const part = await reader.read();
+              if (part.done) break;
+              size += part.value.length;
+              if (size > 2_000_000) {
+                await reader.cancel();
+                throw new Error("Documento JSON excede o limite.");
+              }
+              chunks.push(part.value);
+            }
+          } finally {
+            reader.releaseLock();
+          }
+          const raw = Buffer.concat(chunks).toString("utf8");
+          version = createHash("sha256")
+            .update(officialText(JSON.parse(raw)))
+            .digest("hex");
+        } else version = await documentHash(response);
         if (version !== doc.sha256)
           return {
             id: doc.id,
@@ -205,8 +247,10 @@ export async function enrichClinical(
     const { clinicalReferenceIds: discarded, ...rest } = m;
     void discarded;
     const ids = references
-      .filter((r) =>
-        r.ingredients.some((i) => normalize(i) === normalize(m.ingredient)),
+      .filter(
+        (r) =>
+          !r.referenceOnly &&
+          r.ingredients.some((i) => normalize(i) === normalize(m.ingredient)),
       )
       .map((r) => r.id);
     return { ...rest, ...(ids.length ? { clinicalReferenceIds: ids } : {}) };

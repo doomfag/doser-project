@@ -7,6 +7,8 @@ on:
       - "desktop/**"
       - "server/**"
       - "src/**"
+      - "data/clinical/**"
+      - "downloads/Doser.html"
       - "scripts/prepare-native.ts"
       - "scripts/android.ts"
       - "package*.json"
@@ -81,6 +83,8 @@ jobs:
           "$sdk_dir/cmdline-tools/latest/bin/sdkmanager" "platforms;android-36" "build-tools;36.0.0"
       - run: npm ci
       - run: npm run android:prepare
+        env:
+          DOSER_ANDROID_PREVIEW: "true"
       - run: chmod +x android/gradlew
       - name: Compilar APK
         working-directory: android
@@ -94,9 +98,49 @@ jobs:
             echo '```' >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
+      - name: Conferir instalação Android separada
+        run: |
+          sdk_dir="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          "$sdk_dir/build-tools/36.0.0/aapt2" dump badging android/app/build/outputs/apk/debug/app-debug.apk > android-badging.txt
+          python3 - <<'PYCODE'
+          from pathlib import Path
+          text = Path('android-badging.txt').read_text()
+          assert "package: name='io.github.doomfag.doser.preview07'" in text
+          assert "versionCode='7'" in text
+          assert "versionName='0.7.0'" in text
+          print('Prévia Android confirmada: pacote separado da versão anterior.')
+          PYCODE
       - uses: actions/upload-artifact@v4
         with:
           name: Doser-Android-APK-teste
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
           retention-days: 3
+
+  publish:
+    name: Downloads da versão
+    needs: [desktop, android]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: release-input
+      - name: Publicar instaladores de teste
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p release-files
+          find release-input -type f \( -name '*.exe' -o -name '*.deb' -o -name '*.dmg' \) -exec cp {} release-files/ \;
+          cp release-input/Doser-Android-APK-teste/app-debug.apk release-files/Doser-Android-PREVIA-SEPARADA-0.7.apk
+          cp docs/melhorias-0.7.md release-files/LEIA-ME.md
+          cd release-files
+          sha256sum * > SHA256SUMS.txt
+          cd ..
+          tag="v0.7.0-desktop-android-preview"
+          if ! gh release view "$tag" > /dev/null 2>&1; then
+            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title "Doser 0.7 — PC e prévia Android" --notes-file docs/melhorias-0.7.md
+          fi
+          gh release upload "$tag" release-files/* --clobber

@@ -1,10 +1,13 @@
+import { normalize } from "./text.ts";
+export { normalize } from "./text.ts";
+import { symptomConcepts, compileSymptomQuery } from "./symptoms.ts";
 export const sectionLabels = {
-  indications: "Indicações",
+  indications: "Para que serve",
   dosage: "Posologia",
-  contraindications: "Contraindicações",
-  precautions: "Precauções",
+  contraindications: "Quando não usar",
+  precautions: "Cuidados",
   adverse: "Reações adversas",
-  interactions: "Interações medicamentosas",
+  interactions: "Interações com outros remédios",
   dynamics: "Farmacodinâmica",
   kinetics: "Farmacocinética",
   metabolism: "Metabolismo",
@@ -17,7 +20,7 @@ export interface Source {
   title: string;
   url: string;
   publishedAt?: string;
-  kind?: "leaflet" | "guideline" | "registry" | "scientific";
+  kind?: "leaflet" | "guideline" | "registry" | "scientific" | "regulatory";
   locator?: string;
   checkedAt: string;
   version: string;
@@ -48,6 +51,7 @@ export interface Registration {
   source: Source;
 }
 export interface ClinicalReference {
+  referenceOnly?: boolean;
   issues?: string[];
   id: string;
   documentId: string;
@@ -74,14 +78,6 @@ export interface Medicine {
   professionalLeaflet?: string;
   patientLeaflet?: string;
 }
-export const normalize = (text: string) =>
-  text
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLocaleLowerCase("pt-BR")
-    .replace(/[^a-z0-9 ]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
 export function distance(a: string, b: string): number {
   let row = Array.from({ length: b.length + 1 }, (_, i) => i);
   for (let i = 1; i <= a.length; i++) {
@@ -116,7 +112,8 @@ export function createSearchIndex(
       .flatMap((id) => {
         const r = refMap.get(id);
         const fact = r?.facts.indications;
-        return fact?.source.status === "validated" &&
+        return !r?.referenceOnly &&
+          fact?.source.status === "validated" &&
           r!.ingredients.some(
             (i) => normalize(i) === normalize(medicine.ingredient),
           )
@@ -156,6 +153,13 @@ export function searchIndex(
 ): Medicine[] {
   const q = normalize(query).slice(0, 160);
   if (!q) return [];
+  if (mode !== "ingredients" && symptomConcepts(q).length) {
+    const match = compileSymptomQuery(q);
+    return index
+      .filter((entry) => match(entry.texts.symptoms, entry.texts.medicines))
+      .sort((a, b) => a.medicine.name.localeCompare(b.medicine.name, "pt-BR"))
+      .map((entry) => entry.medicine);
+  }
   const terms = q
     .split(" ")
     .filter((t) => !["e", "de", "da", "do", "com"].includes(t));
@@ -175,7 +179,14 @@ export function searchIndex(
       return {
         medicine,
         score: scores.every(Boolean)
-          ? scores.reduce<number>((a, b) => a + b, 0)
+          ? scores.reduce<number>((a, b) => a + b, 0) +
+            (normalize(medicine.name) === q
+              ? 100
+              : normalize(medicine.ingredient) === q
+                ? 80
+                : normalize(medicine.name).startsWith(q)
+                  ? 30
+                  : 0)
           : 0,
       };
     })
@@ -194,6 +205,7 @@ export function isApproximateMatch(
 ): boolean {
   const q = normalize(query).slice(0, 160);
   if (!q) return false;
+  if (mode !== "ingredients" && symptomConcepts(q).length) return false;
   const terms = q
     .split(" ")
     .filter((t) => !["e", "de", "da", "do", "com"].includes(t));
@@ -237,7 +249,9 @@ function requiredText(value: unknown, limit: number): string {
 }
 function parseSourceKind(value: unknown): NonNullable<Source["kind"]> {
   if (
-    !["leaflet", "guideline", "registry", "scientific"].includes(String(value))
+    !["leaflet", "guideline", "registry", "scientific", "regulatory"].includes(
+      String(value),
+    )
   )
     throw new Error("Tipo de fonte inválido.");
   return value as NonNullable<Source["kind"]>;
@@ -467,8 +481,14 @@ export function parseClinicalReferences(input: unknown): ClinicalReference[] {
         !item.issues.every((i) => text(i, 2000)))
     )
       throw new Error("Ressalvas clínicas inválidas.");
+    if (
+      item.referenceOnly !== undefined &&
+      typeof item.referenceOnly !== "boolean"
+    )
+      throw new Error("Escopo de referência inválido.");
     return {
       ...(item.issues === undefined ? {} : { issues: item.issues }),
+      ...(item.referenceOnly === true ? { referenceOnly: true } : {}),
       id: item.id,
       documentId: item.documentId,
       subject: item.subject,
@@ -488,6 +508,7 @@ export function clinicalReferencesFor(
   const ids = new Set(medicine.clinicalReferenceIds ?? []);
   return references.filter(
     (r) =>
+      !r.referenceOnly &&
       ids.has(r.id) &&
       r.ingredients.some(
         (i) => normalize(i) === normalize(medicine.ingredient),
@@ -504,6 +525,7 @@ export function assertReferenceLinks(
       (m.clinicalReferenceIds ?? []).some(
         (id) =>
           !refs.has(id) ||
+          refs.get(id)?.referenceOnly ||
           !refs
             .get(id)!
             .ingredients.some((i) => normalize(i) === normalize(m.ingredient)),

@@ -22,7 +22,11 @@ export default function ComparisonFact({
       r.facts[section]
         ? [
             {
-              context: r.subject + " · referência PCDT, não é bula",
+              context:
+                r.subject +
+                (r.source.kind === "regulatory"
+                  ? " · referência Anvisa, não é bula"
+                  : " · referência PCDT, não é bula"),
               fact: r.facts[section]!,
             },
           ]

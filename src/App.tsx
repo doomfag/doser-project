@@ -1,3 +1,8 @@
+import OffersWorkbench from "./components/OffersWorkbench";
+import { normalize } from "./domain/text";
+import ReferenceResults from "./components/ReferenceResults";
+import { matchesSymptoms } from "./domain/symptoms";
+import { symptomContext } from "./domain/symptoms";
 import { localId } from "./data/localId";
 import {
   useTelevisionNavigation,
@@ -92,6 +97,7 @@ export default function App() {
   const [submitted, setSubmitted] = useState("");
   const [mode, setMode] = useState<SearchMode>("medicines");
   const [selected, setSelected] = useState<string[]>([]);
+  const [comparisonQuery, setComparisonQuery] = useState("");
   const [detail, setDetail] = useState<Medicine | null>(null);
   const [notice, setNotice] = useState("");
   const [libraryTab, setLibraryTab] = useState("favorites");
@@ -196,6 +202,28 @@ export default function App() {
   const symptomDataMissing =
     mode === "symptoms" && catalog.length > 0 && !hasClinicalIndications;
   const alert = symptomAlert(submitted);
+  const symptom = symptomContext(submitted);
+  const referenceResults = useMemo(() => {
+    if (
+      !submitted.trim() ||
+      mode === "ingredients" ||
+      symptomContext(submitted).broad
+    )
+      return [];
+    return references.filter((r) => {
+      const fact = r.facts.indications;
+      return (
+        fact?.source.status === "validated" &&
+        (symptomContext(submitted).recognized
+          ? matchesSymptoms(
+              normalize(fact.text),
+              submitted,
+              normalize(r.subject),
+            )
+          : normalize(r.subject).includes(normalize(submitted)))
+      );
+    });
+  }, [references, submitted, mode]);
   function medicineRow(m: Medicine) {
     return (
       <div className="medicine-row" key={m.id}>
@@ -332,7 +360,7 @@ export default function App() {
             <Settings2 size={19} />
             <span>Dados e ajustes</span>
           </button>
-          <span className="version">DOSER / VERSÃO 0.6</span>
+          <span className="version">DOSER / VERSÃO 0.7</span>
         </div>
       </aside>
       <div className="workspace">
@@ -402,6 +430,11 @@ export default function App() {
               saved={personal.favorites.includes(detail.id)}
               onBack={() => setDetail(null)}
               onFavorite={favorite}
+              catalog={catalog}
+              onOpen={(m) => {
+                setDetail(m);
+                window.scrollTo({ top: 0 });
+              }}
               onCompare={(id) => {
                 if (!selected.includes(id)) toggleComparison(id);
                 setDetail(null);
@@ -516,7 +549,11 @@ export default function App() {
                       <div className="section-heading">
                         <h2>Resultados para “{submitted}”</h2>
                         <span className="meta">
-                          {results.length} encontrados
+                          {results.length
+                            ? `${results.length} medicamentos`
+                            : referenceResults.length
+                              ? `${referenceResults.length} documento(s)`
+                              : "0 encontrados"}
                         </span>
                       </div>
                       {alert && (
@@ -525,23 +562,58 @@ export default function App() {
                           {alert}
                         </div>
                       )}
+                      {symptom.recognized && (
+                        <div className="symptom-help">
+                          <p>
+                            {symptom.broad
+                              ? "Dor de barriga pode significar coisas diferentes. O que você está sentindo?"
+                              : "Resultados ligados ao sintoma em documentos conferidos. A ordem não indica qual remédio funciona melhor para você."}
+                          </p>
+                          {symptom.options.length > 0 && (
+                            <div className="comparison-chips">
+                              {symptom.options.map((option) => (
+                                <button
+                                  className="chip"
+                                  key={option}
+                                  onClick={() => runSearch(option)}
+                                >
+                                  {option}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                          {symptom.broad && (
+                            <small>
+                              Escolher uma opção ajuda a pesquisar; não
+                              identifica a causa da dor. Dor forte, persistente
+                              ou que piora precisa de avaliação profissional.
+                            </small>
+                          )}
+                        </div>
+                      )}
                       {results.length ? (
                         results.slice(0, resultLimit).map(medicineRow)
-                      ) : (
+                      ) : referenceResults.length ? (
+                        <ReferenceResults references={referenceResults} />
+                      ) : !symptom.broad ? (
                         <div className="empty-state">
                           <Search size={24} />
                           <h3>
                             {symptomDataMissing
                               ? "Indicações clínicas ainda não importadas"
                               : catalog.length
-                                ? "Nenhum resultado encontrado"
+                                ? symptom.recognized
+                                  ? "Ainda não há informação conferida para este sintoma"
+                                  : "Nenhum resultado encontrado"
                                 : "Seu catálogo ainda está vazio"}
                           </h3>
                           <p>
                             {symptomDataMissing
                               ? "A base atual contém cadastros da Anvisa, mas não indicações terapêuticas. Pesquise pelo nome ou princípio ativo e consulte a bula."
                               : catalog.length
-                                ? "Tente outro termo ou confira o tipo de pesquisa. A ausência de resultados não exclui uma condição clínica."
+                                ? symptom.recognized
+                                  ? "Entendemos sua pesquisa, mas ainda falta uma fonte conferida para relacionar medicamentos. Isso não significa que não exista tratamento. Não vamos preencher essa informação por suposição."
+                                  : "Tente outro nome ou uma expressão parecida. Você pode pesquisar sintomas com suas próprias palavras."
                                 : "Atualize a base oficial ou importe registros com fontes para pesquisar neste dispositivo."}
                           </p>
                           <button
@@ -551,7 +623,28 @@ export default function App() {
                             Gerenciar catálogo <ChevronRight size={15} />
                           </button>
                         </div>
-                      )}
+                      ) : null}
+                      {results.length > 0 &&
+                        referenceResults.some(
+                          (r) =>
+                            !results.some((m) =>
+                              m.clinicalReferenceIds?.includes(r.id),
+                            ),
+                        ) && (
+                          <details className="fact">
+                            <summary>
+                              Outras informações sobre esta busca
+                            </summary>
+                            <ReferenceResults
+                              references={referenceResults.filter(
+                                (r) =>
+                                  !results.some((m) =>
+                                    m.clinicalReferenceIds?.includes(r.id),
+                                  ),
+                              )}
+                            />
+                          </details>
+                        )}
                       {results.length > resultLimit && (
                         <button
                           className="secondary-button load-more"
@@ -698,26 +791,38 @@ export default function App() {
                     </button>
                   </div>
                   {catalog.length > 0 && (
-                    <label className="field">
-                      Adicionar medicamento
-                      <select
-                        value=""
-                        onChange={(e) => toggleComparison(e.target.value)}
-                      >
-                        <option value="">Selecione até 4 registros</option>
-                        {catalog
+                    <div className="comparison-search">
+                      <label className="field">
+                        Adicionar medicamento
+                        <input
+                          value={comparisonQuery}
+                          onChange={(e) => setComparisonQuery(e.target.value)}
+                          placeholder="Digite o nome do remédio"
+                          maxLength={160}
+                        />
+                      </label>
+                      {comparisonQuery.trim() &&
+                        searchIndex(index, comparisonQuery, "medicines")
                           .filter((m) => !selected.includes(m.id))
+                          .slice(0, 8)
                           .map((m) => (
-                            <option
-                              disabled={selected.length >= 4}
+                            <button
+                              className="external-row related-product"
                               key={m.id}
-                              value={m.id}
+                              disabled={selected.length >= 4}
+                              onClick={() => {
+                                toggleComparison(m.id);
+                                setComparisonQuery("");
+                              }}
                             >
-                              {m.name} · {m.ingredient}
-                            </option>
+                              <span>
+                                <strong>{m.name}</strong>
+                                <small>{m.ingredient}</small>
+                              </span>
+                              <Plus size={16} />
+                            </button>
                           ))}
-                      </select>
-                    </label>
+                    </div>
                   )}
                   {chosen.length ? (
                     <>
@@ -733,6 +838,15 @@ export default function App() {
                           </button>
                         ))}
                       </div>
+                      <details className="fact">
+                        <summary>
+                          Comparar preço e entrega nas farmácias
+                        </summary>
+                        <OffersWorkbench
+                          key={chosen.map((m) => m.id).join(",")}
+                          medicines={chosen}
+                        />
+                      </details>
                       {chosen.length >= 2 ? (
                         <>
                           <p className="comparison-notice">

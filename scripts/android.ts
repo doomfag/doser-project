@@ -44,8 +44,12 @@ writeFileSync(
 const gradlePath = "android/app/build.gradle";
 writeFileSync(
   gradlePath,
+  readFileSync(gradlePath, "utf8").replace(/versionCode \d+/, "versionCode 7"),
+);
+writeFileSync(
+  gradlePath,
   readFileSync(gradlePath, "utf8").replace(
-    /applicationId "io.github.doomfag.doser(?:\.tv)?"/,
+    /applicationId "io.github.doomfag.doser(?:\.tv|\.preview07)?"/,
     'applicationId "io.github.doomfag.doser"',
   ),
 );
@@ -54,7 +58,7 @@ writeFileSync(
   gradlePath,
   readFileSync(gradlePath, "utf8").replace(
     /versionName "[^"]+"/,
-    'versionName "0.6.0"',
+    'versionName "0.7.0"',
   ),
 );
 
@@ -99,5 +103,47 @@ public class MainActivity extends BridgeActivity {
   return super.dispatchKeyEvent(event);
  }
 }`,
+  );
+}
+
+const labelsPath = "android/app/src/main/res/values/strings.xml";
+writeFileSync(
+  labelsPath,
+  readFileSync(labelsPath, "utf8")
+    .replace(
+      /<string name="app_name">[^<]*<\/string>/,
+      '<string name="app_name">Doser</string>',
+    )
+    .replace(
+      /<string name="title_activity_main">[^<]*<\/string>/,
+      '<string name="title_activity_main">Doser</string>',
+    ),
+);
+
+// A separate test install preserves the old app's data when its ephemeral debug
+// signing key is unavailable. This is not a migration or a production signature.
+if (
+  process.env.DOSER_ANDROID_PREVIEW === "true" &&
+  !process.argv.includes("--tv")
+) {
+  writeFileSync(
+    gradlePath,
+    readFileSync(gradlePath, "utf8").replace(
+      'applicationId "io.github.doomfag.doser"',
+      'applicationId "io.github.doomfag.doser.preview07"',
+    ),
+  );
+  const labels = "android/app/src/main/res/values/strings.xml";
+  writeFileSync(
+    labels,
+    readFileSync(labels, "utf8")
+      .replace(
+        /<string name="app_name">[^<]*<\/string>/,
+        '<string name="app_name">Doser 0.7 — prévia</string>',
+      )
+      .replace(
+        /<string name="title_activity_main">[^<]*<\/string>/,
+        '<string name="title_activity_main">Doser 0.7 — prévia</string>',
+      ),
   );
 }
