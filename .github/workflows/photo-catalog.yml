@@ -1,0 +1,77 @@
+name: Conferir catálogo de fotos
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/doser-photos-100]
+    paths:
+      - data/photos/candidate-metadata.json
+      - server/photoImport.ts
+      - scripts/analyze-photo.py
+      - scripts/validate-photo-assets.ts
+      - .github/workflows/photo-catalog.yml
+permissions:
+  contents: read
+concurrency:
+  group: photo-catalog-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  inspect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: npm ci
+      - run: python -m pip install Pillow==12.3.0
+      - run: npm run typecheck
+      - run: npm test
+      - name: Conferir arquivos de imagem e cobertura
+        run: |
+          if node scripts/validate-photo-assets.ts > photo-review.log 2>&1; then
+            cat photo-review.log
+          else
+            tail -100 photo-review.log
+            echo '### Catálogo ainda não atingiu a cobertura exigida' >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            tail -60 photo-review.log >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+            if [ -f releases/photo-catalog/validacao-fotos.json ]; then
+              node -e 'const r=require("./releases/photo-catalog/validacao-fotos.json"); console.log(JSON.stringify({medicines:r.medicines,images:r.images,eligible:r.eligible,rejected:r.rejected.slice(0,12)},null,2))' >> "$GITHUB_STEP_SUMMARY"
+            fi
+            exit 1
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Catalogo-de-fotos-metadados-validados
+          path: releases/photo-catalog/*.json
+          if-no-files-found: error
+          retention-days: 3
+  publish:
+    needs: inspect
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Catalogo-de-fotos-metadados-validados
+          path: photo-catalog
+      - name: Publicar somente metadados para revisão do aplicativo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd photo-catalog
+          sha256sum *.json > SHA256SUMS.txt
+          cd ..
+          tag=v0.8.0-photo-review
+          if ! gh release view "$tag" >/dev/null 2>&1; then
+            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title 'Doser — conferência de metadados das fotos' --notes 'Etapa de validação do catálogo visual. Contém apenas URLs, identificação e hashes; não redistribui fotografias e não é um instalador. O APK ampliado é publicado separadamente após integração e testes.'
+          fi
+          gh release upload "$tag" photo-catalog/* --clobber
