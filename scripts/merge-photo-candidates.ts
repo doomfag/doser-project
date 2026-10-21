@@ -17,7 +17,12 @@ for (const file of [
         photos: [],
       };
       for (const p of g.photos)
-        if (!current.photos.some((a) => a.src === p.src))
+        if (
+          !/tarja|placeholder|sem[-_ ]?imagem/i.test(
+            decodeURIComponent(p.src),
+          ) &&
+          !current.photos.some((a) => a.src === p.src)
+        )
           current.photos.push(p);
       all.set(g.registration, current);
     }

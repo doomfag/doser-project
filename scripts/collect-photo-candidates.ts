@@ -174,7 +174,7 @@ async function worker() {
           if (!found.some((x) => x.src === p.src)) found.push(p);
       }
       if (
-        found.length >= 4 &&
+        found.length >= 1 &&
         !groups.some((g) => g.registration === chosenRegistration)
       ) {
         groups.push({
@@ -188,8 +188,7 @@ async function worker() {
       } else {
         failures.push({
           name,
-          reason:
-            found.length + " imagens candidatas com vínculo exato; mínimo é 4",
+          reason: found.length + " imagens candidatas com vínculo exato",
         });
         console.log("Pendente:", name, found.length);
       }

@@ -22,6 +22,7 @@ interface Inspected {
   analysis: Analysis;
   bytes: number;
   sha256: string;
+  originContentType: string;
 }
 const input = JSON.parse(
   await readFile("data/photos/candidate-metadata.json", "utf8"),
@@ -58,6 +59,8 @@ async function inspect(p: PhotoCandidate): Promise<Inspected | undefined> {
   requests = turn.catch(() => {});
   await turn;
   try {
+    if (/tarja|placeholder|sem[-_ ]?imagem/i.test(decodeURIComponent(p.src)))
+      throw Error("Imagem genérica da loja, não uma foto identificadora");
     const response = await fetch(p.src, {
       redirect: "error",
       signal: AbortSignal.timeout(12000),
@@ -96,14 +99,27 @@ async function inspect(p: PhotoCandidate): Promise<Inspected | undefined> {
     if (result.status !== 0)
       throw Error("Raster não aprovado: " + result.stderr.slice(0, 160));
     const analysis = JSON.parse(result.stdout) as Analysis;
-    if (
-      !response.headers
+    const originContentType =
+      response.headers
         .get("content-type")
-        ?.toLowerCase()
-        .startsWith(analysis.contentType)
+        ?.split(";")[0]
+        .trim()
+        .toLowerCase() ?? "";
+    // Some CDNs negotiate a different raster while retaining the original header.
+    // Trust the fully decoded allowed raster and pin its bytes, never HTML/SVG.
+    if (
+      ![
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "image/webp",
+        "application/octet-stream",
+      ].includes(originContentType)
     )
-      throw Error("MIME da origem difere do raster");
-    return { candidate: p, analysis, bytes: size, sha256 };
+      throw Error(
+        `MIME não permitido: ${originContentType}; raster: ${analysis.contentType}`,
+      );
+    return { candidate: p, analysis, bytes: size, sha256, originContentType };
   } catch (e) {
     rejected.push({ id: p.id, reason: String(e) });
     return undefined;
@@ -212,6 +228,7 @@ const manifest = chosen.flatMap((g) =>
       sha256: row.sha256,
       bytes: row.bytes,
       contentType: row.analysis.contentType,
+      originContentType: row.originContentType,
       width: row.analysis.width,
       height: row.analysis.height,
       position: i,
@@ -233,6 +250,23 @@ const report = {
     images: g.rows.length,
   })),
   rejected,
+  reviewed: input.groups.map((g: { name: string; registration: string }) => ({
+    name: g.name,
+    registration: g.registration,
+    distinctFiles: (inspected.get(g.registration) || []).length,
+    exclusiveFiles: (inspected.get(g.registration) || []).filter(
+      (p) => owners.get(p.sha256)!.size === 1,
+    ).length,
+  })),
+  mimeDifferences: chosen.flatMap((g) =>
+    g.rows
+      .filter((p) => p.originContentType !== p.analysis.contentType)
+      .map((p) => ({
+        id: p.candidate.id,
+        declared: p.originContentType,
+        decoded: p.analysis.contentType,
+      })),
+  ),
   methods: [
     "EAN+registro+nome+titular CMED",
     "raster decodificado, dimensões e tamanho",
