@@ -1,6 +1,6 @@
-# iPhone e iPad sem Mac, sem assinatura paga
+# Doser 0.8.0 no iPhone e iPad — sem Mac e sem mensalidade
 
-O Doser gera uma IPA sem assinatura. Para instalá-la gratuitamente sem Mac, uma opção é o **AltStore Classic com AltServer em Windows**. Isso exige acesso a um computador Windows; Linux sozinho não foi validado como alternativa. O programa aparece como aplicativo no iPhone/iPad, sem abrir o navegador para usar o Doser.
+O Doser 0.8.0 foi compilado para iPhone/iPad e aberto no simulador. O arquivo IPA é distribuído sem assinatura digital pessoal. Essa assinatura é uma autorização temporária para o iPhone abrir o aplicativo; não é uma cobrança ou assinatura de serviço. Para instalá-la gratuitamente sem Mac, uma opção é o **AltStore Classic com AltServer em Windows**. Isso exige acesso a um computador Windows; Linux sozinho não foi validado como alternativa. O programa aparece como aplicativo no iPhone/iPad, sem abrir o navegador para usar o Doser.
 
 ## Limites antes de instalar
 
@@ -14,7 +14,7 @@ O Doser gera uma IPA sem assinatura. Para instalá-la gratuitamente sem Mac, uma
 1. Consulte o [guia oficial do AltStore para Windows](https://faq.altstore.io/altstore-classic/how-to-install-altstore-windows). Use os downloads indicados pelo projeto oficial. O guia exige iTunes e iCloud nas versões indicadas ali, além do AltServer.
 2. Conecte o iPhone/iPad ao Windows por USB, autorize o computador no aparelho e siga o guia para instalar o AltStore Classic. A sincronização Wi-Fi permite a renovação posterior. O guia também explica a ativação do Modo de Desenvolvedor quando exigida pelo iOS.
 3. A autenticação com sua conta Apple é feita no próprio fluxo do AltServer/Apple. **Não envie senha, códigos ou certificados pelo chat.** Leia as condições e permissões da ferramenta antes de usá-la; ela é um projeto independente do Doser.
-4. Baixe `Doser-iOS-SEM-ASSINATURA.ipa` na página de downloads do Doser, transfira-o para Arquivos no iPhone/iPad e use o botão **+** em **My Apps** do AltStore Classic para selecionar a IPA. O AltStore fará a assinatura pessoal. Não use o ZIP de simulador.
+4. Baixe [Doser-iOS-SEM-ASSINATURA.ipa — versão 0.8.0](https://github.com/doomfag/doser-project/releases/download/v0.8.0-apple-tv-preview/Doser-iOS-SEM-ASSINATURA.ipa), transfira-o para Arquivos no iPhone/iPad e use o botão **+** em **My Apps** do AltStore Classic para selecionar a IPA. O AltStore fará a assinatura pessoal. Não use o ZIP de simulador.
 5. Abra o Doser pelo ícone do sistema. Confira em **My Apps** a validade da assinatura e renove antes do vencimento com o AltServer acessível. Evite desinstalar o Doser para tentar atualizar: isso pode apagar dados locais.
 
 Não é necessário comprar Apple Developer Program para esse fluxo de assinatura pessoal descrito pelo AltStore. Não foi criado cadastro ou contratado serviço em seu nome. Recursos de distribuição da Apple têm regras diferentes; não confunda AltStore Classic com outras modalidades ou lojas.
