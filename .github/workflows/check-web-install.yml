@@ -1,0 +1,51 @@
+name: Conferir link público do Doser
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/doser-iphone-install]
+    paths: [".github/workflows/check-web-install.yml"]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 4
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Conferir HTTPS e arquivos publicados
+        env:
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          node --input-type=module <<'JS'
+          import {createHash} from 'node:crypto';
+          const repository=process.env.REPOSITORY;
+          if(repository!=='doomfag/doser-project')throw Error('Unexpected distribution');
+          const source='https://raw.githubusercontent.com/'+repository+'/refs/heads/gh-pages/';
+          const site='https://doomfag.github.io/doser-project/';
+          const files=['index.html','sw.js','manifest.webmanifest','icons/icon-512.png','icons/apple-touch-icon.png'];
+          const hash=b=>createHash('sha256').update(b).digest('hex');
+          const expected=new Map();
+          for(const file of files){const r=await fetch(source+file,{cache:'no-store',signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error('Source '+file+': '+r.status);expected.set(file,hash(Buffer.from(await r.arrayBuffer())));}
+          for(let attempt=0;attempt<9;attempt++){
+            const checked=[];
+            for(const file of files){
+              const url=site+(file==='index.html'?'':file);
+              const r=await fetch(url,{cache:'no-store',headers:{'Cache-Control':'no-cache'},signal:AbortSignal.timeout(15000)});
+              if(!r.ok){checked.push({file,status:r.status,match:false});break;}
+              const bytes=Buffer.from(await r.arrayBuffer()),sha256=hash(bytes),match=sha256===expected.get(file);
+              checked.push({file,status:r.status,sha256,match});
+              if(file==='index.html'&&(!bytes.includes(Buffer.from('data-doser-pwa="true"'))||!bytes.includes(Buffer.from('web-json'))))throw Error('Published page is not the installable Doser');
+              if(file==='manifest.webmanifest'){const m=JSON.parse(bytes.toString('utf8'));if(m.display!=='standalone'||m.scope!=='./')throw Error('Incorrect install manifest');}
+            }
+            if(checked.length===files.length&&checked.every(x=>x.match)){
+              console.log(JSON.stringify({site,checked,ready:true,checkedAt:new Date().toISOString()}));
+              console.log('::notice::PUBLIC_DOSER_READY: '+site+' — HTTPS 200; HTML, service worker, manifest and icons match the published branch.');
+              process.exit(0);
+            }
+            console.log(JSON.stringify({attempt,checked,ready:false}));
+            if(attempt<8)await new Promise(r=>setTimeout(r,10000));
+          }
+          throw Error('Public deployment not confirmed. Do not claim that the installation link is ready.');
+          JS
