@@ -14,10 +14,12 @@ export default function ProductPhotos({
   medicineId,
   name,
   presentations = [],
+  hasManufacturerPhotos = false,
 }: {
   medicineId: string;
   name: string;
   presentations?: string[];
+  hasManufacturerPhotos?: boolean;
 }) {
   const [photos, setPhotos] = useState<ProductPhoto[]>([]);
   const [error, setError] = useState("");
@@ -43,9 +45,10 @@ export default function ProductPhotos({
           Fotos da embalagem {photos.length ? `(${photos.length})` : ""}
         </summary>
         <p className="small-note">
-          Não há acervo de fotos verificado conectado. Você pode guardar fotos
-          da sua embalagem neste dispositivo. Uma foto não confirma
-          autenticidade nem equivalência.
+          {!hasManufacturerPhotos &&
+            "Ainda não há imagem do fabricante conferida para este cadastro. "}
+          Você também pode guardar fotos da sua embalagem neste dispositivo. Uma
+          foto não confirma autenticidade nem equivalência.
         </p>
         <div className="photo-grid">
           {photos.map((p) => (
@@ -79,6 +82,11 @@ export default function ProductPhotos({
             </figure>
           ))}
         </div>
+        <datalist id={`photo-presentations-${medicineId}`}>
+          {presentations.map((p) => (
+            <option key={p} value={presentationLabel(p)} />
+          ))}
+        </datalist>
         <form
           className="photo-entry"
           onSubmit={async (e) => {

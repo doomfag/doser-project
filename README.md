@@ -1,4 +1,4 @@
-# Doser 0.7.1
+# Doser 0.7.2
 
 Consulta pessoal de medicamentos em React e TypeScript. Sem chatbot, conta, hospedagem ou API paga.
 
@@ -6,9 +6,13 @@ A base real foi consultada na Anvisa em **20/10/2026**: **10.326 registros ativo
 
 A integração CMED adiciona **25.219 apresentações em 8.355 fichas**, com vínculo por registro MS e nome do produto. As descrições, datas e fontes são preservadas. Isso não constitui dose recomendada, estoque ou preço comercial real.
 
+## Imagens dos fabricantes
+
+A versão 0.7.2 inclui uma galeria de **15 imagens de apresentações de Dorflex e Novalgina**, consultadas nos sites oficiais. Os arquivos não são redistribuídos no APK: o primeiro acesso usa internet e, no celular, uma cópia privada pode ser guardada após conferir sua integridade. Não há fotos para todos os medicamentos. [Cobertura, termos e instalação](docs/melhorias-0.7.2.md).
+
 ## Atualização Android
 
-O usuário já usa o APK anterior. A prévia 0.7.1 instala ao lado dele, com identificador próprio; não desinstale a versão antiga. Favoritos e anotações continuam no aplicativo anterior, sem migração automática. Assinatura definitiva e restauração nativa ainda precisam ser configuradas e validadas. [Instruções de instalação](docs/melhorias-0.7.md).
+O usuário já usa o APK anterior. A prévia 0.7.2 instala ao lado dele, com identificador próprio; não desinstale a versão antiga. Favoritos e anotações continuam no aplicativo anterior, sem migração automática. Assinatura definitiva e restauração nativa ainda precisam ser configuradas e validadas. [Instruções de instalação](docs/melhorias-0.7.2.md).
 
 ## Apple e TVs
 

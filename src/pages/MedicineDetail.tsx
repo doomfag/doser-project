@@ -1,4 +1,6 @@
 import { presentationLabel } from "../domain/presentationLabel";
+import ManufacturerPhotos from "../components/ManufacturerPhotos";
+import { manufacturerPhotosFor } from "../domain/manufacturerPhotos";
 import ProductPhotos from "../components/ProductPhotos";
 import { normalize } from "../domain/catalog";
 import ClinicalReferences from "../components/ClinicalReferences";
@@ -32,6 +34,7 @@ export default function MedicineDetail({
   onFavorite,
   onCompare,
 }: Props) {
+  const officialPhotos = useMemo(() => manufacturerPhotosFor(detail), [detail]);
   const [tab, setTab] = useState("overview");
   const related = useMemo(
     () =>
@@ -108,10 +111,14 @@ export default function MedicineDetail({
         ))}
       </div>
       {tab === "overview" && (
+        <ManufacturerPhotos key={detail.id} photos={officialPhotos} />
+      )}
+      {tab === "overview" && (
         <ProductPhotos
           key={detail.id}
           medicineId={detail.id}
           name={detail.name}
+          hasManufacturerPhotos={officialPhotos.length > 0}
           presentations={detail.presentations}
         />
       )}

@@ -32,7 +32,7 @@ await writeFile(
   JSON.stringify(
     {
       id: "io.github.doomfag.doser.tv",
-      version: "0.7.1",
+      version: "0.7.2",
       type: "web",
       main: "index.html",
       title: "Doser",
@@ -48,7 +48,7 @@ await writeFile(
 );
 await writeFile(
   "build-tv/tizen/config.xml",
-  `<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://github.com/doomfag/doser-project" version="0.7.1" viewmodes="maximized"><tizen:application id="DoserTV001.Doser" package="DoserTV001" required_version="6.5"/><content src="index.html"/><icon src="icon.png"/><name>Doser</name><tizen:profile name="tv-samsung"/><feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/><tizen:setting screen-orientation="landscape" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/><access origin="https://*" subdomains="true"/></widget>`,
+  `<?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="https://github.com/doomfag/doser-project" version="0.7.2" viewmodes="maximized"><tizen:application id="DoserTV001.Doser" package="DoserTV001" required_version="6.5"/><content src="index.html"/><icon src="icon.png"/><name>Doser</name><tizen:profile name="tv-samsung"/><feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/><tizen:setting screen-orientation="landscape" context-menu="disable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/><access origin="https://*" subdomains="true"/></widget>`,
 );
 await writeFile(
   "build-tv/tizen/LEIA-ME.txt",

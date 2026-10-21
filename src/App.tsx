@@ -361,7 +361,7 @@ export default function App() {
             <Settings2 size={19} />
             <span>Dados e ajustes</span>
           </button>
-          <span className="version">DOSER / VERSÃO 0.7.1</span>
+          <span className="version">DOSER / VERSÃO 0.7.2</span>
         </div>
       </aside>
       <div className="workspace">
