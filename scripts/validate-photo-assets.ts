@@ -34,6 +34,11 @@ if (
   !Array.isArray(input.groups)
 )
   throw Error("Manifesto de revisão inválido");
+if (
+  new Set(input.groups.map((g: { registration: string }) => g.registration))
+    .size !== input.groups.length
+)
+  throw Error("Registros repetidos não podem ampliar a contagem");
 const root = process.env.DOSER_PHOTO_REVIEW_DIR || "/tmp/doser-photo-review";
 await mkdir(root, { recursive: true });
 const output = process.env.DOSER_PHOTO_OUTPUT_DIR || "releases/photo-catalog";

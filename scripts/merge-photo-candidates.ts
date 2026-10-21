@@ -38,7 +38,15 @@ for (const name of priority.candidates) {
       (g) => normalize(g.name) === normalize(name) && g.photos.length >= 3,
     )
     .sort((a, b) => b.photos.length - a.photos.length)[0];
-  if (group) selected.push(group);
+  if (
+    group &&
+    !selected.some(
+      (g) =>
+        g.registration === group.registration ||
+        normalize(g.name) === normalize(group.name),
+    )
+  )
+    selected.push(group);
 }
 await mkdir("data/photos", { recursive: true });
 const output = {
