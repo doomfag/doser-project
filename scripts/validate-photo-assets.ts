@@ -3,8 +3,11 @@ import { createHash } from "node:crypto";
 import { spawnSync } from "node:child_process";
 import {
   retailerImageUrl,
+  validEan,
   type PhotoCandidate,
 } from "../server/photoImport.ts";
+import { normalize, parseCatalog } from "../src/domain/catalog.ts";
+import { retailerPageMatches } from "../src/domain/photoSources.ts";
 import type { ManufacturerPhoto } from "../src/domain/manufacturerPhotos.ts";
 
 interface Analysis {
@@ -27,6 +30,12 @@ interface Inspected {
 const input = JSON.parse(
   await readFile("data/photos/candidate-metadata.json", "utf8"),
 );
+const medicines = parseCatalog(
+  JSON.parse(await readFile("build-native/seed/catalog.json", "utf8")),
+);
+const medicinesByRegistration = new Map(
+  medicines.map((m) => [m.registration?.number, m]),
+);
 if (
   input.status !== "pending-image-files" ||
   input.minimumMedicines !== 100 ||
@@ -48,11 +57,17 @@ const filePromises = new Map<string, Promise<Inspected | undefined>>();
 let requests = Promise.resolve();
 let nextStart = 0;
 async function inspect(p: PhotoCandidate): Promise<Inspected | undefined> {
+  const medicine = medicinesByRegistration.get(p.registration);
   if (
     !retailerImageUrl(p.src) ||
-    !/^\d{13}$/.test(p.ean) ||
+    !retailerPageMatches(p.src, p.sourcePage, p.sourceLabel) ||
+    !validEan(p.ean) ||
     !/^\d{9}$/.test(p.registration) ||
-    !/^\d{14}$/.test(p.holderCnpj)
+    !/^\d{14}$/.test(p.holderCnpj) ||
+    !medicine ||
+    normalize(medicine.name) !== normalize(p.name) ||
+    normalize(medicine.ingredient) !== normalize(p.ingredient) ||
+    !medicine.registration?.holder?.startsWith(p.holderCnpj)
   )
     throw Error("Fonte ou identidade inválida");
   const turn = requests.then(async () => {
