@@ -16,6 +16,10 @@ A busca oferece correções de sintomas para confirmação, mantém outros sinto
 
 O pacote 0.8.0 usa o nome **Doser**, versão 0.8.0, código 10 e identificador `io.github.doomfag.doser`. Se uma instalação antiga do mesmo identificador tiver assinatura diferente, a reinstalação exige removê-la e apaga seus dados. Nesta tarefa, o usuário confirmou que não tem dados a preservar. Prévia 0.7.2 com outro identificador pode continuar ao lado deste pacote. Assinatura estável e migração/restauração nativa ainda estão pendentes. [Instruções de instalação](docs/melhorias-0.8.0.md).
 
+## iPhone sem computador
+
+Há uma distribuição web instalável pelo Safari, com ícone e janela própria, consulta offline após preparação e atualização controlada pelo usuário. Não exige computador nem renovação semanal. [Instalação e ativação do endereço](docs/iphone-sem-computador.md). O primeiro acesso e as fotos precisam de internet; dados pessoais ficam neste dispositivo e não migram automaticamente do APK.
+
 ## Apple e TVs
 
 A extensão 0.6 acrescenta projetos/builds para iPhone/iPad, Apple TV, Android TV/Google TV/Fire TV e LG webOS, além de um projeto Samsung Tizen. [Veja a matriz de suporte e as limitações de assinatura](docs/apple-e-tvs.md). Não há alegação de compatibilidade universal: versões Apple sem assinatura não são instaladores prontos para dispositivo físico; Samsung requer certificado do SDK. As compilações ficam no workflow [iOS e TVs](https://github.com/doomfag/doser-project/actions/workflows/extended-platforms.yml).

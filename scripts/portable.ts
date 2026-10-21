@@ -45,21 +45,37 @@ const gzipEnvelope = JSON.stringify({
   data: gzip.toString("base64"),
 });
 const nativeJson = process.argv.includes("--native-json");
+const pwa = process.argv.includes("--pwa");
+if (pwa && nativeJson) throw Error("Escolha uma distribuição web ou nativa.");
 const tv = process.argv.includes("--tv");
-const envelope = nativeJson
+const plainSnapshot = {
+  version: 1,
+  medicines,
+  clinicalReferences: snapshot.clinicalReferences ?? [],
+  status: snapshot.status,
+};
+const envelope = pwa
   ? JSON.stringify({
-      encoding: "native-json",
-      snapshot: {
-        version: 1,
-        medicines,
-        clinicalReferences: snapshot.clinicalReferences ?? [],
-        status: snapshot.status,
-      },
+      encoding: "web-json",
+      snapshot: plainSnapshot,
+      sha256: createHash("sha256")
+        .update(JSON.stringify(plainSnapshot))
+        .digest("hex"),
     }).replace(/</g, "\\u003c")
-  : gzipEnvelope;
+  : nativeJson
+    ? JSON.stringify({
+        encoding: "native-json",
+        snapshot: {
+          version: 1,
+          medicines,
+          clinicalReferences: snapshot.clinicalReferences ?? [],
+          status: snapshot.status,
+        },
+      }).replace(/</g, "\\u003c")
+    : gzipEnvelope;
 html = html.replace(
   '<html lang="pt-BR">',
-  `<html lang="pt-BR" data-doser-standalone="true"${nativeJson ? ' data-doser-native="true"' : ""}${tv ? ' data-doser-tv="true"' : ""}>`,
+  `<html lang="pt-BR" data-doser-standalone="true"${pwa ? ' data-doser-pwa="true"' : ""}${nativeJson ? ' data-doser-native="true"' : ""}${tv ? ' data-doser-tv="true"' : ""}>`,
 );
 html = html.replace(
   /<script[^>]+src="[^"]+"[^>]*><\/script>/,

@@ -4,7 +4,7 @@ import { createCatalogMiddleware } from "./server/middleware.ts";
 export default defineConfig({
   build: {
     target:
-      process.env.DOSER_TARGET === "ios"
+      ["ios", "pwa"].includes(process.env.DOSER_TARGET ?? "")
         ? "safari15.4"
         : process.env.DOSER_TARGET?.includes("tv")
           ? "chrome87"

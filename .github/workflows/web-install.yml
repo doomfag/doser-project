@@ -1,0 +1,55 @@
+name: Doser instalável pelo Safari
+on:
+  workflow_dispatch:
+  push:
+    branches: [codex/doser-iphone-install]
+    paths:
+      - "src/**"
+      - "scripts/**"
+      - "downloads/Doser.html"
+      - "package*.json"
+      - "vite.config.ts"
+      - "index.html"
+      - ".github/workflows/web-install.yml"
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: web-install
+  cancel-in-progress: true
+jobs:
+  build-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      DOSER_TARGET: pwa
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run pwa:build
+      - run: npm run test:pwa
+      - name: Publicar arquivos estáticos sem dados pessoais
+        run: node scripts/publish-pwa.ts
+      - name: Ativar publicação gratuita do Pages quando a credencial permitir
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! gh api "repos/$GITHUB_REPOSITORY/pages" > pages-state.json 2>/dev/null; then
+            printf '%s\n' '{"source":{"branch":"gh-pages","path":"/"},"build_type":"legacy"}' > pages-request.json
+            if ! gh api --method POST "repos/$GITHUB_REPOSITORY/pages" --input pages-request.json > pages-state.json 2>pages-error.txt; then
+              cat pages-error.txt
+              echo '::notice::PAGES_OWNER_ACTIVATION_REQUIRED: Arquivos publicados no branch gh-pages. Settings → Pages → Deploy from a branch → gh-pages → /(root) → Save.'
+              exit 0
+            fi
+          fi
+          if node -e 'const s=require("./pages-state.json");process.exit(s.source?.branch==="gh-pages"?0:1)'; then
+            gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" > /dev/null
+            echo '::notice::PAGES_BUILD_REQUESTED: https://doomfag.github.io/doser-project/'
+          else
+            echo '::notice::PAGES_SOURCE_REVIEW_REQUIRED: A configuração existente foi preservada; selecione o branch gh-pages em Settings → Pages para usar esta versão.'
+          fi

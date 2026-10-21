@@ -1,5 +1,7 @@
 # Doser 0.8.0 no iPhone e iPad — sem Mac e sem mensalidade
 
+**Sem computador:** prefira a [versão instalável pelo Safari](iphone-sem-computador.md). As instruções abaixo são apenas para quem deseja instalar o pacote nativo pelo AltStore.
+
 O Doser 0.8.0 foi compilado para iPhone/iPad e aberto no simulador. O arquivo IPA é distribuído sem assinatura digital pessoal. Essa assinatura é uma autorização temporária para o iPhone abrir o aplicativo; não é uma cobrança ou assinatura de serviço. Para instalá-la gratuitamente sem Mac, uma opção é o **AltStore Classic com AltServer em Windows**. Isso exige acesso a um computador Windows; Linux sozinho não foi validado como alternativa. O programa aparece como aplicativo no iPhone/iPad, sem abrir o navegador para usar o Doser.
 
 ## Limites antes de instalar

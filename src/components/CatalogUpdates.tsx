@@ -68,7 +68,9 @@ export default function CatalogUpdates({
           <span className="portable-label">
             {nativePackaged
               ? "Base incluída no aplicativo"
-              : "Base incluída no arquivo"}
+              : document.documentElement.dataset.doserPwa === "true"
+                ? "Base incluída nesta versão"
+                : "Base incluída no arquivo"}
           </span>
         ) : (
           <button
@@ -88,10 +90,17 @@ export default function CatalogUpdates({
       )}
       {portable ? (
         <p className="small-note">
-          {nativePackaged
-            ? "Consulta offline. A atualização automática nesta plataforma ainda não está disponível. Para renovar, importe um"
-            : "Consulta offline com a base incluída. Para renovar, importe um"}
-          catálogo ou use o programa local, que permite a verificação semanal.
+          {document.documentElement.dataset.doserPwa === "true" ? (
+            "Consulta offline com a base desta versão. Uma nova publicação do Doser pode trazer um catálogo atualizado; a tela inicial avisa quando houver atualização do aplicativo. Você também pode importar um catálogo com fontes."
+          ) : (
+            <>
+              {nativePackaged
+                ? "Consulta offline. A atualização automática nesta plataforma ainda não está disponível. Para renovar, importe um"
+                : "Consulta offline com a base incluída. Para renovar, importe um"}
+              catálogo ou use o programa local, que permite a verificação
+              semanal.
+            </>
+          )}
         </p>
       ) : (
         <label className="automatic-setting">
@@ -143,7 +152,8 @@ export default function CatalogUpdates({
           {status.presentations.products} registros.{" "}
           {status.presentations.status === "cached"
             ? "Cache anterior, com data original preservada."
-            : "A lista não confirma estoque ou comercialização."} {status.presentations.message}
+            : "A lista não confirma estoque ou comercialização."}{" "}
+          {status.presentations.message}
         </p>
       )}
       {status.clinical && (

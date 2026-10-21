@@ -13,6 +13,8 @@
     "start": "node --use-env-proxy server/index.ts",
     "catalog:update": "node --use-env-proxy server/update.ts",
     "build:portable": "npm run build && node scripts/portable.ts",
+    "pwa:build": "npm run native:prepare && node scripts/portable.ts build-pwa/index.html --pwa && node scripts/prepare-pwa.ts",
+    "test:pwa": "node scripts/verify-pwa.ts",
     "test:release": "node scripts/verify-release.ts",
     "native:prepare": "npm run build && node scripts/prepare-native.ts",
     "desktop:dev": "npm run native:prepare && electron .",

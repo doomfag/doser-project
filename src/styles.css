@@ -2741,3 +2741,15 @@ html[data-doser-tv="true"] .dose-unit-input select {
   color: #657571;
   margin: 3px 0 10px;
 }
+
+.pwa-install { margin: 0 0 28px; padding: 18px 20px; border: 1px solid #dce8e1; border-radius: 16px; background: #f0f5f2; }
+.pwa-install-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.pwa-install-heading p { margin: 5px 0 0; font-size: 13px; color: #53675c; }
+.pwa-install > .small-note { margin: 10px 0 0; }
+.pwa-instructions { margin-top: 16px; font-size: 14px; line-height: 1.65; }
+.pwa-instructions ol { padding-left: 22px; }
+.pwa-instructions li { margin-bottom: 10px; }
+.pwa-instructions svg { display: inline; vertical-align: middle; }
+.pwa-instructions p, .pwa-update p { color: #53675c; font-size: 13px; }
+.pwa-update { margin-top: 14px; border-top: 1px solid #dce8e1; padding-top: 12px; }
+@media (max-width: 650px) { .pwa-install { padding: 16px; } .pwa-install-heading { align-items: flex-start; flex-direction: column; gap: 12px; } }

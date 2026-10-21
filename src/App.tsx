@@ -1,4 +1,5 @@
 import { presentationLabel } from "./domain/presentationLabel";
+import PwaInstall from "./components/PwaInstall";
 import { bularioUrl } from "./domain/bulario";
 import OffersWorkbench from "./components/OffersWorkbench";
 import { normalize } from "./domain/text";
@@ -413,30 +414,33 @@ export default function App() {
             <Calculator size={18} />
             <span>Calculadora</span>
           </button>
-          {catalogState.portable && !nativeMobile && !television && (
-            <button
-              className="text-button portable-save"
-              title="Salvar HTML"
-              aria-label="Salvar HTML"
-              onClick={() => {
-                try {
-                  savePortableApplication();
-                  setNotice(
-                    "Solicitação enviada ao navegador. Confira a lista de downloads. A biblioteca pessoal deve ser exportada separadamente.",
-                  );
-                } catch (e) {
-                  setNotice(
-                    e instanceof Error
-                      ? e.message
-                      : "Não foi possível preparar o arquivo.",
-                  );
-                }
-              }}
-            >
-              <Download size={18} />
-              <span>Salvar HTML</span>
-            </button>
-          )}
+          {catalogState.portable &&
+            !nativeMobile &&
+            !television &&
+            document.documentElement.dataset.doserPwa !== "true" && (
+              <button
+                className="text-button portable-save"
+                title="Salvar HTML"
+                aria-label="Salvar HTML"
+                onClick={() => {
+                  try {
+                    savePortableApplication();
+                    setNotice(
+                      "Solicitação enviada ao navegador. Confira a lista de downloads. A biblioteca pessoal deve ser exportada separadamente.",
+                    );
+                  } catch (e) {
+                    setNotice(
+                      e instanceof Error
+                        ? e.message
+                        : "Não foi possível preparar o arquivo.",
+                    );
+                  }
+                }}
+              >
+                <Download size={18} />
+                <span>Salvar HTML</span>
+              </button>
+            )}
           <button
             className="profile"
             aria-label="Abrir dados e ajustes"
@@ -450,6 +454,7 @@ export default function App() {
           key={`${page}-${detail?.id ?? "index"}`}
           className={page === "home" && !detail ? "main home-main" : "main"}
         >
+          {page === "home" && !detail && <PwaInstall />}
           {detail ? (
             <MedicineDetail
               onCalculate={() => setCalculatorOpen(true)}

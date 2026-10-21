@@ -28,6 +28,22 @@ export async function readEmbeddedCatalog(): Promise<EmbeddedCatalog | null> {
   if (element.textContent.length > 100 * 1024 * 1024)
     throw new Error("Base incluída excede o limite permitido.");
   const envelope = JSON.parse(element.textContent);
+  if (envelope.encoding === "web-json") {
+    if (
+      document.documentElement.dataset.doserPwa !== "true" ||
+      document.documentElement.dataset.doserStandalone !== "true" ||
+      !/^[a-f0-9]{64}$/.test(envelope.sha256)
+    )
+      throw Error("Base web inválida.");
+    const bytes = new TextEncoder().encode(JSON.stringify(envelope.snapshot));
+    const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", bytes));
+    const hash = [...digest]
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+    if (hash !== envelope.sha256)
+      throw Error("A integridade da base web não confere.");
+    return validateSnapshot(envelope.snapshot);
+  }
   if (envelope.encoding === "native-json") {
     if (document.documentElement.dataset.doserNative !== "true")
       throw new Error("Formato de base exclusivo de aplicativo empacotado.");

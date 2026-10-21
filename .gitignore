@@ -20,6 +20,7 @@ android/
 ios/
 build-ios/
 build-tv/
+build-pwa/
 tv-releases/
 tv/apple/Resources/
 tv/apple/*.xcodeproj/
