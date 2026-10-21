@@ -108,6 +108,14 @@ try {
       );
       return !!i?.naturalWidth && i.alt.includes("gotas");
     });
+    await page
+      .locator(".manufacturer-image img")
+      .evaluate(async (image: HTMLImageElement) => {
+        await image.decode();
+        await new Promise((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(resolve)),
+        );
+      });
     await page.screenshot({
       path: `releases/fotos-dorflex-${width}.png`,
       fullPage: true,
@@ -124,6 +132,14 @@ try {
       );
       return !!i?.naturalWidth && i.alt.includes("solução oral");
     });
+    await page
+      .locator(".manufacturer-image img")
+      .evaluate(async (image: HTMLImageElement) => {
+        await image.decode();
+        await new Promise((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(resolve)),
+        );
+      });
     await page.screenshot({
       path: `releases/fotos-novalgina-${width}.png`,
       fullPage: true,
