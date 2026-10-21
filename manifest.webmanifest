@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "Doser",
+  "short_name": "Doser",
+  "lang": "pt-BR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F8FAF9",
+  "theme_color": "#14261E",
+  "description": "Consulta farmacológica e biblioteca pessoal.",
+  "icons": [
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
