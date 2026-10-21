@@ -6,6 +6,7 @@ import {
   publicProductData,
   searchProductLinks,
   validEan,
+  collectPagueMenosPhotos,
 } from "./photoImport.ts";
 const ean = "7891058017507";
 const medicine = {
@@ -161,5 +162,56 @@ describe("photo identity import", () => {
     ).toEqual([
       { url: "https://www.drogasil.com.br/teste.html", name: "Fixture" },
     ]);
+  });
+});
+
+describe("public Pague Menos catalog metadata", () => {
+  const product = () => ({
+    productName: "Medicamento teste 10 mg 20 comprimidos",
+    link: "https://www.paguemenos.com.br/medicamento-teste/p",
+    NumeroRegistroMS: ["1234567890001"],
+    description: "Do not import medical or commercial text",
+    items: [
+      {
+        ean,
+        isKit: false,
+        sellers: [{ sellerId: "1", commertialOffer: { Price: 99 } }],
+        images: [1, 2, 3].map((i) => ({
+          imageUrl: `https://paguemenos.vteximg.com.br/arquivos/ids/${i}/${ean}_${i}.png?v=123456789012345678`,
+        })),
+      },
+    ],
+  });
+  it("joins the barcode and keeps several original image views without importing offers", () => {
+    const photos = collectPagueMenosPhotos([product()], index(), "2026-10-21");
+    expect(photos).toHaveLength(3);
+    expect(
+      photos.every((p) => p.ean === ean && p.sourceLabel === "Pague Menos"),
+    ).toBe(true);
+    expect(JSON.stringify(photos)).not.toMatch(
+      /Price|commertialOffer|Do not import/,
+    );
+  });
+  it("rejects marketplace-only items, kits, invalid EANs and untrusted image URLs", () => {
+    for (const mutate of [
+      (p: ReturnType<typeof product>) => {
+        p.items[0].sellers = [
+          { sellerId: "third-party", commertialOffer: { Price: 1 } },
+        ];
+      },
+      (p: ReturnType<typeof product>) => {
+        p.items[0].isKit = true;
+      },
+      (p: ReturnType<typeof product>) => {
+        p.items[0].ean = "7891058017508";
+      },
+      (p: ReturnType<typeof product>) => {
+        p.items[0].images = [{ imageUrl: "https://evil.example/image.png" }];
+      },
+    ]) {
+      const p = product();
+      mutate(p);
+      expect(collectPagueMenosPhotos([p], index(), "2026-10-21")).toEqual([]);
+    }
   });
 });

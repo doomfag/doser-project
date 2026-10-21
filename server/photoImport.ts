@@ -1,3 +1,5 @@
+import { retailerImageUrl } from "../src/domain/photoSources.ts";
+export { retailerImageUrl } from "../src/domain/photoSources.ts";
 import { createHash } from "node:crypto";
 import { parse } from "csv-parse/sync";
 import { normalize, type Medicine } from "../src/domain/catalog.ts";
@@ -127,35 +129,6 @@ export function publicProductData(html: string): Record<string, unknown> {
   if (!product || typeof product !== "object")
     throw Error("Página não descreve um produto.");
   return product;
-}
-
-export function retailerImageUrl(value: unknown): value is string {
-  if (typeof value !== "string") return false;
-  try {
-    const url = new URL(value);
-    return (
-      url.protocol === "https:" &&
-      !url.username &&
-      !url.password &&
-      !url.port &&
-      !url.hash &&
-      ((url.hostname === "product-data.raiadrogasil.io" &&
-        !url.search &&
-        /^\/images\/\d+\.(?:webp|jpg|jpeg|png)$/.test(url.pathname)) ||
-        (url.hostname === "img.drogasil.com.br" &&
-          !url.search &&
-          /^\/media\/catalog\/product\/[a-zA-Z0-9/_%.()-]+\.(?:webp|jpg|jpeg|png)$/.test(
-            url.pathname,
-          )) ||
-        (url.hostname === "paguemenos.vteximg.com.br" &&
-          /^\/arquivos\/ids\/\d+(?:-\d+-\d+)?\/[a-zA-Z0-9/_%.()+-]+\.(?:webp|jpg|jpeg|png)$/i.test(
-            url.pathname,
-          ) &&
-          (!url.search || /^\?v=\d{8,30}$/.test(url.search))))
-    );
-  } catch {
-    return false;
-  }
 }
 
 /** Public VTEX catalog metadata. No prices, stock or clinical text are imported. */
