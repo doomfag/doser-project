@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-10-21",
+  "review": "Inspeção visual de miniaturas; decisões editoriais sobre arquivos específicos. Não é revisão clínica da coleção.",
+  "files": [
+    {
+      "sha256": "4c1592628d94eb97a16271a47674d869950f3679386af486507fb24370bd09ea",
+      "reason": "Imagem genérica da loja/aviso de produto sem imagem; não identifica a apresentação real."
+    },
+    {
+      "sha256": "c81eb891063175f1f98448eafad8f8e1ebeb9b975d3bad1463dc4b3ff37e5477",
+      "reason": "Imagem genérica da loja/aviso de produto sem imagem; não identifica a apresentação real."
+    },
+    {
+      "sha256": "0e45858f287aafd34a4941cef0eb56f4250d300ae46060313ccb8cdf34b6461e",
+      "reason": "Imagem genérica da loja/aviso de produto sem imagem; não identifica a apresentação real."
+    },
+    {
+      "sha256": "c4c1eb209aaa3a5c7a43fab56776df30d7ec95da6bf91e270cef3b0b32ba7305",
+      "reason": "Imagem genérica da loja/aviso de produto sem imagem; não identifica a apresentação real."
+    },
+    {
+      "sha256": "93d38698e2b2f013bb2ff32240f25aaef04ad4a83c6080d9d94b071181ac468d",
+      "reason": "Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "sha256": "281a2e99e220905a30cf05d1fadef3c233852a783a21171ed0ffedab1748ab74",
+      "reason": "Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "sha256": "611366db640ed9da767cd8787d4e8194e0624355f7749097feca233ae56a0f84",
+      "reason": "Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "sha256": "315dd8a0edbc40eb0c88a9ebdc7f5773ba20e2923c218158d5a2b18263b89e3d",
+      "reason": "Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "sha256": "c4326063413e79d1198fb9e85889b0c901586f09d02fd5bee824fd459bfc4be0",
+      "reason": "Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "sha256": "4cf6685bb4639ce81baa687a555a434bb8b77d05fa5025c9ea8667bf9987ea22",
+      "reason": "Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "sha256": "88ac4c577d7e1bc5bb0673f2fa139a5449e24537b7e2479d487c2b6bc4f7a1b5",
+      "reason": "Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "sha256": "37c7ebd7ca0153cfe7f275b85ea13efae15d55c0cfcf40e16d501269a35f3300",
+      "reason": "Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "sha256": "2db4e4721064dbd80dd6f690ffb270eb7a03f505ffc86283c680b67e964e9185",
+      "reason": "Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    }
+  ]
+}

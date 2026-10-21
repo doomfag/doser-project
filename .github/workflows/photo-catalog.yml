@@ -5,6 +5,7 @@ on:
     branches: [codex/doser-photos-100]
     paths:
       - data/photos/candidate-metadata.json
+      - data/photos/excluded-images.json
       - server/photoImport.ts
       - scripts/analyze-photo.py
       - scripts/validate-photo-assets.ts

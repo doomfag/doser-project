@@ -30,6 +30,6 @@ writeFileSync(
     .replace(/MARKETING_VERSION = [^;]+;/g, `MARKETING_VERSION = ${version};`)
     .replace(
       /CURRENT_PROJECT_VERSION = [^;]+;/g,
-      "CURRENT_PROJECT_VERSION = 9;",
+      "CURRENT_PROJECT_VERSION = 10;",
     ),
 );

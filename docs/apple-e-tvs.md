@@ -1,4 +1,4 @@
-# Apple e TVs — versão inicial 0.6
+# Apple e TVs — versão 0.8.0
 
 Compatibilidade deve ser declarada por sistema e versão. Não existe instalador universal para todos os aparelhos. As compilações e os testes abaixo não comprovam funcionamento em todos os modelos ou controles.
 

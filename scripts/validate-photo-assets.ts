@@ -53,6 +53,15 @@ await mkdir(root, { recursive: true });
 const output = process.env.DOSER_PHOTO_OUTPUT_DIR || "releases/photo-catalog";
 await mkdir(output, { recursive: true });
 const rejected: { id: string; reason: string }[] = [];
+const exclusions = JSON.parse(
+  await readFile("data/photos/excluded-images.json", "utf8"),
+);
+const excludedHashes = new Map<string, string>(
+  exclusions.files.map((p: { sha256: string; reason: string }) => [
+    p.sha256,
+    p.reason,
+  ]),
+);
 const filePromises = new Map<string, Promise<Inspected | undefined>>();
 let requests = Promise.resolve();
 let nextStart = 0;
@@ -109,6 +118,7 @@ async function inspect(p: PhotoCandidate): Promise<Inspected | undefined> {
     }
     const data = Buffer.concat(parts);
     const sha256 = createHash("sha256").update(data).digest("hex");
+    if (excludedHashes.has(sha256)) throw Error(excludedHashes.get(sha256));
     const path = root + "/" + sha256 + ".bin";
     await writeFile(path, data, { mode: 0o600 });
     const result = spawnSync(
@@ -236,7 +246,7 @@ const manifest = chosen.flatMap((g) =>
       productTitle: p.productTitle,
       ean: p.ean,
       presentation: p.presentation,
-      src: p.src,
+      src: new URL(p.src).href,
       sourcePage: p.sourcePage,
       sourceKind: "retailer",
       sourceLabel: p.sourceLabel,

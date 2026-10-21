@@ -1,6 +1,6 @@
 {
   "name": "doser",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -53,7 +53,7 @@
     "node": ">=24.5.0"
   },
   "main": "desktop/main.cjs",
-  "description": "Consulta farmacol\u00f3gica pessoal com cat\u00e1logo local",
+  "description": "Consulta farmacológica pessoal com catálogo local",
   "author": "Doser",
   "overrides": {
     "global-agent": "^4.1.3"

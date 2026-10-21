@@ -4,7 +4,11 @@ import {
   searchIndex,
   type Medicine,
 } from "../domain/catalog";
-import { symptomContext } from "../domain/symptoms";
+import {
+  symptomContext,
+  suggestSymptomQuery,
+  refineSymptomQuery,
+} from "../domain/symptoms";
 const source = {
   title: "Synthetic",
   url: "https://example.org/source",
@@ -47,6 +51,71 @@ describe("plain language symptom search", () => {
     expect(
       searchIndex(index, "dor de cabeça e enjoo", "symptoms"),
     ).toHaveLength(0);
+  });
+  it("does not treat a negated symptom or a class-only extra term as a documented indication", () => {
+    expect(searchIndex(index, "dor de cabeça sem febre", "symptoms")).toEqual(
+      [],
+    );
+    const i = createSearchIndex([
+      { ...medicine("headache-only", "Cefaleia"), drugClass: "Formigamento" },
+    ]);
+    expect(searchIndex(i, "dor de cabeça e formigamento", "symptoms")).toEqual(
+      [],
+    );
+  });
+  it("suggests corrected full queries without silently choosing medicines or dropping symptoms", () => {
+    expect(suggestSymptomQuery("dor de cabessa e febr")).toEqual([
+      "Dor de cabeça e febre",
+    ]);
+    expect(suggestSymptomQuery("diarrea")).toEqual(["Diarreia"]);
+    expect(suggestSymptomQuery("tose e nariz entupido")).toEqual([
+      "Tosse e nariz entupido",
+    ]);
+    expect(suggestSymptomQuery("paracetamol")).toEqual([]);
+    expect(suggestSymptomQuery("qzxw")).toEqual([]);
+    expect(searchIndex(index, "dor de cabessa e febr", "symptoms")).toEqual([]);
+    expect(
+      searchIndex(index, "dor de cabeça e sintoma desconhecido", "symptoms"),
+    ).toEqual([]);
+  });
+  it("preserves additional symptoms when a broad belly query is clarified", () => {
+    expect(
+      refineSymptomQuery("Dor de barriga e febre", "Dor de barriga", "Gases"),
+    ).toBe("Gases e febre");
+    expect(
+      refineSymptomQuery("Dor no estômago e enjoo", "Dor de barriga", "Azia"),
+    ).toBe("Azia e enjoo");
+  });
+  it("recognizes urgent everyday words but does not list medicines to treat them", () => {
+    const urgent = createSearchIndex([
+      medicine("urgent-fixture", "Dor no peito e dispneia"),
+    ]);
+    expect(symptomContext("dificuldade para respirar").urgent).toBe(true);
+    expect(searchIndex(urgent, "dor no peito", "symptoms")).toEqual([]);
+    expect(searchIndex(urgent, "falta de ar", "medicines")).toEqual([]);
+  });
+  it("prioritizes product-specific documented indications without implying efficacy", () => {
+    const direct = medicine("Z-product-document", "Cefaleia e febre");
+    const indirect = {
+      ...medicine("A-substance-reference", ""),
+      facts: {},
+      clinicalReferenceIds: ["test-ref"],
+    };
+    const refs = [
+      {
+        id: "test-ref",
+        ingredients: ["Test"],
+        facts: { indications: { text: "Cefaleia e febre", source } },
+        subject: "Test reference",
+      },
+    ] as import("../domain/catalog").ClinicalReference[];
+    expect(
+      searchIndex(
+        createSearchIndex([indirect, direct], refs),
+        "dor de cabeça e febre",
+        "symptoms",
+      ).map((m) => m.id),
+    ).toEqual(["Z-product-document", "A-substance-reference"]);
   });
   it("does not turn migraine prevention into treatment for any headache", () => {
     expect(

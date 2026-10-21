@@ -2,7 +2,7 @@ name: Aplicativos instaláveis
 on:
   workflow_dispatch:
   push:
-    branches: [codex/doser-download]
+    branches: [codex/doser-photos-100]
     paths:
       - "desktop/**"
       - "server/**"
@@ -83,8 +83,6 @@ jobs:
           "$sdk_dir/cmdline-tools/latest/bin/sdkmanager" "platforms;android-36" "build-tools;36.0.0"
       - run: npm ci
       - run: npm run android:prepare
-        env:
-          DOSER_ANDROID_PREVIEW: "true"
       - run: chmod +x android/gradlew
       - name: Compilar APK
         working-directory: android
@@ -98,17 +96,17 @@ jobs:
             echo '```' >> "$GITHUB_STEP_SUMMARY"
             exit 1
           fi
-      - name: Conferir instalação Android separada
+      - name: Conferir identificação e versão Android
         run: |
           sdk_dir="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
           "$sdk_dir/build-tools/36.0.0/aapt2" dump badging android/app/build/outputs/apk/debug/app-debug.apk > android-badging.txt
           python3 - <<'PYCODE'
           from pathlib import Path
           text = Path('android-badging.txt').read_text()
-          assert "package: name='io.github.doomfag.doser.preview072'" in text
-          assert "versionCode='9'" in text
-          assert "versionName='0.7.2'" in text
-          print('Prévia Android confirmada: pacote separado da versão anterior.')
+          assert "package: name='io.github.doomfag.doser'" in text
+          assert "versionCode='10'" in text
+          assert "versionName='0.8.0'" in text
+          print('Android confirmado: Doser 0.8.0, código 10.')
           PYCODE
       - uses: actions/upload-artifact@v4
         with:
@@ -134,13 +132,13 @@ jobs:
         run: |
           mkdir -p release-files
           find release-input -type f \( -name '*.exe' -o -name '*.deb' -o -name '*.dmg' \) -exec cp {} release-files/ \;
-          cp release-input/Doser-Android-APK-teste/app-debug.apk release-files/Doser-Android-PREVIA-SEPARADA-0.7.2.apk
-          cp docs/melhorias-0.7.2.md release-files/LEIA-ME.md
+          cp release-input/Doser-Android-APK-teste/app-debug.apk release-files/Doser-Android-0.8.0.apk
+          cp docs/melhorias-0.8.0.md release-files/LEIA-ME.md
           cd release-files
           sha256sum * > SHA256SUMS.txt
           cd ..
-          tag="v0.7.2-desktop-android-preview"
+          tag="v0.8.0-desktop-android-preview"
           if ! gh release view "$tag" > /dev/null 2>&1; then
-            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title "Doser 0.7.2 — PC e prévia Android" --notes-file docs/melhorias-0.7.2.md
+            gh release create "$tag" --target "$GITHUB_SHA" --prerelease --title "Doser 0.8.0 — PC e prévia Android" --notes-file docs/melhorias-0.8.0.md
           fi
           gh release upload "$tag" release-files/* --clobber

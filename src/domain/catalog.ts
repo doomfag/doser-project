@@ -1,6 +1,10 @@
-import { normalize } from "./text.ts";
-export { normalize } from "./text.ts";
-import { symptomConcepts, compileSymptomQuery } from "./symptoms.ts";
+import { normalize, distance } from "./text.ts";
+export { normalize, distance } from "./text.ts";
+import {
+  symptomConcepts,
+  compileSymptomQuery,
+  symptomContext,
+} from "./symptoms.ts";
 export const sectionLabels = {
   indications: "Para que serve",
   dosage: "Posologia",
@@ -79,20 +83,6 @@ export interface Medicine {
   professionalLeaflet?: string;
   patientLeaflet?: string;
 }
-export function distance(a: string, b: string): number {
-  let row = Array.from({ length: b.length + 1 }, (_, i) => i);
-  for (let i = 1; i <= a.length; i++) {
-    const next = [i];
-    for (let j = 1; j <= b.length; j++)
-      next[j] = Math.min(
-        next[j - 1] + 1,
-        row[j] + 1,
-        row[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1),
-      );
-    row = next;
-  }
-  return row[b.length];
-}
 export type SearchMode = "medicines" | "symptoms" | "ingredients";
 export interface SearchIndexEntry {
   medicine: Medicine;
@@ -158,8 +148,20 @@ export function searchIndex(
     const match = compileSymptomQuery(q);
     return index
       .filter((entry) => match(entry.texts.symptoms, entry.texts.medicines))
-      .sort((a, b) => a.medicine.name.localeCompare(b.medicine.name, "pt-BR"))
-      .map((entry) => entry.medicine);
+      .map((entry) => ({
+        entry,
+        productMatch:
+          entry.medicine.facts.indications?.source.status === "validated" &&
+          match(normalize(entry.medicine.facts.indications.text))
+            ? 1
+            : 0,
+      }))
+      .sort(
+        (a, b) =>
+          b.productMatch - a.productMatch ||
+          a.entry.medicine.name.localeCompare(b.entry.medicine.name, "pt-BR"),
+      )
+      .map(({ entry }) => entry.medicine);
   }
   const terms = q
     .split(" ")
@@ -434,9 +436,10 @@ export function compare(a: Medicine, b: Medicine): string {
     : "Princípios ativos com descrições diferentes. A comparação não estabelece equivalência ou intercambialidade.";
 }
 export function symptomAlert(query: string): string | null {
-  return /falta de ar|dor no peito|desmaio|convuls|sangue|confusao|rigidez na nuca/.test(
-    normalize(query),
-  )
+  return symptomContext(query).urgent ||
+    /falta de ar|dor no peito|desmaio|convuls|sangue|confusao|rigidez na nuca/.test(
+      normalize(query),
+    )
     ? "Estes termos podem indicar necessidade de avaliação urgente. No Brasil, em uma emergência, ligue 192 (SAMU). A pesquisa não avalia gravidade nem realiza diagnóstico."
     : null;
 }

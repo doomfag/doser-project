@@ -7,6 +7,7 @@ import {
   parseClinicalReferences,
   assertReferenceLinks,
 } from "../src/domain/catalog.ts";
+import { manufacturerPhotosFor } from "../src/domain/manufacturerPhotos.ts";
 let snapshot;
 try {
   snapshot = JSON.parse(await readFile(".doser/catalog.json", "utf8"));
@@ -31,6 +32,16 @@ if (
   !snapshot.status.lastSuccess
 )
   throw new Error("Base inicial inválida.");
+const illustrated = medicines.filter(
+  (m) => manufacturerPhotosFor(m).length >= 3,
+);
+if (illustrated.length < 100)
+  throw new Error(
+    `Galeria incompleta: ${illustrated.length}/100 registros da base com três imagens verificadas. Empacotamento interrompido.`,
+  );
+console.log(
+  `Galeria relacionada à base: ${illustrated.length} medicamentos com ao menos três imagens cada.`,
+);
 await mkdir("build-native/seed", { recursive: true });
 await writeFile("build-native/seed/catalog.json", JSON.stringify(snapshot));
 await mkdir(".doser", { recursive: true });

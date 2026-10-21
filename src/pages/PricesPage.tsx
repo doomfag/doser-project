@@ -4,10 +4,12 @@ import { AlertCircle, Tag } from "lucide-react";
 import { External, PageHeading } from "../components/ui";
 export default function PricesPage({
   onNotice: _onNotice,
+  initialQuery = "",
 }: {
   onNotice: (message: string) => void;
+  initialQuery?: string;
 }) {
-  const [priceQuery, setPriceQuery] = useState("");
+  const [priceQuery, setPriceQuery] = useState(initialQuery);
   return (
     <>
       <PageHeading

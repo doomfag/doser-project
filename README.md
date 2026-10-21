@@ -1,4 +1,4 @@
-# Doser 0.7.2
+# Doser 0.8.0
 
 Consulta pessoal de medicamentos em React e TypeScript. Sem chatbot, conta, hospedagem ou API paga.
 
@@ -6,13 +6,15 @@ A base real foi consultada na Anvisa em **20/10/2026**: **10.326 registros ativo
 
 A integração CMED adiciona **25.219 apresentações em 8.355 fichas**, com vínculo por registro MS e nome do produto. As descrições, datas e fontes são preservadas. Isso não constitui dose recomendada, estoque ou preço comercial real.
 
-## Imagens dos fabricantes
+## Galeria e busca por sintomas
 
-A versão 0.7.2 inclui uma galeria de **15 imagens de apresentações de Dorflex e Novalgina**, consultadas nos sites oficiais. Os arquivos não são redistribuídos no APK: o primeiro acesso usa internet e, no celular, uma cópia privada pode ser guardada após conferir sua integridade. Não há fotos para todos os medicamentos. [Cobertura, termos e instalação](docs/melhorias-0.7.2.md).
+São **100 medicamentos com 548 imagens distintas**, ao menos três por registro, vinculadas por código de barras, nome, registro e titular CMED/Anvisa. A galeria separa apresentações e permite alternar vistas por miniaturas. Inclui embalagens e imagens comerciais das fontes; não promete todos os ângulos, comprimidos soltos ou uma forma líquida por medicamento. Imagens genéricas identificadas e algumas instruções promocionais de dose foram excluídas na revisão. Os arquivos não são distribuídos no APK: o primeiro acesso exige internet; o transporte nativo confere tamanho/formato/hash e pode guardar cópia privada. [Cobertura por medicamento](docs/medicamentos-com-imagens.md) · [Origem, instalação e limites](docs/melhorias-0.8.0.md).
 
-## Atualização Android
+A busca oferece correções de sintomas para confirmação, mantém outros sintomas ao refinar “dor de barriga” e exige documentação para todos os sintomas combinados. Sem correspondência conjunta, permite pesquisar cada sintoma separadamente, sem recomendar combinações de medicamentos. A ordem prioriza indicações documentadas do produto, não eficácia clínica. Comparações agrupam campos ausentes e permitem consultar a bula ou pesquisar preços pelo nome selecionado. Não existe cobertura de tratamentos para todos os sintomas nem recomendação universal de melhor medicamento.
 
-O usuário já usa o APK anterior. A prévia 0.7.2 instala ao lado dele, com identificador próprio; não desinstale a versão antiga. Favoritos e anotações continuam no aplicativo anterior, sem migração automática. Assinatura definitiva e restauração nativa ainda precisam ser configuradas e validadas. [Instruções de instalação](docs/melhorias-0.7.2.md).
+## Instalação Android
+
+O pacote 0.8.0 usa o nome **Doser**, versão 0.8.0, código 10 e identificador `io.github.doomfag.doser`. Se uma instalação antiga do mesmo identificador tiver assinatura diferente, a reinstalação exige removê-la e apaga seus dados. Nesta tarefa, o usuário confirmou que não tem dados a preservar. Prévia 0.7.2 com outro identificador pode continuar ao lado deste pacote. Assinatura estável e migração/restauração nativa ainda estão pendentes. [Instruções de instalação](docs/melhorias-0.8.0.md).
 
 ## Apple e TVs
 

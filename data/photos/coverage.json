@@ -1,0 +1,1417 @@
+{
+  "checkedAt": "2026-10-21T15:03:30.383Z",
+  "minimumMedicines": 100,
+  "minimumPerMedicine": 3,
+  "medicines": 100,
+  "images": 548,
+  "complete": true,
+  "eligible": 111,
+  "records": [
+    {
+      "name": "DORFLEX",
+      "registration": "186200008",
+      "images": 6
+    },
+    {
+      "name": "NOVALGINA",
+      "registration": "186200018",
+      "images": 6
+    },
+    {
+      "name": "TYLENOL",
+      "registration": "157211214",
+      "images": 6
+    },
+    {
+      "name": "NEOSALDINA",
+      "registration": "178170899",
+      "images": 6
+    },
+    {
+      "name": "BUSCOPAN",
+      "registration": "178170890",
+      "images": 6
+    },
+    {
+      "name": "BUSCOPAN COMPOSTO",
+      "registration": "178170891",
+      "images": 6
+    },
+    {
+      "name": "BUSCOFEM",
+      "registration": "178170892",
+      "images": 6
+    },
+    {
+      "name": "ADVIL",
+      "registration": "192900005",
+      "images": 6
+    },
+    {
+      "name": "ALIVIUM",
+      "registration": "178170826",
+      "images": 6
+    },
+    {
+      "name": "ANADOR",
+      "registration": "186200006",
+      "images": 6
+    },
+    {
+      "name": "DORIL",
+      "registration": "178170007",
+      "images": 6
+    },
+    {
+      "name": "FLANAX",
+      "registration": "170560047",
+      "images": 6
+    },
+    {
+      "name": "DIPIRONA MONOIDRATADA",
+      "registration": "183260247",
+      "images": 6
+    },
+    {
+      "name": "IBUPROFENO",
+      "registration": "183260194",
+      "images": 6
+    },
+    {
+      "name": "AAS",
+      "registration": "178170936",
+      "images": 6
+    },
+    {
+      "name": "ASPIRINA",
+      "registration": "170560020",
+      "images": 6
+    },
+    {
+      "name": "BENEGRIP",
+      "registration": "178170092",
+      "images": 6
+    },
+    {
+      "name": "CIMEGRIPE",
+      "registration": "143810272",
+      "images": 6
+    },
+    {
+      "name": "RESFENOL",
+      "registration": "106890135",
+      "images": 4
+    },
+    {
+      "name": "DECONGEX PLUS",
+      "registration": "105730231",
+      "images": 6
+    },
+    {
+      "name": "FLUIMUCIL",
+      "registration": "100840075",
+      "images": 6
+    },
+    {
+      "name": "MUCOSOLVAN",
+      "registration": "186200017",
+      "images": 5
+    },
+    {
+      "name": "BISOLVON",
+      "registration": "186200004",
+      "images": 6
+    },
+    {
+      "name": "ALLEGRA",
+      "registration": "186200010",
+      "images": 6
+    },
+    {
+      "name": "CLARITIN",
+      "registration": "170560110",
+      "images": 6
+    },
+    {
+      "name": "POLARAMINE",
+      "registration": "178170811",
+      "images": 6
+    },
+    {
+      "name": "HISTAMIN",
+      "registration": "155840373",
+      "images": 5
+    },
+    {
+      "name": "DESALEX",
+      "registration": "100290191",
+      "images": 3
+    },
+    {
+      "name": "ENGOV",
+      "registration": "178170093",
+      "images": 5
+    },
+    {
+      "name": "ESTOMAZIL",
+      "registration": "178170039",
+      "images": 6
+    },
+    {
+      "name": "SAL DE FRUTA ENO",
+      "registration": "192900003",
+      "images": 6
+    },
+    {
+      "name": "PEPSAMAR",
+      "registration": "155840639",
+      "images": 5
+    },
+    {
+      "name": "FLORATIL",
+      "registration": "103900216",
+      "images": 6
+    },
+    {
+      "name": "REPOFLOR",
+      "registration": "102350420",
+      "images": 6
+    },
+    {
+      "name": "DULCOLAX",
+      "registration": "186200020",
+      "images": 6
+    },
+    {
+      "name": "LACTULONA",
+      "registration": "104540043",
+      "images": 6
+    },
+    {
+      "name": "MUVINLAX",
+      "registration": "100330131",
+      "images": 6
+    },
+    {
+      "name": "DUPHALAC",
+      "registration": "105530338",
+      "images": 3
+    },
+    {
+      "name": "REDOXON",
+      "registration": "170560016",
+      "images": 6
+    },
+    {
+      "name": "DORFLEX UNO",
+      "registration": "186200009",
+      "images": 6
+    },
+    {
+      "name": "DORFLEX DIP",
+      "registration": "186200007",
+      "images": 6
+    },
+    {
+      "name": "NEOSALDINA DIP",
+      "registration": "178170912",
+      "images": 6
+    },
+    {
+      "name": "NOVALGINA FLASH",
+      "registration": "186200023",
+      "images": 6
+    },
+    {
+      "name": "MECLIN",
+      "registration": "101180165",
+      "images": 4
+    },
+    {
+      "name": "NEBACETIN",
+      "registration": "178170904",
+      "images": 6
+    },
+    {
+      "name": "CANESTEN",
+      "registration": "170560102",
+      "images": 6
+    },
+    {
+      "name": "HIRUDOID",
+      "registration": "104540013",
+      "images": 6
+    },
+    {
+      "name": "PROCTYL",
+      "registration": "106390111",
+      "images": 6
+    },
+    {
+      "name": "LISADOR",
+      "registration": "178170060",
+      "images": 6
+    },
+    {
+      "name": "DORIL ENXAQUECA",
+      "registration": "178170123",
+      "images": 6
+    },
+    {
+      "name": "BENEGRIP MULTI",
+      "registration": "178170768",
+      "images": 5
+    },
+    {
+      "name": "BENEGRIP MULTI DIA",
+      "registration": "178170869",
+      "images": 4
+    },
+    {
+      "name": "BENEGRIP MULTI NOITE",
+      "registration": "178170868",
+      "images": 3
+    },
+    {
+      "name": "CORISTINA D PRO",
+      "registration": "178170919",
+      "images": 6
+    },
+    {
+      "name": "APRACUR",
+      "registration": "178170774",
+      "images": 5
+    },
+    {
+      "name": "NEOLEFRIN",
+      "registration": "155840214",
+      "images": 6
+    },
+    {
+      "name": "ACETILCISTEINA",
+      "registration": "102351342",
+      "images": 5
+    },
+    {
+      "name": "MALEATO DE DEXCLORFENIRAMINA",
+      "registration": "143810130",
+      "images": 3
+    },
+    {
+      "name": "SEKI",
+      "registration": "100840140",
+      "images": 6
+    },
+    {
+      "name": "VICK PYRENA",
+      "registration": "121420001",
+      "images": 6
+    },
+    {
+      "name": "VICK VAPORUB",
+      "registration": "121420009",
+      "images": 6
+    },
+    {
+      "name": "GELOL",
+      "registration": "178170027",
+      "images": 6
+    },
+    {
+      "name": "DORICIN",
+      "registration": "102350072",
+      "images": 4
+    },
+    {
+      "name": "MELHORAL",
+      "registration": "178170004",
+      "images": 3
+    },
+    {
+      "name": "COLÍRIO MOURA BRASIL",
+      "registration": "186200002",
+      "images": 4
+    },
+    {
+      "name": "FLORENT",
+      "registration": "115600098",
+      "images": 6
+    },
+    {
+      "name": "FLORAX",
+      "registration": "115570015",
+      "images": 6
+    },
+    {
+      "name": "PASALIX",
+      "registration": "101550098",
+      "images": 3
+    },
+    {
+      "name": "MULTIGRIP",
+      "registration": "118190230",
+      "images": 4
+    },
+    {
+      "name": "MIORRELAX",
+      "registration": "155840689",
+      "images": 6
+    },
+    {
+      "name": "MINILAX",
+      "registration": "100431404",
+      "images": 3
+    },
+    {
+      "name": "DORIL DC 500",
+      "registration": "178170859",
+      "images": 6
+    },
+    {
+      "name": "FLOGORAL",
+      "registration": "105730313",
+      "images": 6
+    },
+    {
+      "name": "MALVONA",
+      "registration": "101430068",
+      "images": 6
+    },
+    {
+      "name": "ADVIL 12H",
+      "registration": "192900007",
+      "images": 6
+    },
+    {
+      "name": "BENALET",
+      "registration": "157211204",
+      "images": 6
+    },
+    {
+      "name": "CALMINEX DICLO",
+      "registration": "178170916",
+      "images": 6
+    },
+    {
+      "name": "MAGNESIA BISURADA",
+      "registration": "137640180",
+      "images": 6
+    },
+    {
+      "name": "LACTO PURGA",
+      "registration": "178170015",
+      "images": 6
+    },
+    {
+      "name": "LOCERYL",
+      "registration": "129160036",
+      "images": 6
+    },
+    {
+      "name": "BEPANTRIZ",
+      "registration": "143810133",
+      "images": 6
+    },
+    {
+      "name": "CATAFLAMPRO",
+      "registration": "192900008",
+      "images": 6
+    },
+    {
+      "name": "LISADOR DIP",
+      "registration": "178170842",
+      "images": 6
+    },
+    {
+      "name": "DULCOLAX GOTAS",
+      "registration": "186200014",
+      "images": 6
+    },
+    {
+      "name": "BALSAMO BENGUE",
+      "registration": "102351067",
+      "images": 6
+    },
+    {
+      "name": "NALDECON MULTI",
+      "registration": "173900012",
+      "images": 6
+    },
+    {
+      "name": "SONRISAL",
+      "registration": "192900011",
+      "images": 6
+    },
+    {
+      "name": "SALONPAS GEL",
+      "registration": "110520005",
+      "images": 6
+    },
+    {
+      "name": "REHIDRAT",
+      "registration": "100430690",
+      "images": 5
+    },
+    {
+      "name": "BUSCOPAN PEDIÁTRICO",
+      "registration": "178170929",
+      "images": 6
+    },
+    {
+      "name": "DORILAX DT",
+      "registration": "105730715",
+      "images": 6
+    },
+    {
+      "name": "SEDAVAN",
+      "registration": "103900225",
+      "images": 4
+    },
+    {
+      "name": "STREPSILS",
+      "registration": "173900003",
+      "images": 6
+    },
+    {
+      "name": "XAROPE VICK",
+      "registration": "121420015",
+      "images": 6
+    },
+    {
+      "name": "DERMODEX",
+      "registration": "106390260",
+      "images": 5
+    },
+    {
+      "name": "NALDECON NOITE",
+      "registration": "173900007",
+      "images": 3
+    },
+    {
+      "name": "CAFILISADOR",
+      "registration": "178170097",
+      "images": 3
+    },
+    {
+      "name": "VICK PYRENA GRIP – 7",
+      "registration": "121420672",
+      "images": 6
+    },
+    {
+      "name": "DORILEN",
+      "registration": "167730210",
+      "images": 6
+    },
+    {
+      "name": "GUTTALAX",
+      "registration": "186200016",
+      "images": 4
+    }
+  ],
+  "rejected": [
+    {
+      "id": "pm-7896094904675-eaabbea5990a",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "id": "pm-7896094920910-c5ab643f2b93",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "id": "pm-7891158103285-d68f252d8b47",
+      "reason": "Error: Imagem genérica da loja/aviso de produto sem imagem; não identifica a apresentação real."
+    },
+    {
+      "id": "rd-7891158000942-891644e66ad8",
+      "reason": "Error: Imagem genérica da loja/aviso de produto sem imagem; não identifica a apresentação real."
+    },
+    {
+      "id": "pm-7896472501823-f79f3815e91d",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "id": "rd-7891158103285-4461de4ad91b",
+      "reason": "Error: Imagem genérica da loja/aviso de produto sem imagem; não identifica a apresentação real."
+    },
+    {
+      "id": "rd-7896472501823-a507103ec23f",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "id": "rd-7891317022174-9619250021bd",
+      "reason": "Error: Imagem genérica da loja/aviso de produto sem imagem; não identifica a apresentação real."
+    },
+    {
+      "id": "pm-7896222721198-fc702b7bf264",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "id": "pm-7500435209786-4f624498632f",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "id": "pm-7896016807213-bcf74c672995",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "id": "pm-7896016806261-0fbf68a5d08f",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "id": "pm-7500435188067-e28d04b2eae7",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    },
+    {
+      "id": "pm-7500435188050-3e97680cab21",
+      "reason": "Error: Instrução promocional de uso/posologia sem revisão de bula nesta coleção visual."
+    }
+  ],
+  "reviewed": [
+    {
+      "name": "DORFLEX",
+      "registration": "186200008",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "NOVALGINA",
+      "registration": "186200018",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "TYLENOL",
+      "registration": "157211214",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "NEOSALDINA",
+      "registration": "178170899",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "BUSCOPAN",
+      "registration": "178170890",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "BUSCOPAN COMPOSTO",
+      "registration": "178170891",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "BUSCOFEM",
+      "registration": "178170892",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "ADVIL",
+      "registration": "192900005",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "ALIVIUM",
+      "registration": "178170826",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "ANADOR",
+      "registration": "186200006",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DORIL",
+      "registration": "178170007",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "FLANAX",
+      "registration": "170560047",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DIPIRONA MONOIDRATADA",
+      "registration": "183260247",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "IBUPROFENO",
+      "registration": "183260194",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "AAS",
+      "registration": "178170936",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "ASPIRINA",
+      "registration": "170560020",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "BENEGRIP",
+      "registration": "178170092",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "CIMEGRIPE",
+      "registration": "143810272",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "RESFENOL",
+      "registration": "106890135",
+      "distinctFiles": 4,
+      "exclusiveFiles": 4
+    },
+    {
+      "name": "DECONGEX PLUS",
+      "registration": "105730231",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "FLUIMUCIL",
+      "registration": "100840075",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "MUCOSOLVAN",
+      "registration": "186200017",
+      "distinctFiles": 5,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "BISOLVON",
+      "registration": "186200004",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "ALLEGRA",
+      "registration": "186200010",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "CLARITIN",
+      "registration": "170560110",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "POLARAMINE",
+      "registration": "178170811",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "HISTAMIN",
+      "registration": "155840373",
+      "distinctFiles": 5,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "DESALEX",
+      "registration": "100290191",
+      "distinctFiles": 5,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "PRELONE",
+      "registration": "105730330",
+      "distinctFiles": 3,
+      "exclusiveFiles": 0
+    },
+    {
+      "name": "ENGOV",
+      "registration": "178170093",
+      "distinctFiles": 5,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "ESTOMAZIL",
+      "registration": "178170039",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "SAL DE FRUTA ENO",
+      "registration": "192900003",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "PEPSAMAR",
+      "registration": "155840639",
+      "distinctFiles": 5,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "FLORATIL",
+      "registration": "103900216",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "REPOFLOR",
+      "registration": "102350420",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DULCOLAX",
+      "registration": "186200020",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "LACTULONA",
+      "registration": "104540043",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "MUVINLAX",
+      "registration": "100330131",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DUPHALAC",
+      "registration": "105530338",
+      "distinctFiles": 3,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "KEFLEX",
+      "registration": "156260017",
+      "distinctFiles": 3,
+      "exclusiveFiles": 2
+    },
+    {
+      "name": "REDOXON",
+      "registration": "170560016",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DORFLEX UNO",
+      "registration": "186200009",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DORFLEX DIP",
+      "registration": "186200007",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "NEOSALDINA DIP",
+      "registration": "178170912",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "NOVALGINA FLASH",
+      "registration": "186200023",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "MECLIN",
+      "registration": "101180165",
+      "distinctFiles": 5,
+      "exclusiveFiles": 4
+    },
+    {
+      "name": "PROFENID",
+      "registration": "183260360",
+      "distinctFiles": 3,
+      "exclusiveFiles": 0
+    },
+    {
+      "name": "NEBACETIN",
+      "registration": "178170904",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "CANESTEN",
+      "registration": "170560102",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "HIRUDOID",
+      "registration": "104540013",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "PROCTYL",
+      "registration": "106390111",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "ADDERA D3",
+      "registration": "178170028",
+      "distinctFiles": 2,
+      "exclusiveFiles": 1
+    },
+    {
+      "name": "NORIPURUM",
+      "registration": "115240013",
+      "distinctFiles": 3,
+      "exclusiveFiles": 0
+    },
+    {
+      "name": "LISADOR",
+      "registration": "178170060",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DORIL ENXAQUECA",
+      "registration": "178170123",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "BENEGRIP MULTI",
+      "registration": "178170768",
+      "distinctFiles": 5,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "BENEGRIP MULTI DIA",
+      "registration": "178170869",
+      "distinctFiles": 6,
+      "exclusiveFiles": 4
+    },
+    {
+      "name": "BENEGRIP MULTI NOITE",
+      "registration": "178170868",
+      "distinctFiles": 5,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "CORISTINA D PRO",
+      "registration": "178170919",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "APRACUR",
+      "registration": "178170774",
+      "distinctFiles": 5,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "NEOLEFRIN",
+      "registration": "155840214",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "ACETILCISTEINA",
+      "registration": "102351342",
+      "distinctFiles": 5,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "MALEATO DE DEXCLORFENIRAMINA",
+      "registration": "143810130",
+      "distinctFiles": 3,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "SEKI",
+      "registration": "100840140",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "FLAGYL",
+      "registration": "110360273",
+      "distinctFiles": 2,
+      "exclusiveFiles": 0
+    },
+    {
+      "name": "VICK PYRENA",
+      "registration": "121420001",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "VICK VAPORUB",
+      "registration": "121420009",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "GELOL",
+      "registration": "178170027",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DORICIN",
+      "registration": "102350072",
+      "distinctFiles": 4,
+      "exclusiveFiles": 4
+    },
+    {
+      "name": "DIPROSONE",
+      "registration": "178170799",
+      "distinctFiles": 2,
+      "exclusiveFiles": 1
+    },
+    {
+      "name": "MELHORAL",
+      "registration": "178170004",
+      "distinctFiles": 3,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "COLÍRIO MOURA BRASIL",
+      "registration": "186200002",
+      "distinctFiles": 4,
+      "exclusiveFiles": 4
+    },
+    {
+      "name": "FLORENT",
+      "registration": "115600098",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "FLORAX",
+      "registration": "115570015",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "PASALIX",
+      "registration": "101550098",
+      "distinctFiles": 3,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "MULTIGRIP",
+      "registration": "118190230",
+      "distinctFiles": 4,
+      "exclusiveFiles": 4
+    },
+    {
+      "name": "DEPAKENE",
+      "registration": "105530315",
+      "distinctFiles": 1,
+      "exclusiveFiles": 0
+    },
+    {
+      "name": "MIORRELAX",
+      "registration": "155840689",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "MINILAX",
+      "registration": "100431404",
+      "distinctFiles": 3,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "DORIL DC 500",
+      "registration": "178170859",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "FLOGORAL",
+      "registration": "105730313",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "MALVONA",
+      "registration": "101430068",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "ADVIL 12H",
+      "registration": "192900007",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "BENALET",
+      "registration": "157211204",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "CALMINEX DICLO",
+      "registration": "178170916",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "MAGNESIA BISURADA",
+      "registration": "137640180",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "LACTO PURGA",
+      "registration": "178170015",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "LOCERYL",
+      "registration": "129160036",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "BEPANTRIZ",
+      "registration": "143810133",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "UNIZINCO",
+      "registration": "114620019",
+      "distinctFiles": 2,
+      "exclusiveFiles": 2
+    },
+    {
+      "name": "CATAFLAMPRO",
+      "registration": "192900008",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "LISADOR DIP",
+      "registration": "178170842",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DULCOLAX GOTAS",
+      "registration": "186200014",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "BALSAMO BENGUE",
+      "registration": "102351067",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "NALDECON MULTI",
+      "registration": "173900012",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "SONRISAL",
+      "registration": "192900011",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "SALONPAS GEL",
+      "registration": "110520005",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "REHIDRAT",
+      "registration": "100430690",
+      "distinctFiles": 5,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "BUSCOPAN PEDIÁTRICO",
+      "registration": "178170929",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DORILAX DT",
+      "registration": "105730715",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "SEDAVAN",
+      "registration": "103900225",
+      "distinctFiles": 4,
+      "exclusiveFiles": 4
+    },
+    {
+      "name": "STREPSILS",
+      "registration": "173900003",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "XAROPE VICK",
+      "registration": "121420015",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DERMODEX",
+      "registration": "106390260",
+      "distinctFiles": 5,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "NALDECON PACK",
+      "registration": "173900008",
+      "distinctFiles": 3,
+      "exclusiveFiles": 2
+    },
+    {
+      "name": "NALDECON NOITE",
+      "registration": "173900007",
+      "distinctFiles": 4,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "CAFILISADOR",
+      "registration": "178170097",
+      "distinctFiles": 3,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "VICK PYRENA GRIP – 7",
+      "registration": "121420672",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DORILEN",
+      "registration": "167730210",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "GUTTALAX",
+      "registration": "186200016",
+      "distinctFiles": 4,
+      "exclusiveFiles": 4
+    },
+    {
+      "name": "PEDIALYTE MAX",
+      "registration": "105530341",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "GINO-CANESTEN",
+      "registration": "170560124",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DESLORATADINA",
+      "registration": "118190480",
+      "distinctFiles": 6,
+      "exclusiveFiles": 5
+    },
+    {
+      "name": "CLOTRIMAZOL",
+      "registration": "183260167",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DIPIRONA SÓDICA",
+      "registration": "155840280",
+      "distinctFiles": 3,
+      "exclusiveFiles": 3
+    },
+    {
+      "name": "ÁCIDO ACETILSALICÍLICO",
+      "registration": "102350508",
+      "distinctFiles": 3,
+      "exclusiveFiles": 2
+    },
+    {
+      "name": "SPIDUFEN",
+      "registration": "100840148",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "GASTROL",
+      "registration": "155840396",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "GELMAX",
+      "registration": "102350111",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "CISTEIL",
+      "registration": "154230140",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "IBUFLEX",
+      "registration": "167730088",
+      "distinctFiles": 6,
+      "exclusiveFiles": 6
+    },
+    {
+      "name": "DICLOFENACO DIETILAMÔNIO",
+      "registration": "183260142",
+      "distinctFiles": 4,
+      "exclusiveFiles": 4
+    }
+  ],
+  "mimeDifferences": [
+    {
+      "id": "pm-7891058021597-075e8a710019",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896422507059-1bf410482ee9",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896422519830-bf285a150e26",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896422519830-66ce95c237ac",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896422519830-1c9f4ec0c9fe",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896422519830-086b7080c8b9",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896094928091-2fc9189ea3d0",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896523200576-b9c8c4de06cd",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896523200576-2984b13482e7",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7897337712927-2c936d0e9fe9",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7897337712934-53d83b245cbf",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7897337713467-9404c2370db5",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896004715230-65e472a521ba",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896004769028-8038e0b4857e",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896472501823-03cc65dd81bf",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7891317022174-f62e936a7c46",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896658026546-dd05fce47570",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896004715032-53203179d6a7",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896004715049-03f152ccd64e",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896004715032-8ff546fab5df",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    },
+    {
+      "id": "pm-7896004715049-1c52613fbdf0",
+      "declared": "image/jpeg",
+      "decoded": "image/png"
+    }
+  ],
+  "methods": [
+    "EAN+registro+nome+titular CMED",
+    "raster decodificado, dimensões e tamanho",
+    "SHA-256 e duplicatas visuais conservadoras",
+    "sem redistribuição dos arquivos de imagem"
+  ],
+  "limitation": "A validação de arquivos e identidade não é revisão clínica nem inspeção humana de cada ângulo. Os rótulos não presumem frente/verso ou comprimido solto."
+}

@@ -74,6 +74,56 @@ test("everyday symptoms work without selecting the symptom tab", async ({
     page.getByRole("heading", { name: "Informações sobre a substância" }),
   ).toBeVisible();
 });
+test("symptom correction keeps the full query and runs only when selected", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .getByLabel("Pesquisar no catálogo", { exact: true })
+    .fill("dor de cabessa e febr");
+  await page.getByRole("button", { name: "Pesquisar", exact: true }).click();
+  await expect(page.locator(".medicine-row")).toHaveCount(0);
+  await page
+    .getByRole("button", { name: "Dor de cabeça e febre", exact: true })
+    .click();
+  await expect(page.locator(".medicine-row strong")).toHaveText(
+    "Registro de teste",
+  );
+  await expect(
+    page.getByText(/A busca exige documentação para todos/),
+  ).toBeVisible();
+  await page
+    .getByLabel("Pesquisar no catálogo", { exact: true })
+    .fill("dor de cabeça e enjoo");
+  await page.getByRole("button", { name: "Pesquisar", exact: true }).click();
+  await expect(page.locator(".medicine-row")).toHaveCount(0);
+  const separate = page.getByLabel("Pesquisar sintomas separadamente");
+  await expect(separate).toBeVisible();
+  await expect(separate).toContainText(
+    "não são uma recomendação para combinar",
+  );
+  await separate
+    .getByRole("button", { name: "Dor de cabeça", exact: true })
+    .click();
+  await expect(page.locator(".medicine-row strong")).toHaveText(
+    "Registro de teste",
+  );
+});
+test("clarifying a belly symptom preserves fever rather than showing unrelated single-symptom results", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .getByLabel("Pesquisar no catálogo", { exact: true })
+    .fill("dor de barriga e febre");
+  await page.getByRole("button", { name: "Pesquisar", exact: true }).click();
+  await page.getByRole("button", { name: "Gases", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "Resultados para “Gases e febre”" }),
+  ).toBeVisible();
+  await expect(page.locator(".reference-result")).toHaveCount(0);
+  await expect(page.locator(".medicine-row")).toHaveCount(0);
+});
 test("quotes compare freight and delivery independently and persist", async ({
   page,
 }) => {
@@ -189,5 +239,56 @@ test("comparison accepts a short name search instead of a giant product list", a
     page.getByText("Selecione mais um medicamento para comparar.", {
       exact: true,
     }),
+  ).toBeVisible();
+});
+test("comparison groups undocumented fields and opens a price search for the selected product", async ({
+  page,
+}) => {
+  const second = {
+    ...medicine,
+    id: "second-fixture",
+    name: "Segundo teste",
+    facts: {},
+  };
+  await page.route("**/api/catalog", (r) =>
+    r.fulfill({
+      json: {
+        version: 1,
+        medicines: [medicine, second],
+        clinicalReferences: [],
+        status: { count: 2, lastSuccess: "2026-10-21T00:00:00Z" },
+      },
+    }),
+  );
+  await page.goto("/#compare");
+  for (const name of [medicine.name, second.name]) {
+    await page.getByLabel("Adicionar medicamento", { exact: true }).fill(name);
+    await page.locator(".comparison-search .related-product").click();
+  }
+  await expect(
+    page.getByRole("rowheader", { name: "Para que serve", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("rowheader", { name: "Farmacodinâmica", exact: true }),
+  ).toHaveCount(0);
+  await expect(
+    page.getByLabel("Limites dos dados da comparação"),
+  ).toContainText("Informação ausente não significa");
+  await expect(
+    page.getByRole("link", {
+      name: /^Consultar bula de Segundo teste/,
+    }),
+  ).toHaveAttribute("href", /consultas.anvisa.gov.br/);
+  await page
+    .getByRole("button", {
+      name: "Consultar preços de Segundo teste",
+      exact: true,
+    })
+    .click();
+  await expect(
+    page.getByLabel("Medicamento e apresentação", { exact: true }),
+  ).toHaveValue("Segundo teste");
+  await expect(
+    page.getByText(/Não há integração de preços ou estoque nesta versão/),
   ).toBeVisible();
 });

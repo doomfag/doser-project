@@ -1,9 +1,14 @@
 import { presentationLabel } from "./domain/presentationLabel";
+import { bularioUrl } from "./domain/bulario";
 import OffersWorkbench from "./components/OffersWorkbench";
 import { normalize } from "./domain/text";
 import ReferenceResults from "./components/ReferenceResults";
 import { matchesSymptoms } from "./domain/symptoms";
-import { symptomContext } from "./domain/symptoms";
+import {
+  symptomContext,
+  suggestSymptomQuery,
+  refineSymptomQuery,
+} from "./domain/symptoms";
 import { localId } from "./data/localId";
 import {
   useTelevisionNavigation,
@@ -86,6 +91,13 @@ const modes = [
   { id: "symptoms", label: "Sintomas", icon: Stethoscope },
   { id: "ingredients", label: "Princípios ativos", icon: FlaskConical },
 ] as const;
+const comparisonFields = [
+  "indications",
+  "dynamics",
+  "contraindications",
+  "adverse",
+  "interactions",
+] as const;
 export default function App() {
   useTelevisionNavigation();
   const [calculatorOpen, setCalculatorOpen] = useState(false);
@@ -99,6 +111,7 @@ export default function App() {
   const [mode, setMode] = useState<SearchMode>("medicines");
   const [selected, setSelected] = useState<string[]>([]);
   const [comparisonQuery, setComparisonQuery] = useState("");
+  const [priceContext, setPriceContext] = useState("");
   const [detail, setDetail] = useState<Medicine | null>(null);
   const [notice, setNotice] = useState("");
   const [libraryTab, setLibraryTab] = useState("favorites");
@@ -189,6 +202,16 @@ export default function App() {
     const medicine = catalog.find((m) => m.id === id);
     return medicine ? [medicine] : [];
   });
+  const documentedComparisonFields = comparisonFields.filter((key) =>
+    chosen.some(
+      (m) =>
+        m.facts[key] ||
+        clinicalReferencesFor(m, references).some((r) => r.facts[key]),
+    ),
+  );
+  const missingComparisonFields = comparisonFields.filter(
+    (key) => !documentedComparisonFields.includes(key),
+  );
   const hasClinicalIndications = useMemo(
     () =>
       catalog.some(
@@ -204,6 +227,10 @@ export default function App() {
     mode === "symptoms" && catalog.length > 0 && !hasClinicalIndications;
   const alert = symptomAlert(submitted);
   const symptom = symptomContext(submitted);
+  const symptomCorrections = useMemo(
+    () => (mode === "ingredients" ? [] : suggestSymptomQuery(submitted)),
+    [submitted, mode],
+  );
   const referenceResults = useMemo(() => {
     if (
       !submitted.trim() ||
@@ -361,7 +388,7 @@ export default function App() {
             <Settings2 size={19} />
             <span>Dados e ajustes</span>
           </button>
-          <span className="version">DOSER / VERSÃO 0.7.2</span>
+          <span className="version">DOSER / VERSÃO 0.8.0</span>
         </div>
       </aside>
       <div className="workspace">
@@ -563,20 +590,65 @@ export default function App() {
                           {alert}
                         </div>
                       )}
+                      {symptomCorrections.length > 0 && (
+                        <div
+                          className="symptom-help"
+                          aria-label="Correção de sintomas"
+                        >
+                          <p>Você quis dizer:</p>
+                          <div className="comparison-chips">
+                            {symptomCorrections.map((correction) => (
+                              <button
+                                className="chip"
+                                key={correction}
+                                onClick={() => runSearch(correction)}
+                              >
+                                {correction}
+                              </button>
+                            ))}
+                          </div>
+                          <small>
+                            Confira o termo antes de pesquisar. A correção não
+                            identifica uma doença.
+                          </small>
+                        </div>
+                      )}
                       {symptom.recognized && (
                         <div className="symptom-help">
                           <p>
-                            {symptom.broad
-                              ? "Dor de barriga pode significar coisas diferentes. O que você está sentindo?"
-                              : "Resultados ligados ao sintoma em documentos conferidos. A ordem não indica qual remédio funciona melhor para você."}
+                            {symptom.negated
+                              ? "Escreva apenas os sintomas que está sentindo. Expressões como ‘sem febre’ não são interpretadas automaticamente."
+                              : symptom.broad
+                                ? "Dor de barriga pode significar coisas diferentes. O que você está sentindo?"
+                                : symptom.urgent
+                                  ? "Estes sintomas precisam de avaliação. A busca não vai sugerir medicamentos para tratar uma possível urgência."
+                                  : symptom.labels.length > 1
+                                    ? `A busca exige documentação para todos: ${symptom.labels.join(" + ")}. Não confirma que o uso conjunto seja adequado.`
+                                    : "Resultados ligados ao sintoma em documentos conferidos."}
                           </p>
+                          {!symptom.broad && !symptom.urgent && (
+                            <small>
+                              Primeiro aparecem fichas com indicações conferidas
+                              do próprio produto; depois, referências por
+                              substância. A ordem não indica qual remédio
+                              funciona melhor para você.
+                            </small>
+                          )}
                           {symptom.options.length > 0 && (
                             <div className="comparison-chips">
                               {symptom.options.map((option) => (
                                 <button
                                   className="chip"
                                   key={option}
-                                  onClick={() => runSearch(option)}
+                                  onClick={() =>
+                                    runSearch(
+                                      refineSymptomQuery(
+                                        submitted,
+                                        "Dor de barriga",
+                                        option,
+                                      ),
+                                    )
+                                  }
                                 >
                                   {option}
                                 </button>
@@ -592,6 +664,37 @@ export default function App() {
                           )}
                         </div>
                       )}
+                      {!results.length &&
+                        !referenceResults.length &&
+                        symptom.labels.length > 1 &&
+                        !symptom.broad &&
+                        !symptom.urgent && (
+                          <div
+                            className="symptom-help"
+                            aria-label="Pesquisar sintomas separadamente"
+                          >
+                            <p>
+                              Não encontramos informação conferida que atenda a
+                              todos esses sintomas. Você pode consultar cada um
+                              separadamente:
+                            </p>
+                            <div className="comparison-chips">
+                              {symptom.labels.map((label) => (
+                                <button
+                                  key={label}
+                                  className="chip"
+                                  onClick={() => runSearch(label)}
+                                >
+                                  {label}
+                                </button>
+                              ))}
+                            </div>
+                            <small>
+                              Resultados separados não são uma recomendação para
+                              combinar medicamentos.
+                            </small>
+                          </div>
+                        )}
                       {results.length ? (
                         results.slice(0, resultLimit).map(medicineRow)
                       ) : referenceResults.length ? (
@@ -913,15 +1016,7 @@ export default function App() {
                                     </td>
                                   ))}
                                 </tr>
-                                {(
-                                  [
-                                    "indications",
-                                    "dynamics",
-                                    "contraindications",
-                                    "adverse",
-                                    "interactions",
-                                  ] as const
-                                ).map((key) => (
+                                {documentedComparisonFields.map((key) => (
                                   <tr key={key}>
                                     <th>{sectionLabels[key]}</th>
                                     {chosen.map((m) => (
@@ -938,12 +1033,50 @@ export default function App() {
                                 <tr>
                                   <th>Preços</th>
                                   {chosen.map((m) => (
-                                    <td key={m.id}>Não consultados</td>
+                                    <td key={m.id}>
+                                      <p>Não consultados</p>
+                                      <button
+                                        className="text-button"
+                                        onClick={() => {
+                                          setPriceContext(m.name);
+                                          navigate("prices");
+                                        }}
+                                      >
+                                        Consultar preços de {m.name}
+                                      </button>
+                                    </td>
                                   ))}
                                 </tr>
                               </tbody>
                             </table>
                           </div>
+                          {missingComparisonFields.length > 0 && (
+                            <div
+                              className="symptom-help"
+                              aria-label="Limites dos dados da comparação"
+                            >
+                              <p>
+                                Sem informação documentada nos produtos
+                                selecionados:{" "}
+                                {missingComparisonFields
+                                  .map((key) => sectionLabels[key])
+                                  .join(", ")}
+                                .
+                              </p>
+                              <small>
+                                Informação ausente não significa que os
+                                medicamentos sejam iguais ou que não tenham
+                                riscos.
+                              </small>
+                              <div className="comparison-chips">
+                                {chosen.map((m) => (
+                                  <External key={m.id} href={bularioUrl(m)}>
+                                    Consultar bula de {m.name}
+                                  </External>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                           <button
                             className="primary-button"
                             onClick={() => {
@@ -982,7 +1115,13 @@ export default function App() {
                   )}
                 </>
               )}
-              {page === "prices" && <PricesPage onNotice={setNotice} />}
+              {page === "prices" && (
+                <PricesPage
+                  key={priceContext}
+                  initialQuery={priceContext}
+                  onNotice={setNotice}
+                />
+              )}
               {page === "library" && (
                 <>
                   <PageHeading

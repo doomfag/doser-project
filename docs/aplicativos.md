@@ -1,4 +1,4 @@
-# Aplicativos instaláveis — Doser 0.7.1
+# Aplicativos instaláveis — Doser 0.8.0
 
 O objetivo de distribuição passa a ser aplicativo instalado. O HTML permanece uma alternativa de consulta; não é o instalador.
 
@@ -16,7 +16,7 @@ Gerar: `npm ci`, `npm run desktop:build`. Windows gera instalador NSIS .exe; Lin
 
 Capacitor gera um projeto Android real e APK instalável com a mesma interface e a base local. `npm run android:prepare` gera os recursos e sincroniza o projeto. Android SDK e Java 21 são necessários para compilar; `android/gradlew assembleDebug` produz o APK inicial de teste, com assinatura de depuração.
 
-Não é um atalho de navegador. O catálogo inicial, pesquisa, fichas, comparação e calculadora são locais na WebView do aplicativo. A atualização automática no Android ainda não tem adaptador nativo e fica explicitamente indisponível. Não há alegação de teste em aparelho, exportação nativa de arquivos ou assinatura definitiva. A prévia 0.7.1 usa o identificador separado `io.github.doomfag.doser.preview071`, mantendo o aplicativo e a biblioteca anteriores. Não desinstale o Doser antigo: favoritos e anotações continuam nele, sem transferência automática para a prévia. A chave efêmera do APK anterior não foi preservada. Assinatura definitiva e restauração nativa ainda precisam ser configuradas e validadas. Leia [as instruções desta prévia](melhorias-0.7.md).
+Não é um atalho de navegador. O catálogo inicial, pesquisa, fichas, comparação e calculadora são locais na WebView do aplicativo. A atualização automática no Android ainda não tem adaptador nativo e fica explicitamente indisponível. Não há alegação de teste em aparelho, exportação nativa de arquivos ou assinatura definitiva. A versão 0.8.0 usa o identificador `io.github.doomfag.doser`, nome Doser e código 10. Uma chave de depuração diferente pode impedir atualizar sobre o APK antigo; a reinstalação apaga os dados locais. O usuário desta entrega confirmou que não tem dados a preservar e autorizou reinstalar. Não há migração automática nem assinatura definitiva. Leia [as instruções desta versão](melhorias-0.8.0.md).
 
 ## Obter os instaladores
 

@@ -5,6 +5,7 @@ import {
   manufacturerPhotosFor,
   isManufacturerPhoto,
   verifiedManufacturerImage,
+  photoPresentationGroups,
 } from "../domain/manufacturerPhotos";
 import type { Medicine } from "../domain/catalog";
 import { Capacitor, CapacitorHttp } from "@capacitor/core";
@@ -21,7 +22,7 @@ const medicine = {
   ingredient: photo.ingredient,
   registration: {
     number: photo.registration,
-    holder: "38391432000143 - OPELLA HEALTHCARE BRAZIL LTDA",
+    holder: (photo.holderCnpj ?? "38391432000143") + " - test holder",
   },
 } as Medicine;
 // Synthetic RIFF/WebP header, used only for byte/hash validation, never shown as a product.
@@ -30,17 +31,37 @@ const base64 = bytes.toString("base64");
 const expected = {
   bytes: bytes.length,
   sha256: createHash("sha256").update(bytes).digest("hex"),
+  contentType: "image/webp" as const,
 };
 
 describe("manufacturer photo manifest and identity", () => {
-  it("contains only vetted official WebP sources, unique IDs and no redistributed binaries", () => {
-    expect(manufacturerPhotos).toHaveLength(15);
-    expect(new Set(manufacturerPhotos.map((p) => p.id)).size).toBe(15);
+  it("covers 100 distinct registrations with at least three distinct vetted raster images each", () => {
+    expect(manufacturerPhotos.length).toBeGreaterThanOrEqual(300);
+    expect(new Set(manufacturerPhotos.map((p) => p.id)).size).toBe(
+      manufacturerPhotos.length,
+    );
+    expect(new Set(manufacturerPhotos.map((p) => p.sha256)).size).toBe(
+      manufacturerPhotos.length,
+    );
     expect(manufacturerPhotos.every(isManufacturerPhoto)).toBe(true);
-    expect(new Set(manufacturerPhotos.map((p) => p.registration)).size).toBe(5);
+    expect(manufacturerPhotos.every((p) => p.src === new URL(p.src).href)).toBe(
+      true,
+    );
+    const registrations = new Set(
+      manufacturerPhotos.map((p) => p.registration),
+    );
+    expect(registrations.size).toBe(100);
+    for (const registration of registrations)
+      expect(
+        manufacturerPhotos.filter((p) => p.registration === registration)
+          .length,
+      ).toBeGreaterThanOrEqual(3);
   });
   it("uses registration, brand, ingredient and holder together", () => {
-    expect(manufacturerPhotosFor(medicine)).toHaveLength(3);
+    expect(manufacturerPhotosFor(medicine)).toHaveLength(
+      manufacturerPhotos.filter((p) => p.registration === photo.registration)
+        .length,
+    );
     for (const changed of [
       { name: "DORFLEX UNO" },
       { ingredient: "dipirona monoidratada" },
@@ -90,6 +111,33 @@ describe("manufacturer photo manifest and identity", () => {
   });
 });
 describe("private native image validation", () => {
+  it("supports pinned PNG and JPEG downloads, and rejects a MIME/signature mismatch", async () => {
+    for (const [mime, bytes] of [
+      [
+        "image/png",
+        Buffer.from([137, 80, 78, 71, 13, 10, 26, 10, 0, 0, 0, 0, 1, 2, 3, 4]),
+      ],
+      [
+        "image/jpeg",
+        Buffer.from([255, 216, 255, 224, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8]),
+      ],
+    ] as const) {
+      const expected = {
+        bytes: bytes.length,
+        sha256: createHash("sha256").update(bytes).digest("hex"),
+        contentType: mime,
+      };
+      expect(
+        await verifiedManufacturerImage(bytes.toString("base64"), expected),
+      ).toBe("data:" + mime + ";base64," + bytes.toString("base64"));
+      await expect(
+        verifiedManufacturerImage(bytes.toString("base64"), {
+          ...expected,
+          contentType: "image/webp",
+        }),
+      ).rejects.toThrow();
+    }
+  });
   it("accepts line-wrapped base64 returned by the Android native plugin", async () => {
     const androidData = base64.match(/.{1,8}/g)!.join("\n") + "\n";
     expect(await verifiedManufacturerImage(androidData, expected)).toBe(
@@ -121,6 +169,43 @@ describe("private native image validation", () => {
 });
 
 describe("native photo transport", () => {
+  it("shares one download between the main image and its thumbnail", async () => {
+    vi.mocked(Capacitor.isNativePlatform).mockReturnValue(true);
+    vi.mocked(CapacitorHttp.get).mockClear().mockResolvedValue({
+      data: base64,
+      url: photo.src,
+      status: 200,
+      headers: {},
+    });
+    const p = { ...photo, ...expected, id: "fixture-shared-download" };
+    await Promise.all([manufacturerImageSource(p), manufacturerImageSource(p)]);
+    expect(CapacitorHttp.get).toHaveBeenCalledTimes(1);
+  });
+  it("limits concurrent native image requests to three", async () => {
+    vi.mocked(Capacitor.isNativePlatform).mockReturnValue(true);
+    let running = 0,
+      maximum = 0;
+    vi.mocked(CapacitorHttp.get)
+      .mockClear()
+      .mockImplementation(async () => {
+        running++;
+        maximum = Math.max(maximum, running);
+        await new Promise((r) => setTimeout(r, 5));
+        running--;
+        return { data: base64, url: photo.src, status: 200, headers: {} };
+      });
+    await Promise.all(
+      Array.from({ length: 8 }, (_, i) =>
+        manufacturerImageSource({
+          ...photo,
+          ...expected,
+          id: "fixture-concurrency-" + i,
+        }),
+      ),
+    );
+    expect(maximum).toBe(3);
+    expect(CapacitorHttp.get).toHaveBeenCalledTimes(8);
+  });
   it("validates native downloads with redirects disabled, even without IndexedDB", async () => {
     vi.mocked(Capacitor.isNativePlatform).mockReturnValue(true);
     vi.mocked(CapacitorHttp.get).mockResolvedValue({
@@ -163,5 +248,36 @@ describe("native photo transport", () => {
     vi.mocked(CapacitorHttp.get).mockClear();
     expect(await manufacturerImageSource(photo)).toBe(photo.src);
     expect(CapacitorHttp.get).not.toHaveBeenCalled();
+  });
+});
+
+describe("presentation grouping", () => {
+  it("groups angles of the same barcode but keeps concentrations and packages separate", () => {
+    const photos = [
+      {
+        ...photo,
+        id: "a",
+        ean: "7891058017507",
+        productTitle: "Fixture 10 mg, 20 tablets",
+      },
+      {
+        ...photo,
+        id: "b",
+        ean: "7891058017507",
+        productTitle: "Fixture 10 mg, 20 tablets",
+        sha256: "b".repeat(64),
+      },
+      {
+        ...photo,
+        id: "c",
+        ean: "7891058017811",
+        productTitle: "Fixture 50 mg, 10 tablets",
+        sha256: "c".repeat(64),
+      },
+    ];
+    const groups = photoPresentationGroups(photos);
+    expect(groups).toHaveLength(2);
+    expect(groups[0].photos.map((p) => p.id)).toEqual(["a", "b"]);
+    expect(groups[1].label).toBe("Fixture 50 mg, 10 tablets");
   });
 });
